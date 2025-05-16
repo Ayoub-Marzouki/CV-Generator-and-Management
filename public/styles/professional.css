@@ -1,0 +1,462 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    padding:10px;
+}
+
+
+/* ---------------- COMMON ---------------- */
+h2 {
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 2%;
+    padding-bottom: 0.5%;
+    border-bottom: 1px solid #ccc;
+    letter-spacing: 1px;
+}
+
+main, header, #contact {
+    margin:auto;
+}
+
+hr {
+    display:none;
+}
+
+main section, header {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #5D7C60;
+}
+
+main section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.icons {
+    width: 20px;
+    height: 20px;
+    padding:2px;
+    background-color:black;
+}
+
+.flex {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+/* ---------------- profile ---------------- */
+
+#profile {
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 2px solid #5D7C60;
+}
+
+#profile-info {
+    flex: 3;
+}
+
+#name {
+    font-size: 40px;
+    font-weight: 300;
+    color: #222;
+    text-transform: uppercase;
+}
+
+#last-name {
+    font-weight: bold;
+}
+
+#birth {
+    font-size:14px;
+    color: #666;
+    font-style: italic;
+}
+
+#job-title {
+    font-size: 25px;
+    font-weight: 300;
+    color: #5D7C60;
+    border-bottom: 1px solid #ddd;
+}
+
+#professional-summary {
+    color: #555;
+    text-align: justify;
+    margin-bottom: 0;
+}
+
+#image {
+    flex: 1;
+    text-align: right;
+    padding-right:1%;
+}
+
+#photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #5D7C60;
+}
+
+
+/* ---------------- contact ---------------- */
+#contact {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1%;
+    border-bottom: 2px solid #5D7C60;
+    font-size: 14px;
+}
+
+#personal-contact, #links {
+    width: 48%;
+    padding-left:3%;
+    margin-bottom:1%;
+}
+
+#contact a {
+    text-decoration: none;
+    color: #444;
+    align-items: center;
+}
+
+#contact a:hover {
+    color: #5D7C60;
+}
+
+
+/* ---------------- education ---------------- */
+#education-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.education-section {
+    flex-basis: calc(50% - 10px);
+    margin-bottom: 1.5%;
+}
+
+.education-diploma {
+    color: #444;
+    margin-bottom:0.5%;
+}
+
+.education-organization {
+    color: #555;
+    margin-bottom: 0.5%;
+    font-style: italic;
+}
+
+.year-location {
+    font-size: 0.85em;
+    color: #777;
+}
+
+/* ---------------- Technologies & additional technologies ---------------- */
+#technologies-list, #additional-technologies-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.technologies-section {
+    margin-bottom: 1.5%;
+}
+
+.skill {
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 1%;
+    text-transform: uppercase;
+}
+
+.details {
+    list-style: none;
+    font-size: 14px;
+    color: #666;
+}
+
+.details li {
+    margin-bottom: 4px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.details li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: #5D7C60;
+    font-weight: bold;
+}
+
+/* ---------------- experience ---------------- */
+#experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.experience-section {
+    margin-bottom: 1.5%;
+}
+
+.experience-type {
+    font-size: 15px;
+    font-weight: normal;
+    color: #777;
+    margin-top: 0;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+}
+
+.experience-title {
+    color: #444;
+    margin-bottom: 0.5%;
+}
+
+.experience-organization {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 0.5%;
+    font-style: italic;
+}
+
+.year-duration {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 0.8%;
+}
+
+.experience-technologies {
+    list-style: none;
+    font-size: 14px;
+    color: #666;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.experience-technologies li {
+    background-color: #e9e9e9;
+    padding: 3px 8px;
+    border-radius: 3px;
+}
+
+/* ---------------- soft-skills ---------------- */
+#soft-skills-list, #interests-list {
+    /* list-style: none; */
+    list-style-position: inside;
+    font-size: 15px;
+    columns: 2;
+    column-gap: 40px;
+}
+
+#soft-skills-list li, #interests-list li {
+    padding-left:5%;
+}
+
+/* ---------------- languages ---------------- */
+#languages-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.language-name {
+    font-size: 1em;
+    font-weight: bold;
+    color: #444;
+}
+
+.language-level {
+    font-size: 13px;
+    color: #666;
+    font-style: italic;
+}
+
+.language-certification, .language-experience {
+    font-size: 14px;
+    color: #777;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 5px;
+    }
+
+    h2 {
+        font-size: 20px;
+        margin-bottom: 4%;
+        padding-bottom: 1%;
+    }
+
+    main section, header {
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #5D7C60;
+    }
+
+    #profile {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #profile-info {
+        flex: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    #name {
+        font-size: 30px;
+    }
+
+    #birth {
+        font-size: 12px;
+    }
+
+    #job-title {
+        font-size: 20px;
+        border-bottom: 0.5px solid #ddd;
+        margin-bottom: 2%;
+    }
+
+    #professional-summary {
+        text-align: left;
+    }
+
+    #image {
+        flex: none;
+        width: 100%;
+        text-align: center;
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    #photo {
+        width: 150px;
+        height: 150px;
+    }
+
+    #contact {
+        flex-direction: column;
+        font-size: 12px;
+    }
+
+    #personal-contact, #links {
+        width: 100%;
+        padding-left: 0;
+        margin-bottom: 2%;
+    }
+
+    #education-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .education-section {
+        flex-basis: 100%;
+        margin-bottom: 3%;
+    }
+
+    .education-diploma {
+        font-size: 18px;
+    }
+
+    .education-organization {
+        font-size: 14px;
+    }
+
+    .year-location {
+        font-size: 0.8em;
+    }
+
+    #technologies-list, #additional-technologies-list {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+    }
+
+    .skill {
+        font-size: 16px;
+        margin-bottom: 2%;
+    }
+
+    .details {
+        font-size: 12px;
+    }
+
+    #experience-list {
+        gap: 15px;
+    }
+
+    .experience-type {
+        font-size: 13px;
+    }
+
+    .experience-title {
+        font-size: 16px;
+    }
+
+    .experience-organization {
+        font-size: 13px;
+    }
+
+    .year-duration {
+        font-size: 11px;
+    }
+
+    .experience-technologies {
+        font-size: 12px;
+        gap: 5px;
+    }
+
+    #soft-skills-list, #interests-list {
+        font-size: 13px;
+        columns: 1;
+        column-gap: 20px;
+    }
+
+    #soft-skills-list li, #interests-list li {
+        padding-left: 2%;
+    }
+
+    #languages-list {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+    }
+
+    .language-name {
+        font-size: 0.9em;
+    }
+
+    .language-level {
+        font-size: 11px;
+    }
+
+    .language-certification, .language-experience {
+        font-size: 12px;
+    }
+
+    .flex {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

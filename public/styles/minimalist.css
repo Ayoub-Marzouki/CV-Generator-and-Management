@@ -1,0 +1,237 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+/* ------------------ COMMON styling ------------------ */
+
+body {
+    color:rgba(0,0,0,0.8);
+    font-weight: 400;
+}
+
+h2 {
+    text-align:center;
+    margin-bottom:2%;
+    font-size:26px;
+}
+
+h2, h3 {
+    font-weight:800;
+}
+
+li {
+    list-style:disc;
+    list-style-position: inside;
+}
+
+.icons {
+    width:20px;
+    height:20px;
+    padding:1px;
+    background-color:black;
+}
+
+main, header, #contact {
+    margin:auto;
+    border-bottom:1px solid black;
+    background-color: white;
+}
+
+/* Vertically divide main on 2 parts*/
+main {
+    column-count: 2;
+    column-gap:5%;
+    padding:1%;
+    border:none;
+}
+
+main section:not(:first-child) {
+    padding-top:5%;
+}
+
+
+.flex {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.year-location, .year-duration {
+    display:flex;
+    justify-content: space-between;
+    max-width:70%;
+    font-style: italic;
+}
+
+/* ------------------ profile ------------------ */
+
+#profile {
+    padding:2%;
+    display:flex;
+    justify-content: space-between;
+}
+
+
+#profile #job-title {
+    text-align:center;
+    text-decoration:none;
+    font-weight:400;
+}
+
+#professional-summary {
+    line-height: 25px;
+    max-width:90%;
+    margin:auto;
+}
+
+/* A place holder for the image */
+#image {
+    display:none;
+}
+
+/* ------------------ contact ------------------ */
+
+#contact {
+    display:flex;
+    padding:5px 5%;
+    padding-top:15px;
+}
+
+#contact div {
+    width:50%;
+}
+
+#contact a {
+    color:black;
+    font-weight:900;
+    display:flex;
+    gap:10px;
+    align-items:center;
+    text-decoration: none;
+}
+
+/* ------------------ education ------------------ */
+#education .education-section {
+    margin-bottom:5%;
+}
+.education-diploma {
+    font-size:25px;
+}
+.education-organization, .experience-organization {
+    font-size:18px;
+}
+
+/* ------------------ technologies & additional technologies ------------------ */
+.technologies-section {
+    margin-bottom:5%;
+}
+.skill {
+    text-align:center;
+    margin:auto;
+    padding:1% 2%;
+    font-weight:900;
+    border-radius:10px;
+    font-size:19px;
+}
+
+.details {
+    column-count: 2;
+    column-gap:5%;
+}
+
+/* ------------------ experience ------------------ */
+.experience-type, .experience-title {
+    text-align:center;
+}
+
+.experience-technologies {
+    column-count: 2;
+    padding:1%;
+}
+
+/* ------------------ soft skills ------------------ */
+#soft-skills-list {
+    column-count:2;
+}
+
+/* ------------------ soft skills ------------------ */
+.language-section .flex {
+    padding-right:10%;
+}
+.language-section-hr {
+    width:50%;
+    margin:1% auto;
+}
+.language-experience, .language-certification {
+    padding-left: 3%;
+}
+
+@media (max-width: 768px) {
+    main {
+        column-count: 1;
+    }
+
+    #profile {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #profile #profile-info {
+        text-align: center;
+    }
+
+    #professional-summary {
+        max-width: 100%;
+    }
+
+    #contact {
+        flex-direction: column;
+    }
+
+    #contact div {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .details {
+        column-count: 1;
+    }
+
+    .experience-technologies {
+        column-count: 1;
+    }
+
+    #soft-skills-list {
+        column-count: 1;
+    }
+
+    .language-section .flex {
+        padding-right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .year-location, .year-duration {
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 100%;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .education-diploma {
+        font-size: 20px;
+    }
+
+    .education-organization, .experience-organization {
+        font-size: 16px;
+    }
+
+    .skill {
+        font-size: 17px;
+    }
+}

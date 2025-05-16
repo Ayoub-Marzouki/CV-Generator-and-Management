@@ -1,0 +1,541 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body {
+    font-family: 'Merriweather', Georgia, serif;
+    color: #5D4037;
+    line-height: 1.7;
+    padding:10px;
+    background-color: #FAF0E6;
+}
+
+/* ---------------- Common ---------------- */
+
+br {
+    display:none;
+}
+
+main, header, #contact {
+    margin:auto;
+    padding-bottom:5%;
+}
+
+main {
+    height:auto;
+}
+
+
+main section {
+    border-bottom: 2px solid #8B4513;
+}
+
+main section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+h2 {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-size: 35px;
+    color: #4A3B31;
+    text-transform: uppercase;
+    padding-bottom: 2%;
+    text-align: center;
+    border-bottom: 1px solid #A0522D;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: #A0522D;
+    margin:auto;
+}
+
+.icons {
+    width: 20px;
+    height: 20px;
+    padding:3px;
+    margin:0 3px;
+    background-color:black;
+    opacity: 0.6;
+    filter: grayscale(60%) sepia(40%);
+}
+
+/* ---------------- Profile ---------------- */
+#profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-bottom: 2px solid #8B4513;
+}
+
+#profile-info {
+    order: 2;
+}
+
+#profile-info > .flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#name {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-size: 2.8em;
+    font-weight: 700;
+    color: #4A3B31;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+#birth {
+    font-size: 0.9em;
+    color: #755C48;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+#job-title {
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #8B4513;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: none;
+    padding-bottom: 0;
+    display: block;
+    letter-spacing: 0.5px;
+}
+
+#professional-summary {
+    font-size: 1em;
+    color: #5D4037;
+    text-align: justify;
+    margin-bottom: 0;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#image {
+    flex: none;
+    text-align: center;
+    order: 1;
+    margin-bottom: 20px;
+}
+
+#photo {
+    width: 130px;
+    height: 160px;
+    border-radius: 4px;
+    object-fit: cover;
+    border: 3px solid #755C48;
+    filter: sepia(0.4) contrast(0.9) brightness(1.05);
+    box-shadow: 3px 3px 8px rgba(0,0,0,0.1);
+}
+
+
+/* ---------------- Contact ---------------- */
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding:2.5%;
+    border-bottom: 2px solid #8B4513;
+    font-size: 0.95em;
+}
+
+#contact a {
+    text-decoration: none;
+    color: #704214;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap:5px;
+    padding: 3px 5px;
+}
+
+#contact a:hover {
+    color: #4A3B31;
+    text-decoration: underline;
+}
+
+
+/* ---------------- Education ---------------- */
+#education-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.education-section:first-child {
+    padding-top:1%;
+}
+.education-section {
+    padding-left: 1%;
+    border-left: 2px solid #D2B48C;
+}
+
+.education-diploma {
+    font-weight: 900;
+    color: #5D4037;
+    padding-bottom:1%;
+}
+
+.education-organization {
+    color: #704214;
+    padding-bottom:1%;
+    font-style: italic;
+}
+
+.year-location {
+    display: flex;
+    justify-content: flex-start;
+    color: #8B4513;
+}
+.education-year {
+    padding-right:1%;
+}
+.education-year::after{
+    content: "—";
+    padding-left:15px;
+}
+
+
+/* ---------------- Technologies ---------------- */
+#technologies-list, #additional-technologies-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px 20px;
+}
+
+.skill {
+    font-size: 18px;
+    font-weight: 700;
+    color: #5D4037;
+    margin-bottom:5%;
+    text-align:center;
+    padding-top:3%;
+    border-bottom: 1px dotted #A0522D;
+}
+
+.details {
+    list-style: square;
+    list-style-position: inside;
+    padding-left: 3%;
+    font-size:15px;
+    color: #704214;
+}
+
+.details li {
+    margin-bottom: 1%;
+}
+
+
+/* ---------------- Experience ---------------- */
+#experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.experience-section {
+    padding-left: 1%;
+    border-left: 2px solid #D2B48C;
+}
+
+.experience-section:last-child {
+    margin-bottom:1px;
+}
+
+.experience-type {
+    font-size: 14px;
+    font-weight: normal;
+    color: #8B4513;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.experience-title {
+    font-weight: 700;
+    color: #5D4037;
+    margin-bottom:0.2%;
+}
+
+.experience-organization {
+    color: #704214;
+    margin-bottom:0.5%;
+    font-style: italic;
+}
+
+.year-duration {
+    display: flex;
+    justify-content: flex-start;
+    font-size:14px;
+    color: #8B4513;
+    margin-bottom: 1%;
+}
+.year-duration .year::after {
+    content: "—";
+}
+
+.experience-technologies {
+    list-style: none;
+    color: #704214;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.experience-technologies li {
+    background-color: #E9E2D9;
+    padding: 2px 8px;
+    border-radius: 3px;
+    border: 1px solid #D2B48C;
+}
+
+
+/* ---------------- Soft Skills & Interests ---------------- */
+#soft-skills-list, #interests-list {
+    list-style: disc;
+    padding-left:3%;
+    columns: 2;
+    column-gap: 0;
+}
+
+#soft-skills-list li, #interests-list li {
+    margin-bottom: 1%;
+}
+
+/* ---------------- Languages ---------------- */
+#languages-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.language-section .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 5px;
+}
+
+.language-name {
+    font-weight: 700;
+    color: #5D4037;
+    margin: 0;
+}
+
+.language-level {
+    color: #704214;
+    font-style: italic;
+}
+
+.language-certification, .language-experience {
+    font-size: 0.9em;
+    color: #8B4513;
+    margin: 3px 0;
+}
+
+.language-section-hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(139, 69, 19, 0), rgba(139, 69, 19, 0.5), rgba(139, 69, 19, 0));
+    margin-top: 15px;
+}
+.language-section:last-child .language-section-hr {
+    display:none;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 5px;
+    }
+
+    br {
+        display: block;
+    }
+
+    main, header, #contact {
+        padding-bottom: 10%;
+    }
+
+    main section {
+        border-bottom: 1px solid #8B4513;
+    }
+
+    h2 {
+        font-size: 28px;
+        padding-bottom: 4%;
+    }
+
+    h2::after {
+        width: 40px;
+    }
+
+    #profile {
+        align-items: center;
+        text-align: center;
+    }
+
+    #profile-info {
+        order: 2;
+    }
+
+    #profile-info > .flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #name {
+        font-size: 2.2em;
+        margin-top: 10px;
+        margin-bottom: 2px;
+    }
+
+    #birth {
+        font-size: 0.8em;
+        margin-bottom: 10px;
+    }
+
+    #job-title {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+
+    #professional-summary {
+        font-size: 0.9em;
+    }
+
+    #image {
+        margin-bottom: 15px;
+    }
+
+    #photo {
+        width: 100px;
+        height: 130px;
+    }
+
+    #contact {
+        font-size: 0.9em;
+    }
+
+    #education-list {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .education-section {
+        padding-left: 3%;
+        border-left: 1px solid #D2B48C;
+    }
+
+    .education-diploma {
+        font-size: 1em;
+    }
+
+    .education-organization {
+        font-size: 0.9em;
+    }
+
+    .year-location {
+        font-size: 0.8em;
+    }
+
+    .education-year::after {
+        content: "—";
+        padding-left: 10px;
+    }
+
+    #technologies-list, #additional-technologies-list {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px 10px;
+    }
+
+    .skill {
+        font-size: 1em;
+        margin-bottom: 3%;
+        padding-top: 2%;
+    }
+
+    .details {
+        font-size: 0.9em;
+        padding-left: 5%;
+    }
+
+    #experience-list {
+        gap: 20px;
+    }
+
+    .experience-section {
+        padding-left: 3%;
+        border-left: 1px solid #D2B48C;
+    }
+
+    .experience-type {
+        font-size: 0.8em;
+    }
+
+    .experience-title {
+        font-size: 1em;
+    }
+
+    .experience-organization {
+        font-size: 0.9em;
+    }
+
+    .year-duration {
+        font-size: 0.8em;
+    }
+
+    .experience-technologies {
+        font-size: 0.8em;
+        gap: 5px;
+    }
+
+    #soft-skills-list, #interests-list {
+        font-size: 0.9em;
+        columns: 1;
+        padding-left: 5%;
+        column-gap: 20px;
+    }
+
+    #languages-list {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .language-section .flex {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 10px;
+    }
+
+    .language-name {
+        font-size: 0.9em;
+    }
+
+    .language-level {
+        font-size: 0.8em;
+    }
+
+    .language-certification, .language-experience {
+        font-size: 0.8em;
+    }
+
+    .language-section-hr {
+        margin-top: 10px;
+    }
+}

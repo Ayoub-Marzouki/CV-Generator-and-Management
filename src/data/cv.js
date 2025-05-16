@@ -1,0 +1,116 @@
+let cv = {
+    profile : {
+        photo: "/images/image.png",
+        firstName: "Ayoub",
+        lastName: "Marzouki",
+        birthday: {
+            day: 01,
+            month: 11,
+            year: 2003
+        },
+        phone: "0613852665",
+        email: "ayoubma321@gmail.com",
+        address: "Fes, Morocco",
+        professionalSummary: `Persistent and persevering computer science student with a strong foundation in web development and programming.
+        Raw willpower being my primary weapon to overcome challenges and achieve goals.
+        Experienced in building functional web and desktop applications using modern technologies, such as JEE, Spring / Spring Boot, Java Swing, MySQL, Node JS, Django REST Framework, Javascript (AJAX included), SQL, PL/SQL and MySQL. Seeking to strengthen my technical skills and brighten up my future.
+        `,
+        links: ["https://github.com/Ayoub-Marzouki", "https://www.linkedin.com/in/ayoubmarzouki/"]
+    },
+    education: [
+        {
+            diploma: "Software Quality Master's",
+            organisation: "FSDM - Université Sidi Mohammed ben Abdellah - Fès",
+            year: 2026,
+        },
+        {
+            diploma: "Licence at Mathematics and Computer Sciences",
+            organisation: "FSDM - Université Sidi Mohammed ben Abdellah - Fès",
+            year: 2024,
+        },
+        {
+            diploma: "DEUG at Mathematics and Computer Sciences",
+            organisation: "FSDM - Université Sidi Mohammed ben Abdellah - Fès",
+            year: 2024,
+        }
+    ],
+    technologySkills: [
+        {
+            skill: "Jakarta Entreprise Edition (JEE)",
+            details: ["3-tiers Architecture", "MVC2 model", "Servlets and JSPs",
+                "DAO Model", "Spring / Spring Boot Framework", "JPA", "Hibernate",
+                "Tomcat Administration"
+            ]
+        },
+        {
+            skill: "Web Development",
+            details: ["HTML", "Native CSS", "JavaScript", "AJAX"]
+        },
+        {
+            skill: "Java Standard Edition (Java SE)",
+            details: ["Swing", "Generics", "Java XML", "Files I/O", "Lists", "Multithreading", "Exceptions"]
+        },
+        {
+            skill: "C Programming",
+            details: ["Data Structures", "Pointers", "Double Pointers", "Memory management"]
+        },
+        {
+            skill: "Databases",
+            details: ["MySQL", "SQL", "PL/SQL"]
+        },
+        {
+            skill: "Software Development Practices",
+            details: ["Test-Driven Development (TDD)", "JUnit"]
+        }
+    ],
+    experiences: [
+        {
+            type: "Project",
+            organisation: "FSDM - Université Sidi Mohammed ben Abdellah - Fès",
+            title: "CV Generator & Management",
+            technologies: ["HTML", "CSS", "JavaScript", "Node JS"],
+            year: 2025,
+            duration: "1 month"
+        },
+        {
+            type: "Project",
+            organisation: "FSDM - Université Sidi Mohammed ben Abdellah - Fès",
+            title: "Java Project Parser & UML Diagrams Generator",
+            technologies: ["Java", "Java Swing", "XML", "Java XML"],
+            year: 2025,
+            duration: "3 months"
+        },
+        {
+            type: "Project",
+            organisation: "FSDM - Université Sidi Mohammed ben Abdellah - Fès",
+            title: "Online Art Gallery & Marketplace",
+            technologies: ["HTML", "CSS", "JavaScript", "AJAX", "SQLite3", "Django REST Framework"],
+            year: 2024,
+            duration: "3 months"
+        }
+    ],
+    softSkills: ["Resilience", "Perseverance", "Attention To Detail", "Clear Written Communication",
+                 "Problem Solving", "Analytical Thinking", "Self-Motivation", "Independent Learning"
+    ],
+    languages: [
+        {
+            language: "English",
+            level: "C1",
+            certification: "",
+            experience: ""
+        },
+        {
+            language: "French",
+            level: "C1",
+            certification: "",
+            experience: ""
+        },
+        {
+            language: "Arabic",
+            level: "Native",
+            certification: "",
+            experience: ""
+        }
+    ],
+    interests: ["Full Stack Development", "Software Architecture and Clean Code", "Open-Source Tools", "Human Behavior and Emotional Connection"]
+};
