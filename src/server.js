@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import routes from "./routes/routes.js";
 
 export default class Server {
     constructor(port = 3000) {
@@ -15,7 +16,7 @@ export default class Server {
         this.app.use(cors());
     }
     routes() {
-        this.app.get("/", (req, res) => res.send("OK"));
+        this.app.use("/", routes);
     }
     start() {
         this.app.listen(this.port, () => {
