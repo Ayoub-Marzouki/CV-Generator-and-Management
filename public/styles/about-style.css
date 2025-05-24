@@ -1,0 +1,23 @@
+#about-project, #about-developer {
+    width:85%;
+    margin:auto;
+    margin-top:1%;
+    padding:1%;
+    box-shadow:0 8px 24px rgba(0,0,0,0.1);
+    border-radius:10px;
+    line-height:200%;
+}
+
+h1, p, li {
+    margin-top:1%;
+}
+li {
+    list-style-position: inside;
+}
+
+#about-project {
+    margin-bottom:2%;
+}
+#about-developer {
+    margin-bottom:1%;
+}

@@ -11,9 +11,27 @@ const VIEWS_DIR = path.join(__dirname, "../views");
 
 const router = express.Router();
 
+// Views
+router.get("/", (req, res) => {
+    res.render("index");
+});
 router.get("/cv", (req, res) => {
-    res.sendFile(path.join(VIEWS_DIR, "../views/cv.html"));
-})
+    res.render("cv", {
+        layout:false,
+    });
+});
+
+router.get("/about", (req, res) => {
+    res.render("about");
+});
+
+router.get("/contact", (req, res) => {
+    res.render("contact");
+});
+
+router.get("/cv-templates", (req, res) => {
+    res.render("cv-templates");
+});
 
 // REST end-points
 router.get("/api/cvs", handleCVs);
