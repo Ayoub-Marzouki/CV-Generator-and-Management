@@ -1,0 +1,37 @@
+/* Disable some inherited attributes from shared-style */
+body {
+    padding:0;
+}
+
+a {
+    font-weight:500;
+}
+
+/* .flex {
+    display:block;
+} */
+
+#navbar-container {
+    border:none;
+}
+
+/* ------------- CVs ------------ */
+.cv-block {
+    width:80%;
+    padding:1%;
+    margin:auto;
+}
+
+.cv-block:last-of-type {
+    margin-bottom:1%;
+}
+
+hr {
+    margin:1% auto;
+    width:90%;
+    color:rgba(0,0,0,0.5);
+}
+
+.cv-block:last-of-type hr {
+    display:none;
+}

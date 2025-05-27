@@ -1,0 +1,196 @@
+<link rel="stylesheet" href="/styles/creative.css">
+<link rel="stylesheet" href="/styles/retro.css">
+<link rel="stylesheet" href="/styles/minimalist.css">
+<link rel="stylesheet" href="/styles/modern.css">
+<link rel="stylesheet" href="/styles/professional.css">
+<link rel="stylesheet" href="/styles/people-cvs-style.css" />
+
+
+<% cvs.forEach((cv) => { %>
+  <section class="cv-block <%= cv.chosenLayout || 'minimalist'%>">
+    <!-- PROFILE -->
+    <header class="profile">
+		<div class="profile-info">
+			<div class="flex">
+			<h1 class="name">
+				<span class="last-name"><%= cv.profile.lastName || '' %></span>
+				<span class="first-name"><%= cv.profile.firstName %></span>
+			</h1>
+			<p class="birth">
+				<span class="day"><%= cv.profile.birthday.day %></span>/
+				<span class="month"><%= cv.profile.birthday.month %></span>/
+				<span class="year"><%= cv.profile.birthday.year %></span>
+			</p>
+		</div>
+        <h2 class="job-title"><%= cv.profile.jobTitle || '' %></h2>
+        <p class="professional-summary">
+          <%= cv.profile.professionalSummary %>
+        </p>
+        </div>
+		<% if (cv.profile.photo) { %>
+			<div class="image">
+			<img class="photo" src="<%= cv.profile.photo || '' %>" alt="Photo of <%= cv.profile.firstName || '' %>" />
+			</div>
+		<% } %>
+    </header>
+
+    <!-- CONTACT -->
+    <section class="contact">
+      <div class="personal-contact">
+        <% if (cv.profile.email) { %>
+          <a class="email" href="mailto:<%= cv.profile.email %>">
+            <img class="icons" src="/images/icons/envelope.png" alt="Email Icon" />
+            <span><%= cv.profile.email %></span>
+          </a><br>
+        <% } %>
+        <% if (cv.profile.address) { %>
+          <a class="address" href="#">
+            <img class="icons" src="/images/icons/location.png" alt="Address Icon" />
+            <span class="address-text"><%= cv.profile.address %></span>
+          </a><br>
+        <% } %>
+        <% if (cv.profile.phone) { %>
+          <a class="phone" href="tel:+<%= cv.profile.phone %>">
+            <img class="icons" src="/images/icons/phone.png" alt="Phone Icon" />
+            <span class="phone-text"><%= cv.profile.phone %></span>
+          </a><br>
+        <% } %>
+      </div>
+
+      <% if (cv.profile.links && cv.profile.links.length) { %>
+        <div class="links">
+		<% cv.profile.links.forEach(link => { %>
+			<% if (link.toLowerCase().includes('github.com')) { %>
+			<a class="link" href="<%= link %>" target="_blank">
+				<img class="icons" src="/images/icons/github.png" alt="GitHub Icon" />
+				<span class="link-text"><%= link %></span>
+			</a>
+			<br>
+			<% } else { %>
+			<a class="link" href="<%= link %>" target="_blank">
+				<img class="icons" src="/images/icons/linkedin.png" alt="LinkedIn Icon" />
+				<span class="link-text"><%= link %></span>
+			</a>
+			<br>
+			<% } %>
+		<% }) %>
+        </div>
+      <% } %>
+    </section>
+
+    <main>
+      <!-- EDUCATION -->
+      <section class="education">
+        <h2>Education</h2>
+        <div class="education-list">
+          <% cv.education.forEach(edu => { %>
+            <div class="education-section">
+              <h3 class="education-diploma"><%= edu.diploma %></h3>
+              <p class="education-organization"><%= edu.organisation %></p>
+              <div class="flex year-location">
+                <p class="education-year"><%= edu.year %></p>
+                <p class="education-location"><%= edu.location || '' %></p>
+              </div>
+            </div>
+          <% }) %>
+        </div>
+      </section>
+
+      <!-- TECHNOLOGIES -->
+      <section class="technologies">
+        <h2>Skills & Technologies</h2>
+        <div class="technologies-list">
+          <% cv.technologySkills.forEach(skill => { %>
+            <div class="technologies-section">
+              <p class="skill"><%= skill.skill %></p>
+              <% if (skill.details && skill.details.length) { %>
+                <ul class="details">
+                  <% skill.details.forEach(d => { %>
+                    <li><%= d %></li>
+                  <% }) %>
+                </ul>
+              <% } %>
+            </div>
+          <% }) %>
+        </div>
+      </section>
+
+      <!-- EXPERIENCES -->
+      <section class="experience">
+        <h2>Experience</h2>
+        <div class="experience-list">
+          <% cv.experiences.forEach(exp => { %>
+            <div class="experience-section">
+              <h3 class="experience-type"><%= exp.type %></h3>
+              <h3 class="experience-title"><%= exp.title %></h3>
+              <p class="experience-organization"><%= exp.organisation %></p>
+              <div class="year-duration">
+                <p class="year"><%= exp.year %></p>
+                <p class="duration"><%= exp.duration %></p>
+              </div>
+              <% if (exp.technologies && exp.technologies.length) { %>
+                <ul class="experience-technologies">
+                  <% exp.technologies.forEach(t => { %>
+                    <li><%= t %></li>
+                  <% }) %>
+                </ul>
+              <% } %>
+            </div>
+          <% }) %>
+        </div>
+      </section>
+
+      <!-- SOFT SKILLS -->
+      <% if (cv.softSkills && cv.softSkills.length) { %>
+        <section class="soft-skills">
+          <h2>Soft Skills</h2>
+          <ul class="soft-skills-list">
+            <% cv.softSkills.forEach(s => { %>
+              <li><%= s %></li>
+            <% }) %>
+          </ul>
+        </section>
+      <% } %>
+
+      <!-- LANGUAGES -->
+      <% if (cv.languages && cv.languages.length) { %>
+        <section class="languages">
+          <h2>Languages</h2>
+          <div class="languages-list">
+            <% cv.languages.forEach(lang => { %>
+              <div class="language-section">
+                <div class="flex">
+                  <p class="language-name"><%= lang.language %></p>
+                  <p class="language-level"><%= lang.level %></p>
+                </div>
+                <% if (lang.certification) { %>
+                  <p>Certificate: <%= lang.certification %></p>
+                <% } %>
+                <% if (lang.experience) { %>
+                  <p>Experience: <%= lang.experience %></p>
+                <% } %>
+                <hr class="language-section-hr" />
+              </div>
+            <% }) %>
+          </div>
+        </section>
+      <% } %>
+
+      <!-- INTERESTS -->
+      <% if (cv.interests && cv.interests.length) { %>
+        <section class="interests">
+          <h2>Interests</h2>
+          <ul class="interests-list">
+            <% cv.interests.forEach(i => { %>
+              <li><%= i %></li>
+            <% }) %>
+          </ul>
+        </section>
+      <% } %>
+    </main>
+    <hr>
+  </section>
+<% }) %>
+
+<%- contentFor('title') %>
+    <title>Peoples' CVs</title>

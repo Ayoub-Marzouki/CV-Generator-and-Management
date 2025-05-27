@@ -1,14 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-
-* {
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-}
-
-/* ------------------ COMMON styling ------------------ */
-
-body {
+.creative {
     /* background-color:#313b47; */
     background-color:whitesmoke;
     color:whitesmoke;
@@ -16,7 +6,7 @@ body {
     font-weight: 400;
 }
 
-h2 {
+.creative h2 {
     color:#449399;
     text-decoration: underline;
     text-decoration-color:#449399;
@@ -27,35 +17,35 @@ h2 {
     text-align:center;
 }
 
-h2, h3 {
+.creative h2, .creative h3 {
     font-weight:800;
 }
 
-li {
+.creative li {
     list-style:disc;
     list-style-position: inside;
 }
 
-table {
+.creative table {
     margin:auto;
 }
 
-table td {
+.creative table td {
     min-width:200px;
 }
 
 
-.icons {
+.creative .icons {
     width:20px;
     height:20px;
 }
 
-main, header, #contact {
+.creative main, .creative header, .creative .contact {
     margin:auto;
 }
 
 /* Vertically divide main on 2 parts*/
-main {
+.creative main {
     background-color:whitesmoke;
     color:#1c222a;
     column-count: 2;
@@ -65,18 +55,18 @@ main {
     padding:1%;
 }
 
-main section:not(:first-child) {
+.creative main section:not(:first-child) {
     padding-top:5%;
 }
 
 
-.flex {
+.creative .flex {
     display:flex;
     justify-content:space-between;
     align-items:center;
 }
 
-.year-location, .year-duration {
+.creative .year-location, .creative .year-duration {
     display:flex;
     justify-content: space-between;
     color:#449399;
@@ -86,7 +76,7 @@ main section:not(:first-child) {
 
 /* ------------------ profile ------------------ */
 
-#profile {
+.creative .profile {
     background-color:#313c4e;
     padding:2%;
     display:flex;
@@ -94,29 +84,29 @@ main section:not(:first-child) {
 }
 
 /* Force a max width to avoid shrinking the image */
-#profile #profile-info {
+.creative .profile .profile-info {
     max-width: 75%;
 }
 
-#profile #job-title {
+.creative .profile .job-title {
     color:#449399;
     text-decoration:none;
     font-weight:400;
 }
 
-#professional-summary {
+.creative #professional-summary {
     line-height: 25px;
 }
 
 /* A place holder for the image */
-#image {
+.creative .image {
     width:200px;
     height:200px;
     border-radius:50%;
     border:4px solid #449399;
 }
 /* Force the image to take all the space it can take, without being stretched */
-#profile img {
+.creative .profile img {
     width:100%;
     height:100%;
     border-radius:50%;
@@ -125,18 +115,18 @@ main section:not(:first-child) {
 
 /* ------------------ contact ------------------ */
 
-#contact {
+.creative .contact {
     background-color:#222a33;
     display:flex;
     padding:5px 5%;
     padding-top:15px;
 }
 
-#contact div {
+.creative .contact div {
     width:50%;
 }
 
-#contact a {
+.creative .contact a {
     display:flex;
     gap:10px;
 
@@ -146,26 +136,26 @@ main section:not(:first-child) {
 }
 
 /* ------------------ education ------------------ */
-#education .education-section {
+.creative .education .education-section {
     margin-bottom:5%;
 }
-.education-diploma {
+.creative .education-diploma {
     font-size:25px;
 }
-.education-organization, .experience-organization {
+.creative .education-organization, .creative .experience-organization {
     font-size:18px;
 }
 
 /* ------------------ technologies & additional technologies ------------------ */
-/* #technologies-table {
+/* .creative .technologies-table {
     column-count: 2;
     column-fill:auto;
     max-height:1000px;
 } */
-.technologies-section {
+.creative .technologies-section {
     margin-bottom:5%;
 }
-.skill {
+.creative .skill {
     text-align:center;
     margin:auto;
     padding:1% 2%;
@@ -174,84 +164,84 @@ main section:not(:first-child) {
     border-radius:10px;
 }
 
-.details {
+.creative .details {
     column-count: 2;
     column-gap:5%;
 }
 
 /* ------------------ experience ------------------ */
-.experience-type, .experience-title {
+.creative .experience-type, .creative .experience-title {
     text-align:center;
 }
 
-.experience-technologies {
+.creative .experience-technologies {
     column-count: 2;
     padding:1%;
 }
 
 /* ------------------ soft skills ------------------ */
-#soft-skills-list {
+.creative .soft-skills-list {
     column-count:2;
 }
 
 /* ------------------ soft skills ------------------ */
-.language-section .flex {
+.creative .language-section .flex {
     padding-right:10%;
 }
-.language-section-hr {
+.creative .language-section-hr {
     width:50%;
     margin:1% auto;
     color:rgba(68, 147, 153, 0.5);
 }
-.language-experience, .language-certification {
+.creative .language-experience, .creative .language-certification {
     padding-left: 3%;
 }
 
 /* ------------------ Media Query for smaller screens ------------------ */
 @media (max-width: 768px) {
-    body {
+    .creative body {
         font-size:small;
     }
-    main {
+    .creative main {
         column-count: 1; /* Single column layout for main content */
     }
 
-    #profile #profile-info {
+    .creative .profile .profile-info {
         max-width: 100%;
     }
 
-    #image {
+    .creative .image {
         width: 120px;
         height: 120px;
         margin: 0 auto 15px;
     }
 
-    #profile {
+    .creative .profile {
         flex-direction: column; /* Stack profile info and image */
         align-items: center; 
     }
 
-    .year-location, .year-duration {
+    .creative .year-location, .creative .year-duration {
         max-width: 100%;
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .details, .experience-technologies, #soft-skills-list {
+    .creative .details, .creative .experience-technologies, .creative .soft-skills-list {
         padding-left: 20px;
     }
 
-    h2 {
+    .creative h2 {
         font-size: 22px;
         text-underline-offset: 5px;
         margin-bottom: 4%;
     }
 
-    .education-diploma {
+    .creative .education-diploma {
         font-size: 20px;
     }
 
-    .education-organization, .experience-organization {
+    .creative .education-organization, .creative .experience-organization {
         font-size: 14px;
     }
 }

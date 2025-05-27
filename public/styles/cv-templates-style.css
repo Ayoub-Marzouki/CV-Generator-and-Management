@@ -13,3 +13,16 @@ h3 {
 img {
     max-width:300px;
 }
+
+p {
+    text-align:center;
+}
+
+section a:hover h3 {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+h3 {
+    transition: transform 0.3s ease;
+}

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/creative.css" />
+    <link rel="stylesheet" href="styles/retro.css" />
+    <link rel="stylesheet" href="styles/minimalist.css" />
+    <link rel="stylesheet" href="styles/professional.css" />
+    <link rel="stylesheet" href="styles/modern.css" />
+    <link rel="stylesheet" href="styles/create-cv.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+    <script src="/js/create-cv.js" defer></script>
+    <title>Curriculum Vitae</title>
+</head>
+
+<body>
+    <form id="cvForm" action="/create-cv" method="post" class="<%= chosenLayout %>" enctype="multipart/form-data">
+        <input type="hidden" name="chosenLayout" value="<%= chosenLayout %>">
+            <header class="profile">
+            <div class="profile-info">
+                <div class="flex">
+                <h1 class="name">
+                    <span class="last-name">
+                    <input type="text" name="profile[lastName]" placeholder="Last Name" required>
+                    </span>
+                    <span class="first-name">
+                    <input type="text" name="profile[firstName]" placeholder="First Name" required>
+                    </span>
+                </h1>
+                <p class="birth">
+                    <span class="day">
+                    <input type="number" name="profile[birthday][day]" placeholder="25" min="1" max="31" required>
+                    </span>
+                    /
+                    <span class="month">
+                    <input type="number" name="profile[birthday][month]" placeholder="07" min="1" max="12" required>
+                    </span>
+                    /
+                    <span class="year">
+                    <input type="number" name="profile[birthday][year]" placeholder="2000" min="1900" max="2100" required>
+                    </span>
+                </p>
+                </div>
+        
+                <h2 class="job-title">
+                <input type="text" name="profile[jobTitle]" placeholder="Job Title" required>
+                </h2>
+        
+                <p class="professional-summary">
+                <textarea name="profile[professionalSummary]" cols="100" rows="10" placeholder="Persistent and persevering…" required></textarea>
+                </p>
+            </div>
+        
+            <div class="image" title="Image">
+                <input type="file" name="profile[photo]" accept="image/*">
+            </div>
+        </header>
+      
+        <section class="contact">
+            <div class="personal-contact">
+                <img class="icons" src="images/icons/envelope.png" alt="Email Icon">
+                <span>
+                <input type="email" name="profile[email]" placeholder="email@email.com" required>
+                </span>
+                <br>
+                <img class="icons" src="images/icons/location.png" alt="Address Icon">
+                <span class="address-text">
+                <input type="text" name="profile[address]" placeholder="Address" required>
+                </span>
+                <br>
+                <img class="icons" src="images/icons/phone.png" alt="Phone Icon">
+                <span class="phone-text">
+                <input type="tel" name="profile[phone]" placeholder="00 11 22 33 44" required>
+                </span>
+                <br>
+            </div>
+        
+            <div class="links">
+                <img class="icons" src="images/icons/github.png" alt="GitHub Icon">
+                <span class="link-text">
+                <input type="url" name="profile[links][]" placeholder=" https://www.github.com/in/username">
+                </span>
+                <br>
+                <img class="icons" src="images/icons/linkedin.png" alt="LinkedIn Icon">
+                <span class="link-text">
+                <input type="url" name="profile[links][]" placeholder="https://www.linkedin.com/in/username">
+                </span>
+                <br>
+            </div>
+        </section>
+        
+            <main>
+                <section class="education">
+                    <h2>EDUCATION</h2>
+                    <div id="education-list">
+                        <div class="education-section">
+                            <h3 class="education-diploma">
+                                <input type="text" name="education[0][diploma]" placeholder="Diploma’s name" required>
+                            </h3>
+                            <p class="education-organization">
+                                <input type="text" name="education[0][organisation]" placeholder="Organization" required>
+                            </p>
+                            <div class="flex year-location">
+                                <p class="education-year">
+                                    <input type="number" name="education[0][year]" placeholder="2026" min="1900" max="2100" required>
+                                </p>
+                                <p class="education-location">
+                                    <input type="text" name="education[0][location]" placeholder="Morocco" required>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="add-button" type="button" id="add-education-button">Add section</button>
+                </section>
+                  
+                <template id="education-template">
+                    <div class="education-section">
+                            <h3 class="education-diploma">
+                            <input type="text" name="education[0][diploma]" placeholder="Diploma’s name" required>
+                        </h3>
+                        <p class="education-organization">
+                            <input type="text" name="education[0][organisation]" placeholder="Organization" required>
+                        </p>
+                        <div class="flex year-location">
+                            <p class="education-year">
+                                <input type="number" name="education[0][year]" placeholder="2026" min="1900" max="2100" required>
+                            </p>
+                            <p class="education-location">
+                                <input type="text" name="education[0][location]" placeholder="Morocco" required>
+                            </p>
+                        </div>
+                        <button type="button" class="remove-section-button remove-button">Remove</button>
+                    </div>
+                </template>
+        
+                <section class="technologies">
+                    <h2>SKILLS AND TECHNOLOGIES</h2>
+                    <div id="technologies-list">
+                        <div class="technologies-section">
+                            <p class="skill">
+                                <input type="text" name="technologySkills[0][skill]" placeholder="Web Development" required>
+                            </p>
+                            <ul class="details">
+                                <li>
+                                    <input type="text" name="technologySkills[0][details][]" placeholder="HTML, CSS, JavaScript">
+                                    <button type="button" class="remove-detail-button remove-button">-</button>
+                                </li>
+                            </ul>
+                            <button type="button" class="add-detail-button">Add Detail</button>
+                        </div>
+                    </div>
+                
+                    <button type="button" id="add-skill-button">Add Skill</button>
+                </section>
+                
+                <template id="skill-template">
+                    <div class="technologies-section">
+                        <p class="skill">
+                            <input type="text" name="technologySkills[0][skill]" placeholder="Cloud Computing" required>
+                        </p>
+                        <ul class="details">
+                            <li>
+                                <input type="text" name="technologySkills[0][details][]" placeholder="AWS, Docker, Kubernetes">
+                                <button type="button" class="remove-detail-button remove-button">-</button>
+                            </li>
+                        </ul>
+                        <button type="button" class="add-detail-button">Add Detail</button>
+                        <button type="button" class="remove-skill-button remove-button">Remove Skill</button>
+                    </div>
+                </template>
+                
+                <template id="detail-template">
+                    <li>
+                        <input type="text" name="" placeholder="Another detail...">
+                        <button type="button" class="remove-detail-button remove">-</button>
+                    </li>
+                </template>
+        
+                <section class="experience">
+                    <h2>Experience</h2>
+                    <div class="experience-list" id="experience-list">
+                        <div class="experience-section">
+                            <h3 class="experience-type">
+                                <select name="experiences[0][type]" required>
+                                    <option>Internship</option>
+                                    <option>Project</option>
+                                    <option>Work</option>
+                                </select>
+                            </h3>
+                            <h3 class="experience-title">
+                                <input type="text" name="experiences[0][title]" placeholder="Title" required>
+                            </h3>
+                            <p class="experience-organization">
+                                <input type="text" name="experiences[0][organisation]" placeholder="Organization’s name" required>
+                            </p>
+                            <div class="year-duration">
+                                <p class="year">
+                                    <input type="number" name="experiences[0][year]" placeholder="2020" min="1900" max="2100" required>
+                                </p>
+                                <p class="duration">
+                                    <input type="number" name="experiences[0][duration]" placeholder="3" min="0" required> month(s)
+                                </p>
+                            </div>
+                            <ul class="experience-technologies">
+                                <li>
+                                    <input type="text" name="experiences[0][technologies][]" placeholder="Java">
+                                    <button type="button" class="remove-tech-button">-</button>
+                                </li>
+                            </ul>
+                            <button type="button" class="add-tech-button">Add Technology</button>
+                        </div>
+                    </div>
+                
+                    <button type="button" id="add-experience-button">Add Experience</button>
+                </section>
+                
+                <template id="experience-template">
+                    <div class="experience-section">
+                        <h3 class="experience-type">
+                            <select name="experiences[0][type]" required>
+                                <option>Internship</option>
+                                <option>Project</option>
+                                <option>Work</option>
+                            </select>
+                        </h3>
+                        <h3 class="experience-title">
+                            <input type="text" name="experiences[0][title]" placeholder="Title" required>
+                        </h3>
+                        <p class="experience-organization">
+                            <input type="text" name="experiences[0][organisation]" placeholder="Organization’s name" required>
+                        </p>
+                        <div class="year-duration">
+                            <p class="year">
+                                <input type="number" name="experiences[0][year]" placeholder="2020" min="1900" max="2100" required>
+                            </p>
+                            <p class="duration">
+                                <input type="number" name="experiences[0][duration]" placeholder="3" min="0" required> month(s)
+                            </p>
+                        </div>
+                        <ul class="experience-technologies">
+                            <li>
+                                <input type="text" name="experiences[0][technologies][]" placeholder="Java">
+                                <button type="button" class="remove-tech-button">-</button>
+                            </li>
+                        </ul>
+                        <button type="button" class="add-tech-button">Add Technology</button>
+                        <button type="button" class="remove-experience-button">Remove Experience</button>
+                    </div>
+                </template>
+                
+                <template id="experience-tech-template">
+                    <li>
+                        <input type="text" name="" placeholder="Another technology...">
+                        <button type="button" class="remove-tech-button">-</button>
+                    </li>
+                </template>
+        
+                <section class="soft-skills">
+                    <h2>Soft Skills</h2>
+                    <ul class="soft-skills-list" id="soft-skills-list">
+                        <li>
+                            <input type="text" name="softSkills[0]" placeholder="Resilience" required>
+                        </li>
+                    </ul>
+                    <button class="add-button" type="button" id="add-soft-skill-button">Add Skill</button>
+                </section>
+                
+                <template id="soft-skill-template">
+                    <li>
+                        <input type="text" name="softSkills[0]" placeholder="Teamwork" required>
+                        <button type="button" class="remove-section-button remove-button">Remove</button>
+                    </li>
+                </template>
+        
+                <section class="languages">
+                    <h2>Languages</h2>
+                    <div class="languages-list" id="languages-list">
+                        <div class="language-section">
+                            <div class="flex">
+                                <p class="language-name">
+                                    <input type="text" name="languages[0][language]" placeholder="English" required>
+                                </p>
+                                <p class="language-level">
+                                    <input type="text" name="languages[0][level]" placeholder="C1">
+                                </p>
+                                <p class="language-certificate">
+                                    <input type="text" name="languages[0][certification]" placeholder="TOEFL">
+                                </p>
+                                <p class="language-experience">
+                                    <input type="text" name="languages[0][experience]" placeholder="5 years">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="add-button" type="button" id="add-language-button">Add Language</button>
+                </section>
+                
+                <template id="language-template">
+                    <div class="language-section">
+                        <div class="flex">
+                            <p class="language-name">
+                                <input type="text" name="languages[0][language]" placeholder="French" required>
+                            </p>
+                            <p class="language-level">
+                                <input type="text" name="languages[0][level]" placeholder="B2">
+                            </p>
+                            <p class="language-certificate">
+                                <input type="text" name="languages[0][certification]" placeholder="DELF B2">
+                            </p>
+                            <p class="language-experience">
+                                <input type="text" name="languages[0][experience]" placeholder="3 years">
+                            </p>
+                        </div>
+                        <button type="button" class="remove-section-button remove-button">Remove</button>
+                    </div>
+                </template>
+        
+                <section class="interests">
+                    <h2>Interests</h2>
+                    <ul class="interests-list" id="interests-list">
+                        <li>
+                            <input type="text" name="interests[0]" placeholder="Human behavior" required>
+                        </li>
+                    </ul>
+                    <button class="add-button" type="button" id="add-interest-button">Add Interest</button>
+                </section>
+                
+                <template id="interest-template">
+                    <li>
+                        <input type="text" name="interests[0]" placeholder="Artificial Intelligence" required>
+                        <button type="button" class="remove-section-button remove-button">Remove</button>
+                    </li>
+                </template>
+        </main>
+    <button id="create" type="submit">Create CV</button>
+</form>      
+</body>
+</html>

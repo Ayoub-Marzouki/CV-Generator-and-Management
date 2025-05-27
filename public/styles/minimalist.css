@@ -6,59 +6,59 @@
 
 /* ------------------ COMMON styling ------------------ */
 
-body {
+.minimalist {
     color:rgba(0,0,0,0.8);
     font-weight: 400;
 }
 
-h2 {
+.minimalist h2 {
     text-align:center;
     margin-bottom:2%;
     font-size:26px;
 }
 
-h2, h3 {
+.minimalist h2, .minimalist h3 {
     font-weight:800;
 }
 
-li {
+.minimalist li {
     list-style:disc;
     list-style-position: inside;
 }
 
-.icons {
+.minimalist .icons {
     width:20px;
     height:20px;
     padding:1px;
     background-color:black;
 }
 
-main, header, #contact {
+.minimalist main, .minimalist header, .minimalist .contact {
     margin:auto;
     border-bottom:1px solid black;
     background-color: white;
 }
 
 /* Vertically divide main on 2 parts*/
-main {
+.minimalist main {
     column-count: 2;
     column-gap:5%;
     padding:1%;
     border:none;
 }
 
-main section:not(:first-child) {
+.minimalist main section:not(:first-child) {
     padding-top:5%;
 }
 
 
-.flex {
+.minimalist .flex {
     display:flex;
     justify-content:space-between;
     align-items:center;
 }
 
-.year-location, .year-duration {
+.minimalist .year-location, .minimalist .year-duration {
     display:flex;
     justify-content: space-between;
     max-width:70%;
@@ -67,43 +67,43 @@ main section:not(:first-child) {
 
 /* ------------------ profile ------------------ */
 
-#profile {
+.minimalist .profile {
     padding:2%;
     display:flex;
     justify-content: space-between;
 }
 
 
-#profile #job-title {
+.minimalist .profile .job-title {
     text-align:center;
     text-decoration:none;
     font-weight:400;
 }
 
-#professional-summary {
+.minimalist .professional-summary {
     line-height: 25px;
     max-width:90%;
     margin:auto;
 }
 
 /* A place holder for the image */
-#image {
+.minimalist .image {
     display:none;
 }
 
 /* ------------------ contact ------------------ */
 
-#contact {
+.minimalist .contact {
     display:flex;
     padding:5px 5%;
     padding-top:15px;
 }
 
-#contact div {
+.minimalist .contact div {
     width:50%;
 }
 
-#contact a {
+.minimalist .contact a {
     color:black;
     font-weight:900;
     display:flex;
@@ -113,21 +113,21 @@ main section:not(:first-child) {
 }
 
 /* ------------------ education ------------------ */
-#education .education-section {
+.minimalist .education .education-section {
     margin-bottom:5%;
 }
-.education-diploma {
+.minimalist .education-diploma {
     font-size:25px;
 }
-.education-organization, .experience-organization {
+.minimalist .education-organization, .minimalist .experience-organization {
     font-size:18px;
 }
 
 /* ------------------ technologies & additional technologies ------------------ */
-.technologies-section {
+.minimalist .technologies-section {
     margin-bottom:5%;
 }
-.skill {
+.minimalist .skill {
     text-align:center;
     margin:auto;
     padding:1% 2%;
@@ -136,102 +136,102 @@ main section:not(:first-child) {
     font-size:19px;
 }
 
-.details {
+.minimalist .details {
     column-count: 2;
     column-gap:5%;
 }
 
 /* ------------------ experience ------------------ */
-.experience-type, .experience-title {
+.minimalist .experience-type, .minimalist .experience-title {
     text-align:center;
 }
 
-.experience-technologies {
+.minimalist .experience-technologies {
     column-count: 2;
     padding:1%;
 }
 
 /* ------------------ soft skills ------------------ */
-#soft-skills-list {
+.minimalist .soft-skills-list {
     column-count:2;
 }
 
 /* ------------------ soft skills ------------------ */
-.language-section .flex {
+.minimalist .language-section .flex {
     padding-right:10%;
 }
-.language-section-hr {
+.minimalist .language-section-hr {
     width:50%;
     margin:1% auto;
 }
-.language-experience, .language-certification {
+.minimalist .language-experience, .minimalist .language-certification {
     padding-left: 3%;
 }
 
 @media (max-width: 768px) {
-    main {
+    .minimalist main {
         column-count: 1;
     }
 
-    #profile {
+    .minimalist .profile {
         flex-direction: column;
         align-items: center;
     }
 
-    #profile #profile-info {
+    .minimalist .profile .profile-info {
         text-align: center;
     }
 
-    #professional-summary {
+    .minimalist .professional-summary {
         max-width: 100%;
     }
 
-    #contact {
+    .minimalist .contact {
         flex-direction: column;
     }
 
-    #contact div {
+    .minimalist .contact div {
         width: 100%;
         margin-bottom: 10px;
     }
 
-    .details {
+    .minimalist .details {
         column-count: 1;
     }
 
-    .experience-technologies {
+    .minimalist .experience-technologies {
         column-count: 1;
     }
 
-    #soft-skills-list {
+    .minimalist .soft-skills-list {
         column-count: 1;
     }
 
-    .language-section .flex {
+    .minimalist .language-section .flex {
         padding-right: 0;
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .year-location, .year-duration {
+    .minimalist .year-location, .minimalist .year-duration {
         flex-direction: column;
         align-items: flex-start;
         max-width: 100%;
     }
 
-    h2 {
+    .minimalist h2 {
         font-size: 22px;
     }
 
-    .education-diploma {
+    .minimalist .education-diploma {
         font-size: 20px;
     }
 
-    .education-organization, .experience-organization {
+    .minimalist .education-organization, .minimalist .experience-organization {
         font-size: 16px;
     }
 
-    .skill {
+    .minimalist .skill {
         font-size: 17px;
     }
 }

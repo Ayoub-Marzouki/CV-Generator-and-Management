@@ -1,0 +1,48 @@
+input, select, textarea, button {
+    padding:5px;
+    margin:5px;
+    background-color:aliceblue;
+    font-family: 'Ubuntu';
+    border-radius:10px;
+    border:1px solid rgba(0,0,0,0.1);
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+#contact input {
+    min-width:300px;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: none;
+    outline: none;
+}
+
+input[type=file] {
+    margin:0;
+    padding:0;
+    background-color:transparent;
+    max-width:100%;
+}
+
+#create {
+    display:block;
+    margin:auto;
+    font-size:large;
+    font-weight:900;
+    background-color:#313c4e;
+    color:white;
+    padding:1%;
+    border-radius:10px;
+    transition:300ms;
+    cursor:pointer;
+}
+
+#create:hover {
+    font-size:larger;
+    background-color:rgb(23, 28, 37);
+}
+
+button {
+    font-weight:900;
+    cursor:pointer;
+}

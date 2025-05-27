@@ -3,7 +3,7 @@
     padding:0;
     box-sizing:border-box;
 }
-body {
+.retro {
     font-family: 'Merriweather', Georgia, serif;
     color: #5D4037;
     line-height: 1.7;
@@ -13,31 +13,31 @@ body {
 
 /* ---------------- Common ---------------- */
 
-br {
+.retro br {
     display:none;
 }
 
-main, header, #contact {
+.retro main, .retro header, .retro .contact {
     margin:auto;
     padding-bottom:5%;
 }
 
-main {
+.retro main {
     height:auto;
 }
 
 
-main section {
+.retro main section {
     border-bottom: 2px solid #8B4513;
 }
 
-main section:last-child {
+.retro main section:last-child {
     border-bottom: none;
     margin-bottom: 0;
     padding-bottom: 0;
 }
 
-h2 {
+.retro h2 {
     font-family: 'Playfair Display', 'Times New Roman', serif;
     font-size: 35px;
     color: #4A3B31;
@@ -47,7 +47,7 @@ h2 {
     border-bottom: 1px solid #A0522D;
 }
 
-h2::after {
+.retro h2::after {
     content: '';
     display: block;
     width: 60px;
@@ -56,7 +56,7 @@ h2::after {
     margin:auto;
 }
 
-.icons {
+.retro .icons {
     width: 20px;
     height: 20px;
     padding:3px;
@@ -67,7 +67,7 @@ h2::after {
 }
 
 /* ---------------- Profile ---------------- */
-#profile {
+.retro .profile {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -75,17 +75,17 @@ h2::after {
     border-bottom: 2px solid #8B4513;
 }
 
-#profile-info {
+.retro .profile-info {
     order: 2;
 }
 
-#profile-info > .flex {
+.retro .profile-info > .flex {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#name {
+.retro .name {
     font-family: 'Playfair Display', 'Times New Roman', serif;
     font-size: 2.8em;
     font-weight: 700;
@@ -96,7 +96,7 @@ h2::after {
     letter-spacing: 1px;
 }
 
-#birth {
+.retro .birth {
     font-size: 0.9em;
     color: #755C48;
     margin-top: 0px;
@@ -104,7 +104,7 @@ h2::after {
     font-style: italic;
 }
 
-#job-title {
+.retro .job-title {
     font-family: 'Merriweather', Georgia, serif;
     font-size: 1.4em;
     font-weight: 700;
@@ -117,7 +117,7 @@ h2::after {
     letter-spacing: 0.5px;
 }
 
-#professional-summary {
+.retro .professional-summary {
     font-size: 1em;
     color: #5D4037;
     text-align: justify;
@@ -127,14 +127,14 @@ h2::after {
     margin-right: auto;
 }
 
-#image {
+.retro .image {
     flex: none;
     text-align: center;
     order: 1;
     margin-bottom: 20px;
 }
 
-#photo {
+.retro .photo {
     width: 130px;
     height: 160px;
     border-radius: 4px;
@@ -146,7 +146,7 @@ h2::after {
 
 
 /* ---------------- Contact ---------------- */
-#contact {
+.retro .contact {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -156,7 +156,7 @@ h2::after {
     font-size: 0.95em;
 }
 
-#contact a {
+.retro .contact a {
     text-decoration: none;
     color: #704214;
     display: inline-flex;
@@ -166,61 +166,61 @@ h2::after {
     padding: 3px 5px;
 }
 
-#contact a:hover {
+.retro .contact a:hover {
     color: #4A3B31;
     text-decoration: underline;
 }
 
 
 /* ---------------- Education ---------------- */
-#education-list {
+.retro .education-list {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
 }
 
-.education-section:first-child {
+.retro .education-section:first-child {
     padding-top:1%;
 }
-.education-section {
+.retro .education-section {
     padding-left: 1%;
     border-left: 2px solid #D2B48C;
 }
 
-.education-diploma {
+.retro .education-diploma {
     font-weight: 900;
     color: #5D4037;
     padding-bottom:1%;
 }
 
-.education-organization {
+.retro .education-organization {
     color: #704214;
     padding-bottom:1%;
     font-style: italic;
 }
 
-.year-location {
+.retro .year-location {
     display: flex;
     justify-content: flex-start;
     color: #8B4513;
 }
-.education-year {
+.retro .education-year {
     padding-right:1%;
 }
-.education-year::after{
+.retro .education-year::after{
     content: "—";
     padding-left:15px;
 }
 
 
 /* ---------------- Technologies ---------------- */
-#technologies-list, #additional-technologies-list {
+.retro .technologies-list, .retro .additional-technologies-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px 20px;
 }
 
-.skill {
+.retro .skill {
     font-size: 18px;
     font-weight: 700;
     color: #5D4037;
@@ -230,7 +230,7 @@ h2::after {
     border-bottom: 1px dotted #A0522D;
 }
 
-.details {
+.retro .details {
     list-style: square;
     list-style-position: inside;
     padding-left: 3%;
@@ -238,28 +238,28 @@ h2::after {
     color: #704214;
 }
 
-.details li {
+.retro .details li {
     margin-bottom: 1%;
 }
 
 
 /* ---------------- Experience ---------------- */
-#experience-list {
+.retro .experience-list {
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
 
-.experience-section {
+.retro .experience-section {
     padding-left: 1%;
     border-left: 2px solid #D2B48C;
 }
 
-.experience-section:last-child {
+.retro .experience-section:last-child {
     margin-bottom:1px;
 }
 
-.experience-type {
+.retro .experience-type {
     font-size: 14px;
     font-weight: normal;
     color: #8B4513;
@@ -267,30 +267,30 @@ h2::after {
     letter-spacing: 0.5px;
 }
 
-.experience-title {
+.retro .experience-title {
     font-weight: 700;
     color: #5D4037;
     margin-bottom:0.2%;
 }
 
-.experience-organization {
+.retro .experience-organization {
     color: #704214;
     margin-bottom:0.5%;
     font-style: italic;
 }
 
-.year-duration {
+.retro .year-duration {
     display: flex;
     justify-content: flex-start;
     font-size:14px;
     color: #8B4513;
     margin-bottom: 1%;
 }
-.year-duration .year::after {
+.retro .year-duration .year::after {
     content: "—";
 }
 
-.experience-technologies {
+.retro .experience-technologies {
     list-style: none;
     color: #704214;
     display: flex;
@@ -298,7 +298,7 @@ h2::after {
     gap: 8px;
 }
 
-.experience-technologies li {
+.retro .experience-technologies li {
     background-color: #E9E2D9;
     padding: 2px 8px;
     border-radius: 3px;
@@ -307,235 +307,235 @@ h2::after {
 
 
 /* ---------------- Soft Skills & Interests ---------------- */
-#soft-skills-list, #interests-list {
+.retro .soft-skills-list, .retro .interests-list {
     list-style: disc;
     padding-left:3%;
     columns: 2;
     column-gap: 0;
 }
 
-#soft-skills-list li, #interests-list li {
+.retro .soft-skills-list li, .retro .interests-list li {
     margin-bottom: 1%;
 }
 
 /* ---------------- Languages ---------------- */
-#languages-list {
+.retro .languages-list {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
 }
 
-.language-section .flex {
+.retro .language-section .flex {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     margin-bottom: 5px;
 }
 
-.language-name {
+.retro .language-name {
     font-weight: 700;
     color: #5D4037;
     margin: 0;
 }
 
-.language-level {
+.retro .language-level {
     color: #704214;
     font-style: italic;
 }
 
-.language-certification, .language-experience {
+.retro .language-certification, .retro .language-experience {
     font-size: 0.9em;
     color: #8B4513;
     margin: 3px 0;
 }
 
-.language-section-hr {
+.retro .language-section-hr {
     border: 0;
     height: 1px;
     background-image: linear-gradient(to right, rgba(139, 69, 19, 0), rgba(139, 69, 19, 0.5), rgba(139, 69, 19, 0));
     margin-top: 15px;
 }
-.language-section:last-child .language-section-hr {
+.retro .language-section:last-child .language-section-hr {
     display:none;
 }
 
 @media (max-width: 768px) {
-    body {
+    .retro body {
         padding: 5px;
     }
 
-    br {
+    .retro br {
         display: block;
     }
 
-    main, header, #contact {
+    .retro main, .retro header, .retro .contact {
         padding-bottom: 10%;
     }
 
-    main section {
+    .retro main section {
         border-bottom: 1px solid #8B4513;
     }
 
-    h2 {
+    .retro h2 {
         font-size: 28px;
         padding-bottom: 4%;
     }
 
-    h2::after {
+    .retro h2::after {
         width: 40px;
     }
 
-    #profile {
+    .retro .profile {
         align-items: center;
         text-align: center;
     }
 
-    #profile-info {
+    .retro .profile-info {
         order: 2;
     }
 
-    #profile-info > .flex {
+    .retro .profile-info > .flex {
         flex-direction: column;
         align-items: center;
     }
 
-    #name {
+    .retro .name {
         font-size: 2.2em;
         margin-top: 10px;
         margin-bottom: 2px;
     }
 
-    #birth {
+    .retro .birth {
         font-size: 0.8em;
         margin-bottom: 10px;
     }
 
-    #job-title {
+    .retro .job-title {
         font-size: 1.2em;
         margin-bottom: 10px;
     }
 
-    #professional-summary {
+    .retro .professional-summary {
         font-size: 0.9em;
     }
 
-    #image {
+    .retro .image {
         margin-bottom: 15px;
     }
 
-    #photo {
+    .retro .photo {
         width: 100px;
         height: 130px;
     }
 
-    #contact {
+    .retro .contact {
         font-size: 0.9em;
     }
 
-    #education-list {
+    .retro .education-list {
         grid-template-columns: 1fr;
         gap: 15px;
     }
 
-    .education-section {
+    .retro .education-section {
         padding-left: 3%;
         border-left: 1px solid #D2B48C;
     }
 
-    .education-diploma {
+    .retro .education-diploma {
         font-size: 1em;
     }
 
-    .education-organization {
+    .retro .education-organization {
         font-size: 0.9em;
     }
 
-    .year-location {
+    .retro .year-location {
         font-size: 0.8em;
     }
 
-    .education-year::after {
+    .retro .education-year::after {
         content: "—";
         padding-left: 10px;
     }
 
-    #technologies-list, #additional-technologies-list {
+    .retro .technologies-list, .retro .additional-technologies-list {
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
         gap: 20px 10px;
     }
 
-    .skill {
+    .retro .skill {
         font-size: 1em;
         margin-bottom: 3%;
         padding-top: 2%;
     }
 
-    .details {
+    .retro .details {
         font-size: 0.9em;
         padding-left: 5%;
     }
 
-    #experience-list {
+    .retro .experience-list {
         gap: 20px;
     }
 
-    .experience-section {
+    .retro .experience-section {
         padding-left: 3%;
         border-left: 1px solid #D2B48C;
     }
 
-    .experience-type {
+    .retro .experience-type {
         font-size: 0.8em;
     }
 
-    .experience-title {
+    .retro .experience-title {
         font-size: 1em;
     }
 
-    .experience-organization {
+    .retro .experience-organization {
         font-size: 0.9em;
     }
 
-    .year-duration {
+    .retro .year-duration {
         font-size: 0.8em;
     }
 
-    .experience-technologies {
+    .retro .experience-technologies {
         font-size: 0.8em;
         gap: 5px;
     }
 
-    #soft-skills-list, #interests-list {
+    .retro .soft-skills-list, .retro .interests-list {
         font-size: 0.9em;
         columns: 1;
         padding-left: 5%;
         column-gap: 20px;
     }
 
-    #languages-list {
+    .retro .languages-list {
         grid-template-columns: 1fr;
         gap: 15px;
     }
 
-    .language-section .flex {
+    .retro .language-section .flex {
         flex-direction: column;
         align-items: flex-start;
         margin-bottom: 10px;
     }
 
-    .language-name {
+    .retro .language-name {
         font-size: 0.9em;
     }
 
-    .language-level {
+    .retro .language-level {
         font-size: 0.8em;
     }
 
-    .language-certification, .language-experience {
+    .retro .language-certification, .retro .language-experience {
         font-size: 0.8em;
     }
 
-    .language-section-hr {
+    .retro .language-section-hr {
         margin-top: 10px;
     }
 }

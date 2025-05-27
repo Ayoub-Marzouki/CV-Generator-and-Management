@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-body {
+.professional {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: #333;
     line-height: 1.6;
@@ -14,7 +14,7 @@ body {
 
 
 /* ---------------- COMMON ---------------- */
-h2 {
+.professional h2 {
     color: #333;
     text-transform: uppercase;
     margin-bottom: 2%;
@@ -23,34 +23,34 @@ h2 {
     letter-spacing: 1px;
 }
 
-main, header, #contact {
+.professional main, .professional header, .professional .contact {
     margin:auto;
 }
 
-hr {
+.professional hr {
     display:none;
 }
 
-main section, header {
+.professional main section, .professional header {
     margin-bottom: 40px;
     padding-bottom: 20px;
     border-bottom: 2px solid #5D7C60;
 }
 
-main section:last-child {
+.professional main section:last-child {
     border-bottom: none;
     margin-bottom: 0;
     padding-bottom: 0;
 }
 
-.icons {
+.professional .icons {
     width: 20px;
     height: 20px;
     padding:2px;
     background-color:black;
 }
 
-.flex {
+.professional .flex {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
@@ -58,53 +58,53 @@ main section:last-child {
 
 /* ---------------- profile ---------------- */
 
-#profile {
+.professional .profile {
     display: flex;
     align-items: flex-start;
     border-bottom: 2px solid #5D7C60;
 }
 
-#profile-info {
+.professional .profile-info {
     flex: 3;
 }
 
-#name {
+.professional .name {
     font-size: 40px;
     font-weight: 300;
     color: #222;
     text-transform: uppercase;
 }
 
-#last-name {
+.professional .last-name {
     font-weight: bold;
 }
 
-#birth {
+.professional .birth {
     font-size:14px;
     color: #666;
     font-style: italic;
 }
 
-#job-title {
+.professional .job-title {
     font-size: 25px;
     font-weight: 300;
     color: #5D7C60;
     border-bottom: 1px solid #ddd;
 }
 
-#professional-summary {
+.professional .professional-summary {
     color: #555;
     text-align: justify;
     margin-bottom: 0;
 }
 
-#image {
+.professional .image {
     flex: 1;
     text-align: right;
     padding-right:1%;
 }
 
-#photo {
+.professional .photo {
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -114,7 +114,7 @@ main section:last-child {
 
 
 /* ---------------- contact ---------------- */
-#contact {
+.professional .contact {
     display: flex;
     justify-content: space-between;
     margin-bottom: 1%;
@@ -122,82 +122,82 @@ main section:last-child {
     font-size: 14px;
 }
 
-#personal-contact, #links {
+.professional .personal-contact, .professional .links {
     width: 48%;
     padding-left:3%;
     margin-bottom:1%;
 }
 
-#contact a {
+.professional .contact a {
     text-decoration: none;
     color: #444;
     align-items: center;
 }
 
-#contact a:hover {
+.professional .contact a:hover {
     color: #5D7C60;
 }
 
 
 /* ---------------- education ---------------- */
-#education-list {
+.professional .education-list {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
 
-.education-section {
+.professional .education-section {
     flex-basis: calc(50% - 10px);
     margin-bottom: 1.5%;
 }
 
-.education-diploma {
+.professional .education-diploma {
     color: #444;
     margin-bottom:0.5%;
 }
 
-.education-organization {
+.professional .education-organization {
     color: #555;
     margin-bottom: 0.5%;
     font-style: italic;
 }
 
-.year-location {
+.professional .year-location {
     font-size: 0.85em;
     color: #777;
 }
 
 /* ---------------- Technologies & additional technologies ---------------- */
-#technologies-list, #additional-technologies-list {
+.professional .technologies-list, .professional .additional-technologies-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
 
-.technologies-section {
+.professional .technologies-section {
     margin-bottom: 1.5%;
 }
 
-.skill {
+.professional .skill {
     font-weight: bold;
     color: #444;
     margin-bottom: 1%;
     text-transform: uppercase;
 }
 
-.details {
+.professional .details {
     list-style: none;
     font-size: 14px;
     color: #666;
 }
 
-.details li {
+.professional .details li {
     margin-bottom: 4px;
     position: relative;
     padding-left: 15px;
 }
 
-.details li::before {
+.professional .details li::before {
     content: '›';
     position: absolute;
     left: 0;
@@ -206,17 +206,17 @@ main section:last-child {
 }
 
 /* ---------------- experience ---------------- */
-#experience-list {
+.professional .experience-list {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.experience-section {
+.professional .experience-section {
     margin-bottom: 1.5%;
 }
 
-.experience-type {
+.professional .experience-type {
     font-size: 15px;
     font-weight: normal;
     color: #777;
@@ -225,19 +225,19 @@ main section:last-child {
     text-transform: uppercase;
 }
 
-.experience-title {
+.professional .experience-title {
     color: #444;
     margin-bottom: 0.5%;
 }
 
-.experience-organization {
+.professional .experience-organization {
     font-size: 15px;
     color: #555;
     margin-bottom: 0.5%;
     font-style: italic;
 }
 
-.year-duration {
+.professional .year-duration {
     display: flex;
     justify-content: space-between;
     font-size: 13px;
@@ -245,7 +245,7 @@ main section:last-child {
     margin-bottom: 0.8%;
 }
 
-.experience-technologies {
+.professional .experience-technologies {
     list-style: none;
     font-size: 14px;
     color: #666;
@@ -254,14 +254,14 @@ main section:last-child {
     gap: 8px;
 }
 
-.experience-technologies li {
+.professional .experience-technologies li {
     background-color: #e9e9e9;
     padding: 3px 8px;
     border-radius: 3px;
 }
 
 /* ---------------- soft-skills ---------------- */
-#soft-skills-list, #interests-list {
+.professional .soft-skills-list, .professional .interests-list {
     /* list-style: none; */
     list-style-position: inside;
     font-size: 15px;
@@ -269,81 +269,81 @@ main section:last-child {
     column-gap: 40px;
 }
 
-#soft-skills-list li, #interests-list li {
+.professional .soft-skills-list li, .professional .interests-list li {
     padding-left:5%;
 }
 
 /* ---------------- languages ---------------- */
-#languages-list {
+.professional .languages-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
 }
 
-.language-name {
+.professional .language-name {
     font-size: 1em;
     font-weight: bold;
     color: #444;
 }
 
-.language-level {
+.professional .language-level {
     font-size: 13px;
     color: #666;
     font-style: italic;
 }
 
-.language-certification, .language-experience {
+.professional .language-certification, .professional .language-experience {
     font-size: 14px;
     color: #777;
 }
 
 @media (max-width: 768px) {
-    body {
+    .professional body {
         padding: 5px;
     }
 
-    h2 {
+    .professional h2 {
         font-size: 20px;
         margin-bottom: 4%;
         padding-bottom: 1%;
     }
 
-    main section, header {
+    .professional main section, .professional header {
         margin-bottom: 30px;
         padding-bottom: 15px;
         border-bottom: 1px solid #5D7C60;
     }
 
-    #profile {
+    .professional .profile {
         flex-direction: column;
         align-items: center;
     }
 
-    #profile-info {
+    .professional .profile-info {
         flex: none;
         width: 100%;
         text-align: center;
     }
 
-    #name {
+    .professional .name {
         font-size: 30px;
     }
 
-    #birth {
+    .professional .birth {
         font-size: 12px;
     }
 
-    #job-title {
+    .professional .job-title {
         font-size: 20px;
         border-bottom: 0.5px solid #ddd;
         margin-bottom: 2%;
     }
 
-    #professional-summary {
+    .professional .professional-summary {
         text-align: left;
     }
 
-    #image {
+    .professional .image {
         flex: none;
         width: 100%;
         text-align: center;
@@ -351,111 +351,111 @@ main section:last-child {
         margin-bottom: 20px;
     }
 
-    #photo {
+    .professional .photo {
         width: 150px;
         height: 150px;
     }
 
-    #contact {
+    .professional .contact {
         flex-direction: column;
         font-size: 12px;
     }
 
-    #personal-contact, #links {
+    .professional .personal-contact, .professional .links {
         width: 100%;
         padding-left: 0;
         margin-bottom: 2%;
     }
 
-    #education-list {
+    .professional .education-list {
         flex-direction: column;
         gap: 10px;
     }
 
-    .education-section {
+    .professional .education-section {
         flex-basis: 100%;
         margin-bottom: 3%;
     }
 
-    .education-diploma {
+    .professional .education-diploma {
         font-size: 18px;
     }
 
-    .education-organization {
+    .professional .education-organization {
         font-size: 14px;
     }
 
-    .year-location {
+    .professional .year-location {
         font-size: 0.8em;
     }
 
-    #technologies-list, #additional-technologies-list {
+    .professional .technologies-list, .professional .additional-technologies-list {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 10px;
     }
 
-    .skill {
+    .professional .skill {
         font-size: 16px;
         margin-bottom: 2%;
     }
 
-    .details {
+    .professional .details {
         font-size: 12px;
     }
 
-    #experience-list {
+    .professional .experience-list {
         gap: 15px;
     }
 
-    .experience-type {
+    .professional .experience-type {
         font-size: 13px;
     }
 
-    .experience-title {
+    .professional .experience-title {
         font-size: 16px;
     }
 
-    .experience-organization {
+    .professional .experience-organization {
         font-size: 13px;
     }
 
-    .year-duration {
+    .professional .year-duration {
         font-size: 11px;
     }
 
-    .experience-technologies {
+    .professional .experience-technologies {
         font-size: 12px;
         gap: 5px;
     }
 
-    #soft-skills-list, #interests-list {
+    .professional .soft-skills-list, .professional .interests-list {
         font-size: 13px;
         columns: 1;
         column-gap: 20px;
     }
 
-    #soft-skills-list li, #interests-list li {
+    .professional .soft-skills-list li, .professional .interests-list li {
         padding-left: 2%;
     }
 
-    #languages-list {
+    .professional .languages-list {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 10px;
     }
 
-    .language-name {
+    .professional .language-name {
         font-size: 0.9em;
     }
 
-    .language-level {
+    .professional .language-level {
         font-size: 11px;
     }
 
-    .language-certification, .language-experience {
+    .professional .language-certification, .professional .language-experience {
         font-size: 12px;
     }
 
-    .flex {
+    .professional .flex {
         flex-direction: column;
         align-items: flex-start;
     }
