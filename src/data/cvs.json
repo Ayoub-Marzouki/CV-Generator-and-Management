@@ -1,1 +1,583 @@
-[{"profile":{"photo":"/images/image.png","firstName":"Ayoub","lastName":"Marzouki","birthday":{"day":1,"month":11,"year":2003},"phone":"0613852665","email":"ayoubma321@gmail.com","address":"Fes, Morocco","professionalSummary":"Persistent and persevering computer science student with a strong foundation in web development and programming.\nRaw willpower being my primary weapon to overcome challenges and achieve goals.\nExperienced in building functional web and desktop applications using modern technologies, such as JEE, Spring / Spring Boot, Java Swing, MySQL, Node JS, Django REST Framework, Javascript (AJAX included), SQL, PL/SQL and MySQL. Seeking to strengthen my technical skills and brighten up my future.","links":["https://github.com/Ayoub-Marzouki","https://www.linkedin.com/in/ayoubmarzouki/"]},"education":[{"diploma":"Software Quality Master's","organisation":"FSDM - Université Sidi Mohammed ben Abdellah - Fès","year":2026},{"diploma":"Licence at Mathematics and Computer Sciences","organisation":"FSDM - Université Sidi Mohammed ben Abdellah - Fès","year":2024},{"diploma":"DEUG at Mathematics and Computer Sciences","organisation":"FSDM - Université Sidi Mohammed ben Abdellah - Fès","year":2024}],"technologySkills":[{"skill":"Jakarta Entreprise Edition (JEE)","details":["3-tiers Architecture","MVC2 model","Servlets and JSPs","DAO Model","Spring / Spring Boot Framework","JPA","Hibernate","Tomcat Administration"]},{"skill":"Web Development","details":["HTML","Native CSS","JavaScript","AJAX"]},{"skill":"Java Standard Edition (Java SE)","details":["Swing","Generics","Java XML","Files I/O","Lists","Multithreading","Exceptions"]},{"skill":"C Programming","details":["Data Structures","Pointers","Double Pointers","Memory management"]},{"skill":"Databases","details":["MySQL","SQL","PL/SQL"]},{"skill":"Software Development Practices","details":["Test-Driven Development (TDD)","JUnit"]}],"experiences":[{"type":"Project","organisation":"FSDM - Université Sidi Mohammed ben Abdellah - Fès","title":"CV Generator & Management","technologies":["HTML","CSS","JavaScript","Node JS"],"year":2025,"duration":"1 month"},{"type":"Project","organisation":"FSDM - Université Sidi Mohammed ben Abdellah - Fès","title":"Java Project Parser & UML Diagrams Generator","technologies":["Java","Java Swing","XML","Java XML"],"year":2025,"duration":"3 months"},{"type":"Project","organisation":"FSDM - Université Sidi Mohammed ben Abdellah - Fès","title":"Online Art Gallery & Marketplace","technologies":["HTML","CSS","JavaScript","AJAX","SQLite3","Django REST Framework"],"year":2024,"duration":"3 months"}],"softSkills":["Resilience","Perseverance","Attention To Detail","Clear Written Communication","Problem Solving","Analytical Thinking","Self-Motivation","Independent Learning"],"languages":[{"language":"English","level":"C1","certification":"","experience":""},{"language":"French","level":"C1","certification":"","experience":""},{"language":"Arabic","level":"Native","certification":"","experience":""}],"interests":["Full Stack Development","Software Architecture and Clean Code","Open-Source Tools","Human Behavior and Emotional Connection"],"chosenLayout":"creative"},{"chosenLayout":"creative","profile":{"lastName":"Noble","firstName":"Lunea","birthday":{"day":"28","month":"1","year":"1999"},"jobTitle":"Quam velit vitae ea","professionalSummary":"Minus irure quia ull","email":"cyhimo@mailinator.com","address":"Dolor est praesenti","phone":"+1 (832) 943-4907","links":["https://www.github.com/in/ayoubmarzouki/","https://www.linkedin.com/in/ayoubmarzouki/"],"photo":"/uploads/693fb942306fac333441335628841677"},"education":[{"diploma":"Sit et quis doloremq","organisation":"Williamson Payne LLC","year":"2007","location":"Voluptatum commodi f"},{"diploma":"Dicta alias deserunt","organisation":"Cooper Butler Trading","year":"1983","location":"Vel alias laudantium"},{"diploma":"Quia autem ut ad quo","organisation":"Zimmerman Hughes Plc","year":"1994","location":"Expedita sed fugit "}],"technologySkills":[{"skill":"Omnis error doloribu","details":["Nulla sint voluptate","Illo sint qui qui ea","Illum quis in ab re","Minim quod ea mollit"]},{"skill":"Dolores consectetur","details":["Dolorem facere error","Laudantium est dese"]},{"skill":"Impedit dignissimos","details":["Corporis est cupidat","Est et dolor enim id","Deleniti sit volupta","Ea nisi aut ut accus"]}],"experiences":[{"type":"Work","title":"Minim velit enim mol","organisation":"Drake and Clemons Plc","year":"2005","duration":"3","technologies":["Sunt aspernatur sit","Suscipit est accusa","Aliquid corporis lib"]},{"type":"Project","title":"Dolor recusandae Qu","organisation":"Hopkins Gilbert Traders","year":"2005","duration":"3","technologies":["Ut excepturi ut qui "]},{"type":"Work","title":"Doloribus nostrum vo","organisation":"Barr and Marsh Co","year":"2004","duration":"3","technologies":["Ea excepturi eius ve"]}],"softSkills":["Aute est deserunt of","Optio ab nihil labo","Fugit eos itaque d","Nulla voluptates adi","Corrupti laborum P"],"languages":[{"language":"Ipsum non mollitia ","level":"Ab rerum doloremque ","certification":"Tempora vel providen","experience":"Est dolorem et conse"},{"language":"Fugiat voluptatem no","level":"Vel expedita consequ","certification":"Voluptas asperiores ","experience":"Excepturi Nam ut nos"},{"language":"Dolore tempore volu","level":"Rem praesentium prov","certification":"Incidunt ipsum quos","experience":"Amet vel suscipit s"}],"interests":["Laboriosam harum ul","Est voluptatem duis","Adipisci magna dolor","Optio molestias del"]},{"chosenLayout":"retro","profile":{"lastName":"Ellis","firstName":"Sheila","birthday":{"day":"12","month":"3","year":"1999"},"jobTitle":"Vel asperiores dolor","professionalSummary":"Non praesentium unde","email":"semohy@mailinator.com","address":"Sit ex magna nulla ","phone":"+1 (746) 282-4553","links":["https://www.sixixysiry.ws","https://www.puqakusizazaba.org"],"photo":"/uploads/0e9b8d0b2890f80eb9ac56653c8d5536"},"education":[{"diploma":"Esse at voluptas et","organisation":"Lancaster Jenkins Plc","year":"1987","location":"Voluptatem rerum inc"}],"technologySkills":[{"skill":"Sapiente consequat ","details":["Blanditiis velit atq"]}],"experiences":[{"type":"Project","title":"Officiis incididunt ","organisation":"Gomez Alston Trading","year":"1975","duration":"54","technologies":["Eveniet ut consequa"]}],"softSkills":["Elit qui atque illo"],"languages":[{"language":"Vero aut deleniti re","level":"Impedit fugiat null","certification":"Qui quam et quisquam","experience":"Aut in laboris eaque"}],"interests":["Quibusdam ut fugit "]}]
+[
+  {
+    "profile": {
+      "photo": "/images/image.png",
+      "firstName": "Ayoub",
+      "lastName": "Marzouki",
+      "birthday": { "day": 1, "month": 11, "year": 2003 },
+      "jobTitle": "Software Developer",
+      "phone": "0613852665",
+      "email": "ayoubma321@gmail.com",
+      "address": "Fes, Morocco",
+      "professionalSummary": "Persistent and persevering computer science student with a strong foundation in web development and programming.\nRaw willpower being my primary weapon to overcome challenges and achieve goals.\nExperienced in building functional web and desktop applications using modern technologies, such as JEE, Spring / Spring Boot, Java Swing, MySQL, Node JS, Django REST Framework, Javascript (AJAX included), SQL, PL/SQL and MySQL. Seeking to strengthen my technical skills and brighten up my future.",
+      "links": [
+        "https://github.com/Ayoub-Marzouki",
+        "https://www.linkedin.com/in/ayoubmarzouki/"
+      ]
+    },
+    "education": [
+      {
+        "diploma": "Software Quality Master's",
+        "organisation": "FSDM - Université Sidi Mohammed ben Abdellah - Fès",
+        "year": 2026
+      },
+      {
+        "diploma": "Licence at Mathematics and Computer Sciences",
+        "organisation": "FSDM - Université Sidi Mohammed ben Abdellah - Fès",
+        "year": 2024
+      },
+      {
+        "diploma": "DEUG at Mathematics and Computer Sciences",
+        "organisation": "FSDM - Université Sidi Mohammed ben Abdellah - Fès",
+        "year": 2024
+      }
+    ],
+    "technologySkills": [
+      {
+        "skill": "Jakarta Entreprise Edition (JEE)",
+        "details": [
+          "3-tiers Architecture",
+          "MVC2 model",
+          "Servlets and JSPs",
+          "DAO Model",
+          "Spring / Spring Boot Framework",
+          "JPA",
+          "Hibernate",
+          "Tomcat Administration"
+        ]
+      },
+      {
+        "skill": "Web Development",
+        "details": ["HTML", "Native CSS", "JavaScript", "AJAX"]
+      },
+      {
+        "skill": "Java Standard Edition (Java SE)",
+        "details": [
+          "Swing",
+          "Generics",
+          "Java XML",
+          "Files I/O",
+          "Lists",
+          "Multithreading",
+          "Exceptions"
+        ]
+      },
+      {
+        "skill": "C Programming",
+        "details": [
+          "Data Structures",
+          "Pointers",
+          "Double Pointers",
+          "Memory management"
+        ]
+      },
+      { "skill": "Databases", "details": ["MySQL", "SQL", "PL/SQL"] },
+      {
+        "skill": "Software Development Practices",
+        "details": ["Test-Driven Development (TDD)", "JUnit"]
+      }
+    ],
+    "experiences": [
+      {
+        "type": "Project",
+        "organisation": "FSDM - Université Sidi Mohammed ben Abdellah - Fès",
+        "title": "CV Generator & Management",
+        "technologies": ["HTML", "CSS", "JavaScript", "Node JS"],
+        "year": 2025,
+        "duration": "1 month"
+      },
+      {
+        "type": "Project",
+        "organisation": "FSDM - Université Sidi Mohammed ben Abdellah - Fès",
+        "title": "Java Project Parser & UML Diagrams Generator",
+        "technologies": ["Java", "Java Swing", "XML", "Java XML"],
+        "year": 2025,
+        "duration": "3 months"
+      },
+      {
+        "type": "Project",
+        "organisation": "FSDM - Université Sidi Mohammed ben Abdellah - Fès",
+        "title": "Online Art Gallery & Marketplace",
+        "technologies": [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "AJAX",
+          "SQLite3",
+          "Django REST Framework"
+        ],
+        "year": 2024,
+        "duration": "3 months"
+      }
+    ],
+    "softSkills": [
+      "Resilience",
+      "Perseverance",
+      "Attention To Detail",
+      "Clear Written Communication",
+      "Problem Solving",
+      "Analytical Thinking",
+      "Self-Motivation",
+      "Independent Learning"
+    ],
+    "languages": [
+      {
+        "language": "English",
+        "level": "C1",
+        "certification": "",
+        "experience": ""
+      },
+      {
+        "language": "French",
+        "level": "C1",
+        "certification": "",
+        "experience": ""
+      },
+      {
+        "language": "Arabic",
+        "level": "Native",
+        "certification": "",
+        "experience": ""
+      }
+    ],
+    "interests": [
+      "Full Stack Development",
+      "Software Architecture and Clean Code",
+      "Open-Source Tools",
+      "Human Behavior and Emotional Connection"
+    ],
+    "chosenLayout": "creative"
+  },
+  {
+        "profile": {
+            "photo": "/uploads/cv_photo.png",
+            "firstName": "Houssameddine",
+            "lastName": "HAIMOURA",
+            "birthday": {
+                "day": 8,
+                "month": 2,
+                "year": 1999
+            },
+            "phone": "+212 6 97 46 59 59",
+            "email": "houssameddine.haimoura@gmail.com",
+            "address": "N° 6, Rue 7, Bloc II, l'Habitat Dhar Lakhmiss, Fès",
+            "professionalSummary": "Développeur logiciel passionné avec un an d'expérience dans la conception et le développement d'applications robustes. Expertise en Java, PHP et JavaScript, ainsi qu'en frameworks modernes. Orienté vers les solutions innovantes et le travail d'équipe pour livrer des produits de haute qualité.",
+            "links": [
+                "https://github.com/houssameddine-h",
+                "https://linkedin.com/in/houssameddine-haimoura"
+            ]
+        },
+        "education": [
+            {
+                "diploma": "Master Qualité du Logiciel (MQL)",
+                "organisation": "FSDM - Université Sidi Mohammed Ben Abdellah - Fès",
+                "year": "En cours (2ème année)"
+            },
+            {
+                "diploma": "Licence Professionnelle Cybersécurité et Ingénierie des Systèmes",
+                "organisation": "FSR - Université Mohammed V - Rabat",
+                "year": 2023
+            }
+        ],
+        "technologySkills": [
+            {
+                "skill": "Jakarta Entreprise Edition (JEE)",
+                "details": [
+                    "Architecture 3 tiers, MVC2, DAO",
+                    "Servlets, JSP, Spring / Spring Boot",
+                    "MySQL, PostgreSQL"
+                ]
+            },
+            {
+                "skill": "Ingénierie du Web",
+                "details": [
+                    "HTML, CSS, JavaScript, TypeScript",
+                    "Node.js, React, Angular"
+                ]
+            },
+            {
+                "skill": "Ingénierie DevOps",
+                "details": [
+                    "Maven, Git, GitHub, GitLab",
+                    "JUnit, Jest, Selenium"
+                ]
+            },
+            {
+                "skill": "Bases de données",
+                "details": [
+                    "XML (Parseurs : DOM et SAX, DTD, XSD, XSLT, XPath, XQuery)",
+                    "MySQL, PostgreSQL, NoSQL"
+                ]
+            }
+        ],
+        "experiences": [
+            {
+                "type": "CDI",
+                "organisation": "TELCO DEV - Fès",
+                "title": "Développeur Informatique",
+                "technologies": [
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "JQuery",
+                    "Bootstrap",
+                    "Bootstrap",
+                    "PHP",
+                    "MySQL"
+                ],
+                "year": "2021-2022",
+                "duration": "1 an"
+            },
+            {
+                "type": "CDD",
+                "organisation": "ALTEN - Fès",
+                "title": "Technicien Support FAI et Réseaux",
+                "technologies": [
+                    "Réseaux",
+                    "ADSL",
+                    "FTTH",
+                    "VoIP",
+                    "IPTV"
+                ],
+                "year": "2019-2020",
+                "duration": "10 mois"
+            }
+        ],
+        "softSkills": [
+            "Communication",
+            "Esprit d'équipe",
+            "Créativité",
+            "Rigueur",
+            "Adaptabilité",
+            "Organisation"
+        ],
+        "languages": [
+            {
+                "language": "Français",
+                "level": "B2",
+                "certification": "",
+                "experience": ""
+            },
+            {
+                "language": "Anglais",
+                "level": "B2",
+                "certification": "",
+                "experience": ""
+            }
+        ],
+        "interests": [
+            "Sport",
+            "Voyage",
+            "Lecture"
+        ],
+        "chosenLayout":"modern"
+    },
+  {
+    "profile": {
+      "photo": "/uploads/p01.png",
+      "firstName": "Zakaria",
+      "lastName": "Bozari",
+      "birthday": {
+        "day": 20,
+        "month": 2,
+        "year": 2001
+      },
+      "phone": "0623474143",
+      "email": "zakaria.bozari@gmail.com",
+      "address": "Casablanca",
+      "professionalSummary": "Ingénieur en informatique avec une bonne expérience \n            sur les architectures logicielles et les nouvelles technologies informatique, \n            en l'occurence Jakarta EE, Spring Boot, React et Angular. \n            Expérimenté dans la gestion de projets agiles, planification, exécution et coordination des tâches \n            avec des équipes multifonctionnelles. Disposant des compétences requises en communication et \n            en résolution de problèmes avec un esprit ouvert en collaboration efficace avec les parties prenantes \n            et les membres de l'équipe.\n        ",
+      "links": [
+        "https://github.com/B-Zakaria-u",
+        "https://gitlab.com/zakaria.bozari"
+      ]
+    },
+    "education": [
+      {
+        "diploma": "Master MQL",
+        "organisation": "FSDM - Université Sidi Mohammed ben Abdellah - Fès",
+        "year": 2024
+      },
+      {
+        "diploma": "License LST",
+        "organisation": "FSTT - Université Abdelmalek Essaâdi - Tanger",
+        "year": 2024
+      },
+      {
+        "diploma": "Baccalauréat",
+        "organisation": "Collège Lycée Lahlou - Casablanca",
+        "year": 2018
+      }
+    ],
+    "technologySkills": [
+      {
+        "skill": "Jakarta Entreprise Edition (JEE)",
+        "details": [
+          "Architecture 3 tiers",
+          "Modèle MVC2",
+          "Servlets et JSP",
+          "modèle DAO",
+          "Framework Spring / Spring Boot",
+          "JPA",
+          "Hibernate",
+          "Administration Tomcat"
+        ]
+      },
+      {
+        "skill": "Ingénierie du Web",
+        "details": ["HTML", "CSS", "JavaScript", "Node.js", "React", "Angular"]
+      },
+      {
+        "skill": "Ingénierie DevOps",
+        "details": [
+          "Maven",
+          "Git",
+          "GitHub",
+          "GitLab",
+          "Jira",
+          "Jenkins",
+          "JUnit",
+          "Selenuim"
+        ]
+      },
+      {
+        "skill": "Technologie XML",
+        "details": [
+          "Standard XML",
+          "Bases de données XML",
+          "Parseurs XML (DOM, SAX)",
+          "DTD",
+          "XSD (XML Schema)",
+          "XSLT",
+          "XPath",
+          "XQuery"
+        ]
+      }
+    ],
+    "experiences": [
+      {
+        "type": "Stage",
+        "organisation": "Skatys - Casablanca",
+        "title": "Développeur ABAP",
+        "technologies": ["SAP", "ABAP"],
+        "year": 2024,
+        "duration": "2 mois"
+      },
+      {
+        "type": "Projet",
+        "organisation": "FSDM",
+        "title": "Réalisation d'une application de Gestion de CVs",
+        "technologies": ["HTML", "CSS", "JavaScript", "Node.js"],
+        "year": 2025,
+        "duration": "1 mois"
+      },
+      {
+        "type": "Projet",
+        "organisation": "FSDM",
+        "title": "Réalisation d'une application de génération de diagramme de classeswing java",
+        "technologies": ["Java", "Swing", "Technologie XML"],
+        "year": 2025,
+        "duration": "1 mois"
+      }
+    ],
+    "softSkills": [
+      "Communication",
+      "Esprit d'équipe",
+      "Capacité de Résolution de problèmes"
+    ],
+    "languages": [
+      {
+        "language": "Français",
+        "level": "C1",
+        "certification": "TCF",
+        "experience": ""
+      },
+      {
+        "language": "Anglais",
+        "level": "C1",
+        "certification": "Rosetta",
+        "experience": ""
+      },
+      {
+        "language": "Arabe",
+        "level": "Maternelle",
+        "certification": "",
+        "experience": ""
+      }
+    ],
+    "interests": ["Design", "Music", "Création numérique et montage"],
+    "chosenLayout": "professional"
+  },
+  {
+    "profile": {
+        "photo": "/uploads/aymane.jpg",
+        "firstName": "Lamhamdi",
+        "lastName": "Mohamed Aymane",
+        "birthday": {
+        "day": 25,
+        "month": 10,
+        "year": 2001
+        },
+        "phone": "+212 7 05 79 71 52",
+        "email": "mohamedaymanelamhamdi@gmail.com",
+        "address": "Résidence Belle Vue Quartier Adarissa, Fès Maroc",
+        "professionalSummary": "Je suis à la recherche d'un stage dans le domaine de l'ingénierie logicielle pour mettre en pratique mes compétences techniques et contribuer à des projets innovants. Passionné par le développement logiciel, la conception d'architectures robustes et l'amélioration continue des processus.",
+        "links": [
+          "https://www.linkedin.com/in/mohamed-aymane-lamhamdi"
+        ]
+    },
+    "education": [
+        {
+        "diploma": "Master spécialisé en Qualité du Logiciel (en cours)",
+        "organisation": "FSDM - Université Sidi Mohammed ben Abdellah - Fès",
+        "year": "2024-2026"
+        },
+        {
+        "diploma": "Licence Fondamentale en Science Math et Informatique",
+        "organisation": "FSDM - Université Sidi Mohammed ben Abdellah - Fès",
+        "year": "2023-2024"
+        },
+        {
+        "diploma": "DUT en Génie Informatique, option Génie Logiciel",
+        "organisation": "École supérieure de technologie - Fès",
+        "year": "2020-2022"
+        },
+        {
+        "diploma": "Baccalaureat Science Physique et Chimie",
+        "organisation": "Académie Royale Militaire - Meknès",
+        "year": "2019-2020"
+        }
+    ],
+    "technologySkills": [
+        {
+        "skill": "Java & JEE",
+        "details": ["Architecture 3-tiers", "MVC2", "Servlets & JSP", "Design patterns"]
+        },
+        {
+        "skill": "Ingénierie Web",
+        "details": ["HTML", "CSS", "JavaScript", "Node.js", "Express", "React"]
+        },
+        {
+        "skill": "DevOps & tests",
+        "details": ["Maven", "Trello", "Github", "GitLab", "JUnit"]
+        },
+        {
+        "skill": "Procedural Language/SQL",
+        "details": ["PL-SQL", "T-SQL"]
+        },
+        {
+        "skill": "Données & Architectures",
+        "details": ["MySQL", "SQL Server", "XML", "JSON", "REST/SOAP APIs", "GraphQL"]
+        },
+        {
+        "skill": "Design & Outils",
+        "details": ["Canva", "Word", "PowerPoint", "Teams"]
+        },
+        {
+        "skill": "Framework",
+        "details": ["Spring", "Spring Boot", "Angular"]
+        },
+        {
+        "skill": "Méthodes & Modélisation",
+        "details": ["UML", "Merise", "Agile (Scrum)"]
+        }
+    ],
+    "experiences": [
+        {
+        "type": "Stage",
+        "organisation": "RADEEF - Fès",
+        "title": "Technicien",
+        "technologies": [],
+        "year": 2022,
+        "duration": "Avril 2022 - Juin 2022",
+        "description": "Création d'une application mobile de communication"
+        },
+        {
+        "type": "Stage",
+        "organisation": "Pharmacie Labaraka - Fès",
+        "title": "Intern",
+        "technologies": [],
+        "year": 2021,
+        "duration": "Juillet 2021 - Août 2021",
+        "description": "Maintenance des systèmes informatiques"
+        },
+        {
+        "type": "Stage",
+        "organisation": "RADEEF - Fès",
+        "title": "Technicien",
+        "technologies": [],
+        "year": 2021,
+        "duration": "Juin 2021 - Juillet 2021",
+        "description": "Découverte des systèmes de gestion"
+        },
+        {
+        "type": "Projet",
+        "organisation": "",
+        "title": "Création d'une application mobile de gym",
+        "technologies": [],
+        "year": "",
+        "duration": ""
+        },
+        {
+        "type": "Projet",
+        "organisation": "",
+        "title": "Création d'un site web de gym",
+        "technologies": ["Angular", "Spring Boot", "MySQL", "API"],
+        "year": "",
+        "duration": ""
+        }
+    ],
+    "professionalExperiences": [
+        {
+        "title": "IT, Manager de technologie et communication",
+        "organisation": "Youth Access Support - Fès",
+        "duration": ""
+        },
+        {
+        "title": "Président de la commité du BasketBall",
+        "organisation": "Rotaract - Fès",
+        "duration": ""
+        },
+        {
+        "title": "Assistant",
+        "organisation": "Give 2 Get Maroc - Pays-Bas",
+        "duration": ""
+        },
+        {
+        "title": "Gérant d'un magasin de textile",
+        "organisation": "Al Morakab - Taza",
+        "duration": ""
+        }
+    ],
+    "softSkills": [
+        "Optimisation des processus",
+        "Gestion du temps en mode Agile",
+        "Créativité orientée solutions",
+        "Adaptation en contexte incertain",
+        "Collaboration transverse"
+    ],
+    "languages": [
+        {
+        "language": "Arabe",
+        "level": "maternelle"
+        },
+        {
+        "language": "Français",
+        "level": "courant"
+        },
+        {
+        "language": "Anglais",
+        "level": "courant"
+        }
+    ],
+    "interests": [
+        "Permis B",
+        "Équitation",
+        "Voyage",
+        "Paddle-Tennis",
+        "Football",
+        "Natation",
+        "BasketBall"
+    ],
+    "chosenLayout":"retro"
+}
+]

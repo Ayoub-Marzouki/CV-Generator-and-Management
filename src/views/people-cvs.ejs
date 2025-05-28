@@ -3,9 +3,58 @@
 <link rel="stylesheet" href="/styles/minimalist.css">
 <link rel="stylesheet" href="/styles/modern.css">
 <link rel="stylesheet" href="/styles/professional.css">
-<link rel="stylesheet" href="/styles/people-cvs-style.css" />
+<link rel="stylesheet" href="/styles/people-cvs-style.css">
+
+<script src="/js/people-cvs.js" defer></script>
 
 
+<header id="filter">
+  <form action="/people-cvs" method="get">
+      <h1 id="filter-header">Click to Search for a specific person</h1> 
+      <section id="drop-content" class="hidden">
+          <div>
+              <p>Last Name</p>
+              <input type="text" name="lastName" placeholder="Last Name">
+          </div>
+          
+          <div>
+            <p>First Name</p>
+            <input type="text" name="firstName" placeholder="Last Name">
+          </div> 
+
+          <div>
+            <p>Year Born</p>
+            <input type="number" name="year" placeholder="2000">
+          </div>
+          
+          <div>
+            <p>Skill</p>
+            <input type="text" name="skill" placeholder="JEE">
+          </div>
+          
+          <div>
+            <p>Technology Details</p>
+            <input type="text" name="technologyDetails" placeholder="MVC">
+            <p id="add-technology">Add a technology</p>
+          </div>
+          
+
+          <div>
+            <p>Job Title</p>
+            <input type="text" name="jobTitle" placeholder="Job Title">
+          </div> 
+
+          <div id="location-filter">
+              <p>Location</p>
+              <input type="text" name="address" placeholder="Address">
+          </div>
+      </section>
+      <button id="search" type="submit"><img class="icons" src="images/icons/search.png" alt=""></button>
+  </form>
+</header>
+
+
+<% if (cvs && cvs.length) { %>
 <% cvs.forEach((cv) => { %>
   <section class="cv-block <%= cv.chosenLayout || 'minimalist'%>">
     <!-- PROFILE -->
@@ -59,23 +108,34 @@
 
       <% if (cv.profile.links && cv.profile.links.length) { %>
         <div class="links">
-		<% cv.profile.links.forEach(link => { %>
-			<% if (link.toLowerCase().includes('github.com')) { %>
-			<a class="link" href="<%= link %>" target="_blank">
-				<img class="icons" src="/images/icons/github.png" alt="GitHub Icon" />
-				<span class="link-text"><%= link %></span>
-			</a>
-			<br>
-			<% } else { %>
-			<a class="link" href="<%= link %>" target="_blank">
-				<img class="icons" src="/images/icons/linkedin.png" alt="LinkedIn Icon" />
-				<span class="link-text"><%= link %></span>
-			</a>
-			<br>
-			<% } %>
-		<% }) %>
+          <% cv.profile.links.forEach(link => { %>
+            <% if (link.toLowerCase().includes('github.com')) { %>
+              <a class="link" href="<%= link %>" target="_blank">
+                <img class="icons" src="/images/icons/github.png" alt="GitHub Icon" />
+                <span class="link-text"><%= link %></span>
+              </a>
+              <br>
+            <% } else if (link.toLowerCase().includes('linkedin.com')) { %>
+              <a class="link" href="<%= link %>" target="_blank">
+                <img class="icons" src="/images/icons/linkedin.png" alt="LinkedIn Icon" />
+                <span class="link-text"><%= link %></span>
+              </a>
+              <br>
+            <% } else if(link.toLowerCase().includes("gitlab.com")) { %>
+              <a class="link" href="<%= link %>" target="_blank">
+                <img class="icons" src="/images/icons/gitlab.png" alt="Gitlab Icon" />
+                <span class="link-text"><%= link %></span>
+              </a>
+              <br>
+            <% } else { %>
+              <a class="link" href="<%= link %>" target="_blank">
+                <span class="link-text"><%= link %></span>
+              </a>
+              <br>
+            <% } %>
+          <% }) %>
         </div>
-      <% } %>
+      <% } %>      
     </section>
 
     <main>
@@ -188,9 +248,9 @@
         </section>
       <% } %>
     </main>
-    <hr>
   </section>
+  <hr>
 <% }) %>
-
+<% } %>
 <%- contentFor('title') %>
     <title>Peoples' CVs</title>

@@ -22,6 +22,11 @@ a {
     color:#2E3C68;
 }
 
+.icons {
+    width:20px;
+    height:20px;
+}
+
 /* ------------ Header Styles  */
 #navbar-container {
     position:sticky;

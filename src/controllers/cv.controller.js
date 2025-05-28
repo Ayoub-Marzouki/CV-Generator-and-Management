@@ -1,11 +1,16 @@
-import getAllCVs, { saveCV } from "../services/cv.json.service.js";
+import getAllCVs, { getFilteredCvs, saveCV } from "../services/cv.json.service.js";
 
 // catching HTTP related errors via try/catch
 
 // /api/cvs
 export async function handleCVs(req, res) {
+    let cvs;
     try {
-        const cvs = await getAllCVs();
+        if (Object.keys(req.query).length === 0) {
+            cvs = await getAllCVs();
+        } else {
+           cvs = await getFilteredCvs(req.query);
+        }            
         res.json(cvs);
     } catch (error) {
         console.error("Error : ", error);
@@ -15,8 +20,14 @@ export async function handleCVs(req, res) {
 
 // /people-cvs
 export async function handlePeopleCVs(req, res) {
+    let cvs;
     try {
-        const cvs = await getAllCVs();
+        if (Object.keys(req.query).length === 0) {
+        cvs = await getAllCVs();
+        } else {
+           cvs = await getFilteredCvs(req.query);
+        }
+
         let context = {cvs, };
         res.render("people-cvs", context);
     } catch (error) {
