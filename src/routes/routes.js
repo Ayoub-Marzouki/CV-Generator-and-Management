@@ -1,6 +1,6 @@
 import express from "express";
 
-import { chosenLayout, handleCVs, handlePeopleCVs, handleCreateCV } from "../controllers/cv.controller.js";
+import { chosenLayout, handleCVs, handlePeopleCVs, handleCreateCV, chosenCV } from "../controllers/cv.controller.js";
 
 import multer from "multer";
 
@@ -33,6 +33,12 @@ router.get("/cv-templates", (req, res) => {
 });
 
 router.get("/people-cvs", handlePeopleCVs);
+
+router.get("/preview",chosenCV)
+
+router.get("/faqs", (req, res) => {
+    res.render("faqs");
+})
 
 // REST end-points
 router.get("/api/cvs", handleCVs);

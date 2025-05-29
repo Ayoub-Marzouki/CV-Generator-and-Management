@@ -19,8 +19,12 @@ export async function saveCV(cv) {
     }
 }
 
+/**
+ * Filters CVs based on provided seach filters.
+ * @param {*} filters : req.query itself.
+ * @returns 
+ */
 export async function getFilteredCvs(filters) {
-    console.log(filters);
     let cvs;
     let filteredCvs = [];
     // Filters coming from user
@@ -125,4 +129,30 @@ export async function getFilteredCvs(filters) {
 // Helper function
 function normalize(string) {
     return string.trim().toLowerCase();
+}
+
+/**
+ * Returns a unique CV based on last name (assuming all last names are different)
+ * @param {*} lastNameFilter : object coming from req.query (unlike getFilteredCvs which receives the entire req.query) 
+ * @returns 
+ */
+export async function getCvByLastName(lastNameFilter) {
+    let lastName;
+    if (lastNameFilter) {
+        lastName = normalize(lastNameFilter) || '';
+    }
+
+    try {
+        let filteredCv;
+        let cvs = await getAllCVs();
+        for (const cv of cvs) {
+            if (normalize(cv.profile.lastName).includes(lastName)) {
+                filteredCv = cv;
+                break;
+            }
+        }
+        return filteredCv;
+    } catch (error) {
+        console.log(error);
+    }
 }

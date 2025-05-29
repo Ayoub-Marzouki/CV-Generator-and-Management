@@ -1,65 +1,21 @@
-<link rel="stylesheet" href="/styles/creative.css">
-<link rel="stylesheet" href="/styles/retro.css">
-<link rel="stylesheet" href="/styles/minimalist.css">
-<link rel="stylesheet" href="/styles/modern.css">
-<link rel="stylesheet" href="/styles/professional.css">
-<link rel="stylesheet" href="/styles/people-cvs-style.css">
-
-<script src="/js/people-cvs.js" defer></script>
-
-
-<header id="filter">
-  <form action="/people-cvs" method="get">
-      <h1 id="filter-header">Click to Search for a specific person</h1> 
-      <section id="drop-content" class="hidden">
-          <div>
-              <p>Last Name</p>
-              <input type="text" name="lastName" placeholder="Last Name">
-          </div>
-          
-          <div>
-            <p>First Name</p>
-            <input type="text" name="firstName" placeholder="Last Name">
-          </div> 
-
-          <div>
-            <p>Year Born</p>
-            <input type="number" name="year" placeholder="2000">
-          </div>
-          
-          <div>
-            <p>Skill</p>
-            <input type="text" name="skill" placeholder="JEE">
-          </div>
-          
-          <div>
-            <p>Technology Details</p>
-            <input type="text" name="technologyDetails" placeholder="MVC">
-            <p id="add-technology">Add a technology</p>
-          </div>
-          
-
-          <div>
-            <p>Job Title</p>
-            <input type="text" name="jobTitle" placeholder="Job Title">
-          </div> 
-
-          <div id="location-filter">
-              <p>Location</p>
-              <input type="text" name="address" placeholder="Address">
-          </div>
-      </section>
-      <button id="search" type="submit"><img class="icons" src="images/icons/search.png" alt=""></button>
-  </form>
-</header>
-
-
-<% if (cvs && cvs.length) { %>
-<% cvs.reverse().forEach((cv) => { %>
-	<h2><a class="preview-download" href="preview?lastName=<%= cv.profile.lastName %>">Preview and Download</a></h2>
-	<section class="cv-block <%= cv.chosenLayout || 'minimalist'%>">
-	<!-- PROFILE -->
-	<header class="profile">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/shared-style.css">
+    <link rel="stylesheet" href="/styles/preview-style.css">
+    <link rel="stylesheet" href="/styles/<%= cv.chosenLayout %>.css">
+    <title><%= cv.profile.lastName %>-<%= cv.profile.firstName %>-CV</title>
+</head>
+<body class="<%= cv.chosenLayout %>">
+    <div id="actions">
+        <p class="button" id="save" onclick="window.print()">Save as PDF</p>
+        <p class="button" id="learn-more"><a href="faqs#how-to-print" target="_blank">How to properly print CV</a></p>
+    </div>
+    <!-- Profile Section -->
+    <header class="profile">
 		<div class="profile-info">
 			<div class="flex">
 			<h1 class="name">
@@ -249,9 +205,5 @@
 		</section>
 		<% } %>
 	</main>
-	</section>
-	<hr>
-<% }) %>
-<% } %>
-<%- contentFor('title') %>
-    <title>Peoples' CVs</title>
+</body>
+</html>

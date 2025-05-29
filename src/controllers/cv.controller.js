@@ -1,4 +1,4 @@
-import getAllCVs, { getFilteredCvs, saveCV } from "../services/cv.json.service.js";
+import getAllCVs, { getCvByLastName, getFilteredCvs, saveCV } from "../services/cv.json.service.js";
 
 // catching HTTP related errors via try/catch
 
@@ -58,6 +58,18 @@ export async function handleCreateCV(req, res) {
         
         await saveCV(cv);
         res.redirect("/people-cvs");
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export async function chosenCV(req, res) {
+    try {
+        const cv = await getCvByLastName(req.query.lastName);
+        if (!cv) {
+            return res.status(404).send("CV not found");
+        }
+        res.render("preview", {cv, layout:false});
     } catch (error) {
         console.log(error);
     }
