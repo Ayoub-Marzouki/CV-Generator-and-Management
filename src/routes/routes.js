@@ -15,7 +15,12 @@ router.get("/create-cv", chosenLayout);
 
 
 // Handling the image uploaded by the user
-const upload = multer({ dest: './public/uploads/' })
+const upload = multer({ 
+    dest: './public/uploads/',
+    limits: {
+        fileSize:10 * 1024 * 1024,
+    }
+});
 
 router.post("/create-cv", upload.single('profile[photo]'), handleCreateCV);
 
