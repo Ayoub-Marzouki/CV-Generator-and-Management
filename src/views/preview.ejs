@@ -143,7 +143,7 @@
 				<p class="experience-organization"><%= exp.organisation %></p>
 				<div class="year-duration">
 				<p class="year"><%= exp.year %></p>
-				<p class="duration"><%= exp.duration %></p>
+				<p class="duration"><%= exp.duration %> month(s)</p>
 				</div>
 				<% if (exp.technologies && exp.technologies.length) { %>
 				<ul class="experience-technologies">
@@ -156,6 +156,38 @@
 			<% }) %>
 		</div>
 		</section>
+
+		<% if (cv.projects && cv.projects.length > 0) { %>
+		<section class="projects">
+			<h2>Projects</h2>
+			<div class="project-list">
+				<% cv.projects.forEach(project => { %>
+				<div class="project-section">
+					<h3 class="project-title"><%= project.title %></h3>
+					<% if (project.technologies && project.technologies.length) { %>
+					<ul class="project-technologies">
+						<% project.technologies.forEach(t => { %>
+						<li><%= t %></li>
+						<% }) %>
+					</ul>
+					<% } %>
+					<% if (project.links && project.links.length) { %>
+						<div class="links">
+							<% project.links.forEach(link => { %>
+							<% if (link) { %>
+							<a class="link" href="<%= link %>" target="_blank">
+								<span class="link-text"><%= link %></span>
+							</a>
+							<br>
+							<% } %>
+							<% }) %>
+						</div>
+					<% } %>
+				</div>
+				<% }) %>
+			</div>
+			</section>
+		<% } %>
 
 		<!-- SOFT SKILLS -->
 		<% if (cv.softSkills && cv.softSkills.length) { %>

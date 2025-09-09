@@ -56,7 +56,7 @@
 
 <% if (cvs && cvs.length) { %>
 <% cvs.reverse().forEach((cv) => { %>
-	<h2><a class="preview-download" href="preview?lastName=<%= cv.profile.lastName %>">Preview and Download</a></h2>
+	<h2><a class="preview-download" href="preview?<%= cv.id ? ('id=' + cv.id) : ('lastName=' + cv.profile.lastName) %>">Preview and Download</a></h2>
 	<section class="cv-block <%= cv.chosenLayout || 'minimalist'%>">
 	<!-- PROFILE -->
 	<header class="profile">
@@ -200,6 +200,38 @@
 			<% }) %>
 		</div>
 		</section>
+
+		<% if (cv.projects && cv.projects.length > 0) { %>
+			<section class="projects">
+				<h2>Projects</h2>
+				<div class="project-list">
+					<% cv.projects.forEach(project => { %>
+					<div class="project-section">
+						<h3 class="project-title"><%= project.title %></h3>
+						<% if (project.technologies && project.technologies.length) { %>
+						<ul class="project-technologies">
+							<% project.technologies.forEach(t => { %>
+							<li><%= t %></li>
+							<% }) %>
+						</ul>
+						<% } %>
+						<% if (project.links && project.links.length) { %>
+							<div class="links">
+								<% project.links.forEach(link => { %>
+								<% if (link) { %>
+								<a class="link" href="<%= link %>" target="_blank">
+									<span class="link-text"><%= link %></span>
+								</a>
+								<br>
+								<% } %>
+								<% }) %>
+							</div>
+						<% } %>
+					</div>
+					<% }) %>
+				</div>
+				</section>
+			<% } %>
 
 		<!-- SOFT SKILLS -->
 		<% if (cv.softSkills && cv.softSkills.length) { %>

@@ -125,7 +125,7 @@
     border-radius: 2px;
 }
 
-.modern .education-section, .modern .experience-section {
+.modern .education-section, .modern .experience-section, .modern .project-section {
     padding: 1.5rem;
     margin-bottom: 1.5rem;
     background: white;
@@ -134,7 +134,7 @@
     transition: transform 0.2s ease;
 }
 
-.modern .education-section:hover, .modern .experience-section:hover {
+.modern .education-section:hover, .modern .experience-section:hover, .modern .project-section:hover {
     transform: translateY(-2px);
 }
 
@@ -169,6 +169,18 @@
 }
 
 .modern .experience-technologies li {
+    background: var(--accent);
+    width:25%;
+    text-align:center;
+    margin:auto;
+    margin-bottom:3px;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+.modern .project-technologies li {
     background: var(--accent);
     width:25%;
     text-align:center;
@@ -224,6 +236,10 @@
     .modern .experience-technologies li {
         width:70%;
     }
+
+    .modern .project-technologies li {
+        width:70%;
+    }
 }
 
 @media (max-width: 480px) {
@@ -240,6 +256,10 @@
     }
     
     .modern .experience-technologies li {
+        width:100%;
+    }
+
+    .modern .project-technologies li {
         width:100%;
     }
 }

@@ -78,12 +78,12 @@
             </div>
         
             <div class="links">
-                <img class="icons" src="images/icons/github.png" alt="GitHub Icon">
+                <img class="icons" src="/images/icons/github.png" alt="GitHub Icon">
                 <span class="link-text">
                 <input type="url" name="profile[links][]" placeholder=" https://www.github.com/in/username">
                 </span>
                 <br>
-                <img class="icons" src="images/icons/linkedin.png" alt="LinkedIn Icon">
+                <img class="icons" src="/images/icons/linkedin.png" alt="LinkedIn Icon">
                 <span class="link-text">
                 <input type="url" name="profile[links][]" placeholder="https://www.linkedin.com/in/username">
                 </span>
@@ -185,7 +185,6 @@
                             <h3 class="experience-type">
                                 <select name="experiences[0][type]" required>
                                     <option>Internship</option>
-                                    <option>Project</option>
                                     <option>Work</option>
                                 </select>
                             </h3>
@@ -221,7 +220,6 @@
                         <h3 class="experience-type">
                             <select name="experiences[0][type]" required>
                                 <option>Internship</option>
-                                <option>Project</option>
                                 <option>Work</option>
                             </select>
                         </h3>
@@ -256,6 +254,73 @@
                         <button type="button" class="remove-tech-button">-</button>
                     </li>
                 </template>
+        
+                <section class="projects">
+                    <h2>Projects</h2>
+                    <div class="project-list" id="project-list">
+                        <div class="project-section">
+                            <h3 class="project-title">
+                                <input type="text" name="projects[0][title]" placeholder="Title" required>
+                            </h3>
+                            <ul class="project-technologies">
+                                <li>
+                                    <input type="text" name="projects[0][technologies][]" placeholder="Node.js">
+                                    <button type="button" class="remove-tech-button">-</button>
+                                </li>
+                            </ul>
+                            <button type="button" class="add-tech-button">Add Technology</button>
+                            <div class="links">
+                                <span class="link-text">
+                                <input type="url" name="projects[0][links][]" placeholder="https://www.github.com/in/username">
+                                </span>
+                                <br>
+                            </div>
+                            <button type="button" class="add-link-button">Add Link</button>
+                        </div>
+                    </div>
+                    <button type="button" id="add-project-button">Add Project</button>
+                </section>
+                
+                <template id="project-template">
+                    <div class="project-section">
+                        <h3 class="project-title">
+                            <input type="text" name="projects[0][title]" placeholder="Title" required>
+                        </h3>
+                        <ul class="project-technologies">
+                            <li>
+                                <input type="text" name="projects[0][technologies][]" placeholder="Node.js">
+                                <button type="button" class="remove-tech-button">-</button>
+                            </li>
+                        </ul>
+                        <button type="button" class="add-tech-button">Add Technology</button>
+                        <div class="links">
+                            <span class="link-text">
+                            <input type="url" name="projects[0][links][]" placeholder="httpshttps://www.github.com/in/username">
+                            </span>
+                            <br>
+                        </div>
+                        <button type="button" class="add-link-button">Add Link</button>
+                        <button type="button" class="remove-project-button">Remove Project</button>
+                    </div>
+                </template>
+                
+                <template id="project-tech-template">
+                    <li>
+                        <input type="text" name="" placeholder="Another technology...">
+                        <button type="button" class="remove-tech-button">-</button>
+                    </li>
+                </template>
+
+                <template id="project-link-template">
+                    <div>
+                        <span class="link-text">
+                        <input type="url" name="" placeholder="https://www.github.com/in/username">
+                        </span>
+                        <button type="button" class="remove-link-button">-</button>
+                        <br>
+                    </div>
+                </template>
+
         
                 <section class="soft-skills">
                     <h2>Soft Skills</h2>

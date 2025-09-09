@@ -156,3 +156,16 @@ export async function getCvByLastName(lastNameFilter) {
         console.log(error);
     }
 }
+
+/**
+ * Returns a CV by id (string). Falls back to undefined if not found.
+ */
+export async function getCvById(id) {
+    if (!id) return undefined;
+    try {
+        const cvs = await getAllCVs();
+        return cvs.find(cv => cv.id === id);
+    } catch (error) {
+        console.log(error);
+    }
+}

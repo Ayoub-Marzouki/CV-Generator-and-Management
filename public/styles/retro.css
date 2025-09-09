@@ -306,6 +306,43 @@
 }
 
 
+/* ---------------- Projects ---------------- */
+.retro .project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.retro .project-section {
+    padding-left: 1%;
+    border-left: 2px solid #D2B48C;
+}
+
+.retro .project-section:last-child {
+    margin-bottom:1px;
+}
+
+.retro .project-title {
+    font-weight: 700;
+    color: #5D4037;
+    margin-bottom:0.2%;
+}
+
+.retro .project-technologies {
+    list-style: none;
+    color: #704214;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.retro .project-technologies li {
+    background-color: #E9E2D9;
+    padding: 2px 8px;
+    border-radius: 3px;
+    border: 1px solid #D2B48C;
+}
+
 /* ---------------- Soft Skills & Interests ---------------- */
 .retro .soft-skills-list, .retro .interests-list {
     list-style: disc;
@@ -501,6 +538,11 @@
     }
 
     .retro .experience-technologies {
+        font-size: 0.8em;
+        gap: 5px;
+    }
+
+    .retro .project-technologies {
         font-size: 0.8em;
         gap: 5px;
     }

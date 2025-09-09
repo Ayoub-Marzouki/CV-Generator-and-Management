@@ -170,13 +170,22 @@
 }
 
 /* ------------------ experience ------------------ */
-.creative .experience-type, .creative .experience-title {
+.creative .experience-type, .creative .experience-title, .creative .project-title {
     text-align:center;
 }
 
-.creative .experience-technologies {
+.creative .experience-technologies, .creative .project-technologies {
     column-count: 2;
     padding:1%;
+}
+
+/* ------------------ projects ------------------ */
+.creative .project-section {
+    margin-bottom: 5%;
+}
+
+.creative .project-technologies {
+    margin: 2% 0;
 }
 
 /* ------------------ soft skills ------------------ */

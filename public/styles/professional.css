@@ -260,6 +260,37 @@
     border-radius: 3px;
 }
 
+/* ---------------- projects ---------------- */
+.professional .project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.professional .project-section {
+    margin-bottom: 1.5%;
+}
+
+.professional .project-title {
+    color: #444;
+    margin-bottom: 0.5%;
+}
+
+.professional .project-technologies {
+    list-style: none;
+    font-size: 14px;
+    color: #666;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.professional .project-technologies li {
+    background-color: #e9e9e9;
+    padding: 3px 8px;
+    border-radius: 3px;
+}
+
 /* ---------------- soft-skills ---------------- */
 .professional .soft-skills-list, .professional .interests-list {
     /* list-style: none; */
@@ -424,6 +455,11 @@
     }
 
     .professional .experience-technologies {
+        font-size: 12px;
+        gap: 5px;
+    }
+
+    .professional .project-technologies {
         font-size: 12px;
         gap: 5px;
     }

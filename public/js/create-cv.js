@@ -102,6 +102,64 @@ experienceList.addEventListener('click', (event) => {
     }
 });
 
+// PROJECTS SECTION
+const addProjectButton = document.getElementById('add-project-button');
+const projectList = document.getElementById('project-list');
+const projectTemplate = document.getElementById('project-template');
+const projectTechTemplate = document.getElementById('project-tech-template');
+const projectLinkTemplate = document.getElementById('project-link-template');
+
+addProjectButton.addEventListener('click', () => {
+    const projectIndex = projectList.getElementsByClassName('project-section').length;
+    const clone = projectTemplate.content.cloneNode(true);
+    const formElements = clone.querySelectorAll('input, select');
+
+    formElements.forEach(element => {
+        element.name = element.name.replace('[0]', `[${projectIndex}]`);
+    });
+    projectList.appendChild(clone);
+});
+
+projectList.addEventListener('click', (event) => {
+    if (event.target.classList.contains('add-tech-button')) {
+        const parentSection = event.target.closest('.project-section');
+        const techList = parentSection.querySelector('.project-technologies');
+
+        const titleInputName = parentSection.querySelector('input[name*="[title]"]').name;
+        const projectIndex = titleInputName.match(/\[(\d+)\]/)[1]; 
+
+        const techClone = projectTechTemplate.content.cloneNode(true);
+        const techInput = techClone.querySelector('input');
+
+        techInput.name = `projects[${projectIndex}][technologies][]`;
+        techList.appendChild(techClone);
+    }
+
+    if (event.target.classList.contains('add-link-button')) {
+        const parentSection = event.target.closest('.project-section');
+        const linksList = parentSection.querySelector('.links');
+
+        const titleInputName = parentSection.querySelector('input[name*="[title]"]').name;
+        const projectIndex = titleInputName.match(/\[(\d+)\]/)[1];
+
+        const linkClone = projectLinkTemplate.content.cloneNode(true);
+        const linkInput = linkClone.querySelector('input');
+
+        linkInput.name = `projects[${projectIndex}][links][]`;
+        linksList.appendChild(linkClone);
+    }
+
+    if (event.target.classList.contains('remove-project-button')) {
+        event.target.closest('.project-section').remove();
+    }
+    if (event.target.classList.contains('remove-tech-button')) {
+        event.target.closest('li').remove();
+    }
+    if (event.target.classList.contains('remove-link-button')) {
+        event.target.closest('div').remove();
+    }
+});
+
 // SOFT SKILLS SECTION
 const addSoftSkillButton = document.getElementById('add-soft-skill-button');
 const softSkillsList = document.getElementById('soft-skills-list');

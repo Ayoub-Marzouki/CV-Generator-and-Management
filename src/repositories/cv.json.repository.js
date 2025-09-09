@@ -10,6 +10,10 @@ export default async function selectAll() {
 export async function save(cv) {
     let cvs = await selectAll();
 
+    if (!cv.id) {
+        cv.id = `${Date.now()}-${Math.random().toString(36).slice(2,8)}`;
+    }
+
     cvs.push(cv); // Push the cv to the cv.json file
     await fs.writeFile(source, JSON.stringify(cvs)); // rewrite the file (including the newly added cv)
 }

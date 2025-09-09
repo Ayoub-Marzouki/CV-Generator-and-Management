@@ -142,13 +142,22 @@
 }
 
 /* ------------------ experience ------------------ */
-.minimalist .experience-type, .minimalist .experience-title {
+.minimalist .experience-type, .minimalist .experience-title, .minimalist .project-title {
     text-align:center;
 }
 
-.minimalist .experience-technologies {
+.minimalist .experience-technologies, .minimalist .project-technologies {
     column-count: 2;
     padding:1%;
+}
+
+/* ------------------ projects ------------------ */
+.minimalist .project-section {
+    margin-bottom: 5%;
+}
+
+.minimalist .project-technologies {
+    margin: 2% 0;
 }
 
 /* ------------------ soft skills ------------------ */
@@ -200,6 +209,10 @@
     }
 
     .minimalist .experience-technologies {
+        column-count: 1;
+    }
+
+    .minimalist .project-technologies {
         column-count: 1;
     }
 
