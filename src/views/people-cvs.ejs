@@ -140,74 +140,140 @@
 	</section>
 
 	<main>
-		<!-- EDUCATION -->
-		<section class="education">
-		<h2>Education</h2>
-		<div class="education-list">
-			<% cv.education.forEach(edu => { %>
-			<div class="education-section">
-				<h3 class="education-diploma"><%= edu.diploma %></h3>
-				<p class="education-organization"><%= edu.organisation %></p>
-				<div class="flex year-location">
-				<p class="education-year"><%= edu.year %></p>
-				<p class="education-location"><%= edu.location || '' %></p>
+		<div class="left-column">
+			<!-- TECHNOLOGIES -->
+			<section class="technologies">
+			<h2>Skills & Technologies</h2>
+			<div class="technologies-list">
+				<% cv.technologySkills.forEach(skill => { %>
+				<div class="technologies-section">
+					<p class="skill"><%= skill.skill %></p>
+					<% if (skill.details && skill.details.length) { %>
+					<ul class="details">
+						<% skill.details.forEach(d => { %>
+						<li><%= d %></li>
+						<% }) %>
+					</ul>
+					<% } %>
 				</div>
+				<% }) %>
 			</div>
-			<% }) %>
-		</div>
-		</section>
+			</section>
 
-		<!-- TECHNOLOGIES -->
-		<section class="technologies">
-		<h2>Skills & Technologies</h2>
-		<div class="technologies-list">
-			<% cv.technologySkills.forEach(skill => { %>
-			<div class="technologies-section">
-				<p class="skill"><%= skill.skill %></p>
-				<% if (skill.details && skill.details.length) { %>
-				<ul class="details">
-					<% skill.details.forEach(d => { %>
-					<li><%= d %></li>
-					<% }) %>
+			<!-- SOFT SKILLS -->
+			<% if (cv.softSkills && cv.softSkills.length) { %>
+			<section class="soft-skills">
+				<h2>Soft Skills</h2>
+				<ul class="soft-skills-list">
+				<% cv.softSkills.forEach(s => { %>
+					<li><%= s %></li>
+				<% }) %>
 				</ul>
-				<% } %>
-			</div>
-			<% }) %>
-		</div>
-		</section>
+			</section>
+			<% } %>
 
-		<!-- EXPERIENCES -->
-		<section class="experience">
-		<h2>Experience</h2>
-		<div class="experience-list">
-			<% cv.experiences.forEach(exp => { %>
-			<div class="experience-section">
-				<h3 class="experience-type"><%= exp.type %></h3>
-				<h3 class="experience-title"><%= exp.title %></h3>
-				<p class="experience-organization"><%= exp.organisation %></p>
-				<div class="year-duration">
-				<p class="year"><%= exp.year %></p>
-				<p class="duration"><%= exp.duration %> month(s)</p>
+			<!-- LANGUAGES -->
+			<% if (cv.languages && cv.languages.length) { %>
+			<section class="languages">
+				<h2>Languages</h2>
+				<div class="languages-list">
+				<% cv.languages.forEach(lang => { %>
+					<div class="language-section">
+					<div class="flex">
+						<p class="language-name"><%= lang.language %></p>
+						<p class="language-level"><%= lang.level %></p>
+					</div>
+					<% if (lang.certification) { %>
+						<p>Certificate: <%= lang.certification %></p>
+					<% } %>
+					<% if (lang.experience) { %>
+						<p>Experience: <%= lang.experience %></p>
+					<% } %>
+					<hr class="language-section-hr" />
+					</div>
+				<% }) %>
 				</div>
-				<% if (exp.technologies && exp.technologies.length) { %>
-				<ul class="experience-technologies">
-					<% exp.technologies.forEach(t => { %>
-					<li><%= t %></li>
-					<% }) %>
-				</ul>
-				<% } %>
-			</div>
-			<% }) %>
-		</div>
-		</section>
+			</section>
+			<% } %>
 
-		<% if (cv.projects && cv.projects.length > 0) { %>
-			<section class="projects">
-				<h2>Projects</h2>
-				<div class="project-list">
-					<% cv.projects.forEach(project => { %>
+			<!-- EDUCATION -->
+			<section class="education">
+			<h2>Education</h2>
+			<div class="education-list">
+				<% cv.education.forEach(edu => { %>
+				<div class="education-section">
+					<h3 class="education-diploma"><%= edu.diploma %></h3>
+					<p class="education-organization"><%= edu.organisation %></p>
+					<div class="flex year-location">
+					<p class="education-year"><%= edu.year %></p>
+					<p class="education-location"><%= edu.location || '' %></p>
+					</div>
+				</div>
+				<% }) %>
+			</div>
+			</section>
+
+			<!-- INTERESTS -->
+			<% if (cv.interests && cv.interests.length) { %>
+			<section class="interests">
+				<h2>Interests</h2>
+				<ul class="interests-list">
+				<% cv.interests.forEach(i => { %>
+					<li><%= i %></li>
+				<% }) %>
+				</ul>
+			</section>
+			<% } %>
+		</div>
+
+		<div class="right-column">
+			<!-- EXPERIENCES -->
+			<section class="experience">
+			<h2>Experience</h2>
+			<div class="experience-list">
+				<% cv.experiences.forEach(exp => { %>
+				<div class="experience-section">
+					<h3 class="experience-type"><%= exp.type %></h3>
+					<h3 class="experience-title"><%= exp.title %></h3>
+					<p class="experience-organization"><%= exp.organisation %></p>
+					<div class="year-duration">
+					<p class="year"><%= exp.year %></p>
+					<p class="duration"><%= exp.duration %> <%= exp.duration == 1 ? 'month' : 'months' %></p>
+					</div>
+					<% if (exp.description) { %>
+					<div class="experience-description">
+						<p><%= exp.description %></p>
+					</div>
+					<% } %>
+					<% if (exp.technologies && exp.technologies.length) { %>
+					<ul class="experience-technologies">
+						<% exp.technologies.forEach(t => { %>
+						<li><%= t %></li>
+						<% }) %>
+					</ul>
+					<% } %>
+				</div>
+				<% }) %>
+			</div>
+			</section>
+
+			<% if (cv.projects && cv.projects.length > 0) { %>
+				<section class="projects">
+					<h2>Projects</h2>
+					<div class="project-list">
+						<% cv.projects.forEach(project => { %>
 					<div class="project-section">
 						<h3 class="project-title"><%= project.title %></h3>
+						<% if (project.duration) { %>
+						<div class="project-duration">
+							<p class="duration"><%= project.duration %> <%= project.duration == 1 ? 'month' : 'months' %></p>
+						</div>
+						<% } %>
+						<% if (project.description) { %>
+						<div class="project-description">
+							<p><%= project.description %></p>
+						</div>
+						<% } %>
 						<% if (project.technologies && project.technologies.length) { %>
 						<ul class="project-technologies">
 							<% project.technologies.forEach(t => { %>
@@ -228,58 +294,12 @@
 							</div>
 						<% } %>
 					</div>
-					<% }) %>
-				</div>
-				</section>
-			<% } %>
-
-		<!-- SOFT SKILLS -->
-		<% if (cv.softSkills && cv.softSkills.length) { %>
-		<section class="soft-skills">
-			<h2>Soft Skills</h2>
-			<ul class="soft-skills-list">
-			<% cv.softSkills.forEach(s => { %>
-				<li><%= s %></li>
-			<% }) %>
-			</ul>
-		</section>
-		<% } %>
-
-		<!-- LANGUAGES -->
-		<% if (cv.languages && cv.languages.length) { %>
-		<section class="languages">
-			<h2>Languages</h2>
-			<div class="languages-list">
-			<% cv.languages.forEach(lang => { %>
-				<div class="language-section">
-				<div class="flex">
-					<p class="language-name"><%= lang.language %></p>
-					<p class="language-level"><%= lang.level %></p>
-				</div>
-				<% if (lang.certification) { %>
-					<p>Certificate: <%= lang.certification %></p>
+						<% }) %>
+					</div>
+					</section>
 				<% } %>
-				<% if (lang.experience) { %>
-					<p>Experience: <%= lang.experience %></p>
-				<% } %>
-				<hr class="language-section-hr" />
-				</div>
-			<% }) %>
-			</div>
-		</section>
-		<% } %>
 
-		<!-- INTERESTS -->
-		<% if (cv.interests && cv.interests.length) { %>
-		<section class="interests">
-			<h2>Interests</h2>
-			<ul class="interests-list">
-			<% cv.interests.forEach(i => { %>
-				<li><%= i %></li>
-			<% }) %>
-			</ul>
-		</section>
-		<% } %>
+		</div>
 	</main>
 	</section>
 	<hr>

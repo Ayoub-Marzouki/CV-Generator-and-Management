@@ -36,11 +36,38 @@ export async function handlePeopleCVs(req, res) {
 }
 
 
-// catch the chosen template - /createcv?template=...
+// catch the chosen template - /createcv?template=... or /createcv?edit=...
 export async function chosenLayout(req, res) {
     try {
         const chosenLayout = req.query.template || "creative";
-        let context = {chosenLayout, layout:false, };
+        const editId = req.query.edit;
+        
+        let context = {chosenLayout, layout:false, isEdit: false, cvData: null};
+        
+        // If edit mode, fetch the CV data
+        if (editId) {
+            let cvData;
+            try {
+                // First try by ID
+                cvData = await getCvById(editId);
+                // If not found by ID, try by lastName (for existing CVs without IDs)
+                if (!cvData) {
+                    cvData = await getCvByLastName(editId);
+                }
+            } catch (error) {
+                console.log("Error fetching CV:", error);
+            }
+            
+            if (cvData) {
+                context.isEdit = true;
+                context.cvData = cvData;
+                context.chosenLayout = cvData.chosenLayout || chosenLayout;
+                console.log("CV Data found:", cvData); // Debug log
+            } else {
+                console.log("No CV found for editId:", editId); // Debug log
+            }
+        }
+        
         res.render("create-cv", context);
     } catch (error) {
         console.log("Error : ", error);
@@ -48,16 +75,26 @@ export async function chosenLayout(req, res) {
 }
 
 
-// POST /create-cv?template=...
+// POST /create-cv?template=... or /create-cv?edit=...
 export async function handleCreateCV(req, res) {
     try {
         const cv = req.body; // cv's data, but doesn't include the photo
+        const editId = req.query.edit;
+        
         if (req.file) { // photo is in req.file instead of req.body, thus needs special treatment
             cv.profile.photo = `/uploads/${req.file.filename}`;
         }
         
-        await saveCV(cv);
-        res.redirect("/people-cvs");
+        if (editId) {
+            // Update existing CV
+            cv.id = editId; // Ensure the ID is preserved
+            await saveCV(cv, true); // Pass true to indicate update
+            res.redirect(`/preview?id=${editId}&updated=true`);
+        } else {
+            // Create new CV
+            await saveCV(cv);
+            res.redirect("/people-cvs");
+        }
     } catch (error) {
         console.log(error);
     }
@@ -76,7 +113,7 @@ export async function chosenCV(req, res) {
         if (!cv) {
             return res.status(404).send("CV not found");
         }
-        res.render("preview", {cv, layout:false});
+        res.render("preview", {cv, layout:false, req});
     } catch (error) {
         console.log(error);
     }

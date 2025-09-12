@@ -4,6 +4,7 @@
     color:whitesmoke;
     font-family:'Ubuntu';
     font-weight: 400;
+    font-size: 16px;
 }
 
 .creative h2 {
@@ -13,7 +14,7 @@
     text-decoration-thickness: 3px;
     text-underline-offset: 7px;
     margin-bottom:2%;
-    font-size:26px;
+    font-size:28px;
     text-align:center;
 }
 
@@ -44,15 +45,63 @@
     margin:auto;
 }
 
-/* Vertically divide main on 2 parts*/
+/* Journal-style two-column layout with independent columns */
 .creative main {
     background-color:whitesmoke;
     color:#1c222a;
-    column-count: 2;
-    column-gap:5%;
-    /* max-height:700px; */
-    /* column-fill: auto; */
-    padding:1%;
+    display: flex;
+    gap: 5%;
+    padding: 1%;
+    max-width: 100%;
+    position: relative;
+}
+
+/* Add vertical divider line */
+.creative main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: #bdc3c7;
+    z-index: 1;
+}
+
+/* Left column container */
+.creative .left-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Right column container */
+.creative .right-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Left column sections - flow naturally */
+.creative .technologies,
+.creative .soft-skills,
+.creative .languages,
+.creative .interests {
+    width: 100%;
+}
+
+/* Right column sections - flow naturally */
+.creative .experience,
+.creative .projects,
+.creative .education {
+    width: 100%;
+}
+
+/* Ensure sections don't break across pages */
+.creative main section {
+    break-inside: avoid;
+    page-break-inside: avoid;
 }
 
 .creative main section:not(:first-child) {
@@ -140,10 +189,10 @@
     margin-bottom:5%;
 }
 .creative .education-diploma {
-    font-size:25px;
+    font-size:27px;
 }
 .creative .education-organization, .creative .experience-organization {
-    font-size:18px;
+    font-size:20px;
 }
 
 /* ------------------ technologies & additional technologies ------------------ */
@@ -174,6 +223,17 @@
     text-align:center;
 }
 
+.creative .experience-description {
+    margin: 1% 0;
+}
+
+.creative .experience-description p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #444;
+    margin: 0;
+}
+
 .creative .experience-technologies, .creative .project-technologies {
     column-count: 2;
     padding:1%;
@@ -182,6 +242,31 @@
 /* ------------------ projects ------------------ */
 .creative .project-section {
     margin-bottom: 5%;
+}
+
+.creative .project-title {
+    text-align: center;
+}
+
+.creative .project-duration {
+    margin: 1% 0;
+}
+
+.creative .project-duration .duration {
+    font-size: 0.9rem;
+    color: #449399;
+    margin: 0;
+}
+
+.creative .project-description {
+    margin: 1% 0;
+}
+
+.creative .project-description p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #444;
+    margin: 0;
 }
 
 .creative .project-technologies {
@@ -212,7 +297,17 @@
         font-size:small;
     }
     .creative main {
-        column-count: 1; /* Single column layout for main content */
+        flex-direction: column; /* Stack columns vertically on mobile */
+        gap: 2%;
+    }
+    
+    .creative main::before {
+        display: none; /* Hide divider line on mobile */
+    }
+    
+    .creative .left-column,
+    .creative .right-column {
+        flex: none; /* Remove flex constraints on mobile */
     }
 
     .creative .profile .profile-info {

@@ -16,40 +16,43 @@
 </head>
 
 <body>
-    <form id="cvForm" action="/create-cv" method="post" class="<%= chosenLayout %>" enctype="multipart/form-data">
+    <form id="cvForm" action="/create-cv<%= isEdit ? '?edit=' + (cvData.id || cvData.profile.lastName) : '' %>" method="post" class="<%= chosenLayout %>" enctype="multipart/form-data">
         <input type="hidden" name="chosenLayout" value="<%= chosenLayout %>">
+        <% if (isEdit) { %>
+        <input type="hidden" name="id" value="<%= cvData.id || cvData.profile.lastName %>">
+        <% } %>
             <header class="profile">
             <div class="profile-info">
                 <div class="flex">
                 <h1 class="name">
                     <span class="last-name">
-                    <input type="text" name="profile[lastName]" placeholder="Last Name" required>
+                    <input type="text" name="profile[lastName]" placeholder="Last Name" value="<%= isEdit && cvData.profile.lastName ? cvData.profile.lastName : '' %>" required>
                     </span>
                     <span class="first-name">
-                    <input type="text" name="profile[firstName]" placeholder="First Name" required>
+                    <input type="text" name="profile[firstName]" placeholder="First Name" value="<%= isEdit && cvData.profile.firstName ? cvData.profile.firstName : '' %>" required>
                     </span>
                 </h1>
                 <p class="birth">
                     <span class="day">
-                    <input type="number" name="profile[birthday][day]" placeholder="25" min="1" max="31" required>
+                    <input type="number" name="profile[birthday][day]" placeholder="25" min="1" max="31" value="<%= isEdit && cvData.profile.birthday.day ? cvData.profile.birthday.day : '' %>" required>
                     </span>
                     /
                     <span class="month">
-                    <input type="number" name="profile[birthday][month]" placeholder="07" min="1" max="12" required>
+                    <input type="number" name="profile[birthday][month]" placeholder="07" min="1" max="12" value="<%= isEdit && cvData.profile.birthday.month ? cvData.profile.birthday.month : '' %>" required>
                     </span>
                     /
                     <span class="year">
-                    <input type="number" name="profile[birthday][year]" placeholder="2000" min="1900" max="2100" required>
+                    <input type="number" name="profile[birthday][year]" placeholder="2000" min="1900" max="2100" value="<%= isEdit && cvData.profile.birthday.year ? cvData.profile.birthday.year : '' %>" required>
                     </span>
                 </p>
                 </div>
         
                 <h2 class="job-title">
-                <input type="text" name="profile[jobTitle]" placeholder="Job Title" required>
+                <input type="text" name="profile[jobTitle]" placeholder="Job Title" value="<%= isEdit && cvData.profile.jobTitle ? cvData.profile.jobTitle : '' %>" required>
                 </h2>
         
                 <p class="professional-summary">
-                <textarea name="profile[professionalSummary]" cols="100" rows="10" placeholder="Persistent and persevering…" required></textarea>
+                <textarea name="profile[professionalSummary]" cols="100" rows="10" placeholder="Persistent and persevering…" required><%= isEdit && cvData.profile.professionalSummary ? cvData.profile.professionalSummary : '' %></textarea>
                 </p>
             </div>
         
@@ -62,17 +65,17 @@
             <div class="personal-contact">
                 <img class="icons" src="images/icons/envelope.png" alt="Email Icon">
                 <span>
-                <input type="email" name="profile[email]" placeholder="email@email.com" required>
+                <input type="email" name="profile[email]" placeholder="email@email.com" value="<%= isEdit && cvData.profile.email ? cvData.profile.email : '' %>" required>
                 </span>
                 <br>
                 <img class="icons" src="images/icons/location.png" alt="Address Icon">
                 <span class="address-text">
-                <input type="text" name="profile[address]" placeholder="Address" required>
+                <input type="text" name="profile[address]" placeholder="Address" value="<%= isEdit && cvData.profile.address ? cvData.profile.address : '' %>" required>
                 </span>
                 <br>
                 <img class="icons" src="images/icons/phone.png" alt="Phone Icon">
                 <span class="phone-text">
-                <input type="tel" name="profile[phone]" placeholder="00 11 22 33 44" required>
+                <input type="tel" name="profile[phone]" placeholder="00 11 22 33 44" value="<%= isEdit && cvData.profile.phone ? cvData.profile.phone : '' %>" required>
                 </span>
                 <br>
             </div>
@@ -80,24 +83,237 @@
             <div class="links">
                 <img class="icons" src="/images/icons/github.png" alt="GitHub Icon">
                 <span class="link-text">
-                <input type="url" name="profile[links][]" placeholder=" https://www.github.com/in/username">
+                <input type="url" name="profile[links][]" placeholder=" https://www.github.com/in/username" value="<%= isEdit && cvData.profile.links ? cvData.profile.links.find(link => link.toLowerCase().includes('github.com')) || '' : '' %>">
                 </span>
                 <br>
                 <img class="icons" src="/images/icons/linkedin.png" alt="LinkedIn Icon">
                 <span class="link-text">
-                <input type="url" name="profile[links][]" placeholder="https://www.linkedin.com/in/username">
+                <input type="url" name="profile[links][]" placeholder="https://www.linkedin.com/in/username" value="<%= isEdit && cvData.profile.links ? cvData.profile.links.find(link => link.toLowerCase().includes('linkedin.com')) || '' : '' %>">
                 </span>
                 <br>
             </div>
         </section>
         
             <main>
-                <section class="education">
-                    <h2>EDUCATION</h2>
-                    <div id="education-list">
+                <div class="left-column">
+                    <section class="technologies">
+                        <h2>SKILLS AND TECHNOLOGIES</h2>
+                        <div id="technologies-list">
+                            <% if (isEdit && cvData.technologySkills && cvData.technologySkills.length > 0) { %>
+                                <% cvData.technologySkills.forEach((skill, skillIndex) => { %>
+                                <div class="technologies-section">
+                                    <p class="skill">
+                                        <input type="text" name="technologySkills[<%= skillIndex %>][skill]" placeholder="Web Development" value="<%= skill.skill %>" required>
+                                    </p>
+                                    <ul class="details">
+                                        <% if (skill.details && skill.details.length > 0) { %>
+                                            <% skill.details.forEach((detail, detailIndex) => { %>
+                                            <li>
+                                                <input type="text" name="technologySkills[<%= skillIndex %>][details][]" placeholder="HTML, CSS, JavaScript" value="<%= detail %>">
+                                                <button type="button" class="remove-detail-button remove-button">-</button>
+                                            </li>
+                                            <% }) %>
+                                        <% } else { %>
+                                            <li>
+                                                <input type="text" name="technologySkills[<%= skillIndex %>][details][]" placeholder="HTML, CSS, JavaScript">
+                                                <button type="button" class="remove-detail-button remove-button">-</button>
+                                            </li>
+                                        <% } %>
+                                    </ul>
+                                    <button type="button" class="add-detail-button">Add Detail</button>
+                                    <% if (skillIndex > 0) { %>
+                                    <button type="button" class="remove-skill-button remove-button">Remove Skill</button>
+                                    <% } %>
+                                </div>
+                                <% }) %>
+                            <% } else { %>
+                            <div class="technologies-section">
+                                <p class="skill">
+                                    <input type="text" name="technologySkills[0][skill]" placeholder="Web Development" required>
+                                </p>
+                                <ul class="details">
+                                    <li>
+                                        <input type="text" name="technologySkills[0][details][]" placeholder="HTML, CSS, JavaScript">
+                                        <button type="button" class="remove-detail-button remove-button">-</button>
+                                    </li>
+                                </ul>
+                                <button type="button" class="add-detail-button">Add Detail</button>
+                            </div>
+                            <% } %>
+                        </div>
+                    
+                        <button type="button" id="add-skill-button">Add Skill</button>
+                    </section>
+                    
+                    <template id="skill-template">
+                        <div class="technologies-section">
+                            <p class="skill">
+                                <input type="text" name="technologySkills[0][skill]" placeholder="Cloud Computing" required>
+                            </p>
+                            <ul class="details">
+                                <li>
+                                    <input type="text" name="technologySkills[0][details][]" placeholder="AWS, Docker, Kubernetes">
+                                    <button type="button" class="remove-detail-button remove-button">-</button>
+                                </li>
+                            </ul>
+                            <button type="button" class="add-detail-button">Add Detail</button>
+                            <button type="button" class="remove-skill-button remove-button">Remove Skill</button>
+                        </div>
+                    </template>
+                    
+                    <template id="detail-template">
+                        <li>
+                            <input type="text" name="" placeholder="Another detail...">
+                            <button type="button" class="remove-detail-button remove">-</button>
+                        </li>
+                    </template>
+
+                    <section class="soft-skills">
+                        <h2>Soft Skills</h2>
+                        <ul class="soft-skills-list" id="soft-skills-list">
+                            <% if (isEdit && cvData.softSkills && cvData.softSkills.length > 0) { %>
+                                <% cvData.softSkills.forEach((skill, index) => { %>
+                                <li>
+                                    <input type="text" name="softSkills[<%= index %>]" placeholder="Resilience" value="<%= skill %>" required>
+                                    <% if (index > 0) { %>
+                                    <button type="button" class="remove-section-button remove-button">Remove</button>
+                                    <% } %>
+                                </li>
+                                <% }) %>
+                            <% } else { %>
+                            <li>
+                                <input type="text" name="softSkills[0]" placeholder="Resilience" required>
+                            </li>
+                            <% } %>
+                        </ul>
+                        <button class="add-button" type="button" id="add-soft-skill-button">Add Skill</button>
+                    </section>
+                    
+                    <template id="soft-skill-template">
+                        <li>
+                            <input type="text" name="softSkills[0]" placeholder="Teamwork" required>
+                            <button type="button" class="remove-section-button remove-button">Remove</button>
+                        </li>
+                    </template>
+
+                    <section class="languages">
+                        <h2>Languages</h2>
+                        <div class="languages-list" id="languages-list">
+                            <% if (isEdit && cvData.languages && cvData.languages.length > 0) { %>
+                                <% cvData.languages.forEach((lang, index) => { %>
+                                <div class="language-section">
+                                    <div class="flex">
+                                        <p class="language-name">
+                                            <input type="text" name="languages[<%= index %>][language]" placeholder="English" value="<%= lang.language %>" required>
+                                        </p>
+                                        <p class="language-level">
+                                            <input type="text" name="languages[<%= index %>][level]" placeholder="C1" value="<%= lang.level || '' %>">
+                                        </p>
+                                        <p class="language-certificate">
+                                            <input type="text" name="languages[<%= index %>][certification]" placeholder="TOEFL" value="<%= lang.certification || '' %>">
+                                        </p>
+                                        <p class="language-experience">
+                                            <input type="text" name="languages[<%= index %>][experience]" placeholder="5 years" value="<%= lang.experience || '' %>">
+                                        </p>
+                                    </div>
+                                    <% if (index > 0) { %>
+                                    <button type="button" class="remove-section-button remove-button">Remove</button>
+                                    <% } %>
+                                </div>
+                                <% }) %>
+                            <% } else { %>
+                            <div class="language-section">
+                                <div class="flex">
+                                    <p class="language-name">
+                                        <input type="text" name="languages[0][language]" placeholder="English" required>
+                                    </p>
+                                    <p class="language-level">
+                                        <input type="text" name="languages[0][level]" placeholder="C1">
+                                    </p>
+                                    <p class="language-certificate">
+                                        <input type="text" name="languages[0][certification]" placeholder="TOEFL">
+                                    </p>
+                                    <p class="language-experience">
+                                        <input type="text" name="languages[0][experience]" placeholder="5 years">
+                                    </p>
+                                </div>
+                            </div>
+                            <% } %>
+                        </div>
+                        <button class="add-button" type="button" id="add-language-button">Add Language</button>
+                    </section>
+                    
+                    <template id="language-template">
+                        <div class="language-section">
+                            <div class="flex">
+                                <p class="language-name">
+                                    <input type="text" name="languages[0][language]" placeholder="French" required>
+                                </p>
+                                <p class="language-level">
+                                    <input type="text" name="languages[0][level]" placeholder="B2">
+                                </p>
+                                <p class="language-certificate">
+                                    <input type="text" name="languages[0][certification]" placeholder="DELF B2">
+                                </p>
+                                <p class="language-experience">
+                                    <input type="text" name="languages[0][experience]" placeholder="3 years">
+                                </p>
+                            </div>
+                            <button type="button" class="remove-section-button remove-button">Remove</button>
+                        </div>
+                    </template>
+
+                    <section class="education">
+                        <h2>EDUCATION</h2>
+                        <div id="education-list">
+                            <% if (isEdit && cvData.education && cvData.education.length > 0) { %>
+                                <% cvData.education.forEach((edu, index) => { %>
+                                <div class="education-section">
+                                    <h3 class="education-diploma">
+                                        <input type="text" name="education[<%= index %>][diploma]" placeholder="Diploma's name" value="<%= edu.diploma %>" required>
+                                    </h3>
+                                    <p class="education-organization">
+                                        <input type="text" name="education[<%= index %>][organisation]" placeholder="Organization" value="<%= edu.organisation %>" required>
+                                    </p>
+                                    <div class="flex year-location">
+                                        <p class="education-year">
+                                            <input type="text" name="education[<%= index %>][year]" placeholder="2026" value="<%= edu.year %>" required>
+                                        </p>
+                                        <p class="education-location">
+                                            <input type="text" name="education[<%= index %>][location]" placeholder="Morocco" value="<%= edu.location || '' %>" required>
+                                        </p>
+                                    </div>
+                                    <% if (index > 0) { %>
+                                    <button type="button" class="remove-section-button remove-button">Remove</button>
+                                    <% } %>
+                                </div>
+                                <% }) %>
+                            <% } else { %>
+                            <div class="education-section">
+                                <h3 class="education-diploma">
+                                    <input type="text" name="education[0][diploma]" placeholder="Diploma's name" required>
+                                </h3>
+                                <p class="education-organization">
+                                    <input type="text" name="education[0][organisation]" placeholder="Organization" required>
+                                </p>
+                                <div class="flex year-location">
+                                    <p class="education-year">
+                                        <input type="number" name="education[0][year]" placeholder="2026" min="1900" max="2100" required>
+                                    </p>
+                                    <p class="education-location">
+                                        <input type="text" name="education[0][location]" placeholder="Morocco" required>
+                                    </p>
+                                </div>
+                            </div>
+                            <% } %>
+                        </div>
+                        <button class="add-button" type="button" id="add-education-button">Add section</button>
+                    </section>
+                      
+                    <template id="education-template">
                         <div class="education-section">
-                            <h3 class="education-diploma">
-                                <input type="text" name="education[0][diploma]" placeholder="Diploma’s name" required>
+                                <h3 class="education-diploma">
+                                <input type="text" name="education[0][diploma]" placeholder="Diploma's name" required>
                             </h3>
                             <p class="education-organization">
                                 <input type="text" name="education[0][organisation]" placeholder="Organization" required>
@@ -110,77 +326,91 @@
                                     <input type="text" name="education[0][location]" placeholder="Morocco" required>
                                 </p>
                             </div>
+                            <button type="button" class="remove-section-button remove-button">Remove</button>
                         </div>
-                    </div>
-                    <button class="add-button" type="button" id="add-education-button">Add section</button>
-                </section>
-                  
-                <template id="education-template">
-                    <div class="education-section">
-                            <h3 class="education-diploma">
-                            <input type="text" name="education[0][diploma]" placeholder="Diploma’s name" required>
-                        </h3>
-                        <p class="education-organization">
-                            <input type="text" name="education[0][organisation]" placeholder="Organization" required>
-                        </p>
-                        <div class="flex year-location">
-                            <p class="education-year">
-                                <input type="number" name="education[0][year]" placeholder="2026" min="1900" max="2100" required>
-                            </p>
-                            <p class="education-location">
-                                <input type="text" name="education[0][location]" placeholder="Morocco" required>
-                            </p>
-                        </div>
-                        <button type="button" class="remove-section-button remove-button">Remove</button>
-                    </div>
-                </template>
-        
-                <section class="technologies">
-                    <h2>SKILLS AND TECHNOLOGIES</h2>
-                    <div id="technologies-list">
-                        <div class="technologies-section">
-                            <p class="skill">
-                                <input type="text" name="technologySkills[0][skill]" placeholder="Web Development" required>
-                            </p>
-                            <ul class="details">
+                    </template>
+
+                    <section class="interests">
+                        <h2>Interests</h2>
+                        <ul class="interests-list" id="interests-list">
+                            <% if (isEdit && cvData.interests && cvData.interests.length > 0) { %>
+                                <% cvData.interests.forEach((interest, index) => { %>
                                 <li>
-                                    <input type="text" name="technologySkills[0][details][]" placeholder="HTML, CSS, JavaScript">
-                                    <button type="button" class="remove-detail-button remove-button">-</button>
+                                    <input type="text" name="interests[<%= index %>]" placeholder="Human behavior" value="<%= interest %>" required>
+                                    <% if (index > 0) { %>
+                                    <button type="button" class="remove-section-button remove-button">Remove</button>
+                                    <% } %>
                                 </li>
-                            </ul>
-                            <button type="button" class="add-detail-button">Add Detail</button>
-                        </div>
-                    </div>
-                
-                    <button type="button" id="add-skill-button">Add Skill</button>
-                </section>
-                
-                <template id="skill-template">
-                    <div class="technologies-section">
-                        <p class="skill">
-                            <input type="text" name="technologySkills[0][skill]" placeholder="Cloud Computing" required>
-                        </p>
-                        <ul class="details">
+                                <% }) %>
+                            <% } else { %>
                             <li>
-                                <input type="text" name="technologySkills[0][details][]" placeholder="AWS, Docker, Kubernetes">
-                                <button type="button" class="remove-detail-button remove-button">-</button>
+                                <input type="text" name="interests[0]" placeholder="Human behavior" required>
                             </li>
+                            <% } %>
                         </ul>
-                        <button type="button" class="add-detail-button">Add Detail</button>
-                        <button type="button" class="remove-skill-button remove-button">Remove Skill</button>
-                    </div>
-                </template>
-                
-                <template id="detail-template">
-                    <li>
-                        <input type="text" name="" placeholder="Another detail...">
-                        <button type="button" class="remove-detail-button remove">-</button>
-                    </li>
-                </template>
-        
-                <section class="experience">
+                        <button class="add-button" type="button" id="add-interest-button">Add Interest</button>
+                    </section>
+                    
+                    <template id="interest-template">
+                        <li>
+                            <input type="text" name="interests[0]" placeholder="Artificial Intelligence" required>
+                            <button type="button" class="remove-section-button remove-button">Remove</button>
+                        </li>
+                    </template>
+                </div>
+
+                <div class="right-column">
+                    <section class="experience">
                     <h2>Experience</h2>
                     <div class="experience-list" id="experience-list">
+                        <% if (isEdit && cvData.experiences && cvData.experiences.length > 0) { %>
+                            <% cvData.experiences.forEach((exp, index) => { %>
+                            <div class="experience-section">
+                                <h3 class="experience-type">
+                                    <select name="experiences[<%= index %>][type]" required>
+                                        <option value="Internship" <%= exp.type === 'Internship' ? 'selected' : '' %>>Internship</option>
+                                        <option value="Work" <%= exp.type === 'Work' ? 'selected' : '' %>>Work</option>
+                                    </select>
+                                </h3>
+                                <h3 class="experience-title">
+                                    <input type="text" name="experiences[<%= index %>][title]" placeholder="Title" value="<%= exp.title %>" required>
+                                </h3>
+                                <p class="experience-organization">
+                                    <input type="text" name="experiences[<%= index %>][organisation]" placeholder="Organization's name" value="<%= exp.organisation %>" required>
+                                </p>
+                                <div class="year-duration">
+                                    <p class="year">
+                                        <input type="number" name="experiences[<%= index %>][year]" placeholder="2020" min="1900" max="2100" value="<%= exp.year %>" required>
+                                    </p>
+                                    <p class="duration">
+                                        <input type="number" name="experiences[<%= index %>][duration]" placeholder="3" min="0" value="<%= exp.duration %>" required> <span class="month-text">month</span>
+                                    </p>
+                                </div>
+                                <div class="experience-description">
+                                    <textarea name="experiences[<%= index %>][description]" placeholder="Describe your role, responsibilities, and achievements..." rows="3"><%= exp.description || '' %></textarea>
+                                </div>
+                                <ul class="experience-technologies">
+                                    <% if (exp.technologies && exp.technologies.length > 0) { %>
+                                        <% exp.technologies.forEach((tech, techIndex) => { %>
+                                        <li>
+                                            <input type="text" name="experiences[<%= index %>][technologies][]" placeholder="Java" value="<%= tech %>">
+                                            <button type="button" class="remove-tech-button">-</button>
+                                        </li>
+                                        <% }) %>
+                                    <% } else { %>
+                                        <li>
+                                            <input type="text" name="experiences[<%= index %>][technologies][]" placeholder="Java">
+                                            <button type="button" class="remove-tech-button">-</button>
+                                        </li>
+                                    <% } %>
+                                </ul>
+                                <button type="button" class="add-tech-button">Add Technology</button>
+                                <% if (index > 0) { %>
+                                <button type="button" class="remove-experience-button">Remove Experience</button>
+                                <% } %>
+                            </div>
+                            <% }) %>
+                        <% } else { %>
                         <div class="experience-section">
                             <h3 class="experience-type">
                                 <select name="experiences[0][type]" required>
@@ -192,15 +422,18 @@
                                 <input type="text" name="experiences[0][title]" placeholder="Title" required>
                             </h3>
                             <p class="experience-organization">
-                                <input type="text" name="experiences[0][organisation]" placeholder="Organization’s name" required>
+                                <input type="text" name="experiences[0][organisation]" placeholder="Organization's name" required>
                             </p>
                             <div class="year-duration">
                                 <p class="year">
                                     <input type="number" name="experiences[0][year]" placeholder="2020" min="1900" max="2100" required>
                                 </p>
                                 <p class="duration">
-                                    <input type="number" name="experiences[0][duration]" placeholder="3" min="0" required> month(s)
+                                    <input type="number" name="experiences[0][duration]" placeholder="3" min="0" required> <span class="month-text">month</span>
                                 </p>
+                            </div>
+                            <div class="experience-description">
+                                <textarea name="experiences[0][description]" placeholder="Describe your role, responsibilities, and achievements..." rows="3"></textarea>
                             </div>
                             <ul class="experience-technologies">
                                 <li>
@@ -210,6 +443,7 @@
                             </ul>
                             <button type="button" class="add-tech-button">Add Technology</button>
                         </div>
+                        <% } %>
                     </div>
                 
                     <button type="button" id="add-experience-button">Add Experience</button>
@@ -234,8 +468,11 @@
                                 <input type="number" name="experiences[0][year]" placeholder="2020" min="1900" max="2100" required>
                             </p>
                             <p class="duration">
-                                <input type="number" name="experiences[0][duration]" placeholder="3" min="0" required> month(s)
+                                <input type="number" name="experiences[0][duration]" placeholder="3" min="0" required> <span class="month-text">month</span>
                             </p>
+                        </div>
+                        <div class="experience-description">
+                            <textarea name="experiences[0][description]" placeholder="Describe your role, responsibilities, and achievements..." rows="3"></textarea>
                         </div>
                         <ul class="experience-technologies">
                             <li>
@@ -258,10 +495,70 @@
                 <section class="projects">
                     <h2>Projects</h2>
                     <div class="project-list" id="project-list">
+                        <% if (isEdit && cvData.projects && cvData.projects.length > 0) { %>
+                            <% cvData.projects.forEach((project, index) => { %>
+                            <div class="project-section">
+                                <h3 class="project-title">
+                                    <input type="text" name="projects[<%= index %>][title]" placeholder="Title" value="<%= project.title %>" required>
+                                </h3>
+                                <div class="project-duration">
+                                    <p class="duration">
+                                        <input type="number" name="projects[<%= index %>][duration]" placeholder="3" min="0" value="<%= project.duration || '' %>"> <span class="month-text">month</span>
+                                    </p>
+                                </div>
+                                <div class="project-description">
+                                    <textarea name="projects[<%= index %>][description]" placeholder="Describe the project, your role, technologies used, and key achievements..." rows="3"><%= project.description || '' %></textarea>
+                                </div>
+                                <ul class="project-technologies">
+                                    <% if (project.technologies && project.technologies.length > 0) { %>
+                                        <% project.technologies.forEach((tech, techIndex) => { %>
+                                        <li>
+                                            <input type="text" name="projects[<%= index %>][technologies][]" placeholder="Node.js" value="<%= tech %>">
+                                            <button type="button" class="remove-tech-button">-</button>
+                                        </li>
+                                        <% }) %>
+                                    <% } else { %>
+                                        <li>
+                                            <input type="text" name="projects[<%= index %>][technologies][]" placeholder="Node.js">
+                                            <button type="button" class="remove-tech-button">-</button>
+                                        </li>
+                                    <% } %>
+                                </ul>
+                                <button type="button" class="add-tech-button">Add Technology</button>
+                                <div class="links">
+                                    <% if (project.links && project.links.length > 0) { %>
+                                        <% project.links.forEach((link, linkIndex) => { %>
+                                        <span class="link-text">
+                                            <input type="url" name="projects[<%= index %>][links][]" placeholder="https://www.github.com/in/username" value="<%= link %>">
+                                        </span>
+                                        <br>
+                                        <% }) %>
+                                    <% } else { %>
+                                        <span class="link-text">
+                                            <input type="url" name="projects[<%= index %>][links][]" placeholder="https://www.github.com/in/username">
+                                        </span>
+                                        <br>
+                                    <% } %>
+                                </div>
+                                <button type="button" class="add-link-button">Add Link</button>
+                                <% if (index > 0) { %>
+                                <button type="button" class="remove-project-button">Remove Project</button>
+                                <% } %>
+                            </div>
+                            <% }) %>
+                        <% } else { %>
                         <div class="project-section">
                             <h3 class="project-title">
                                 <input type="text" name="projects[0][title]" placeholder="Title" required>
                             </h3>
+                            <div class="project-duration">
+                                <p class="duration">
+                                    <input type="number" name="projects[0][duration]" placeholder="3" min="0"> <span class="month-text">month</span>
+                                </p>
+                            </div>
+                            <div class="project-description">
+                                <textarea name="projects[0][description]" placeholder="Describe the project, your role, technologies used, and key achievements..." rows="3"></textarea>
+                            </div>
                             <ul class="project-technologies">
                                 <li>
                                     <input type="text" name="projects[0][technologies][]" placeholder="Node.js">
@@ -277,6 +574,7 @@
                             </div>
                             <button type="button" class="add-link-button">Add Link</button>
                         </div>
+                        <% } %>
                     </div>
                     <button type="button" id="add-project-button">Add Project</button>
                 </section>
@@ -286,6 +584,14 @@
                         <h3 class="project-title">
                             <input type="text" name="projects[0][title]" placeholder="Title" required>
                         </h3>
+                        <div class="project-duration">
+                            <p class="duration">
+                                <input type="number" name="projects[0][duration]" placeholder="3" min="0"> <span class="month-text">month</span>
+                            </p>
+                        </div>
+                        <div class="project-description">
+                            <textarea name="projects[0][description]" placeholder="Describe the project, your role, technologies used, and key achievements..." rows="3"></textarea>
+                        </div>
                         <ul class="project-technologies">
                             <li>
                                 <input type="text" name="projects[0][technologies][]" placeholder="Node.js">
@@ -320,86 +626,67 @@
                         <br>
                     </div>
                 </template>
-
-        
-                <section class="soft-skills">
-                    <h2>Soft Skills</h2>
-                    <ul class="soft-skills-list" id="soft-skills-list">
-                        <li>
-                            <input type="text" name="softSkills[0]" placeholder="Resilience" required>
-                        </li>
-                    </ul>
-                    <button class="add-button" type="button" id="add-soft-skill-button">Add Skill</button>
-                </section>
-                
-                <template id="soft-skill-template">
-                    <li>
-                        <input type="text" name="softSkills[0]" placeholder="Teamwork" required>
-                        <button type="button" class="remove-section-button remove-button">Remove</button>
-                    </li>
-                </template>
-        
-                <section class="languages">
-                    <h2>Languages</h2>
-                    <div class="languages-list" id="languages-list">
-                        <div class="language-section">
-                            <div class="flex">
-                                <p class="language-name">
-                                    <input type="text" name="languages[0][language]" placeholder="English" required>
-                                </p>
-                                <p class="language-level">
-                                    <input type="text" name="languages[0][level]" placeholder="C1">
-                                </p>
-                                <p class="language-certificate">
-                                    <input type="text" name="languages[0][certification]" placeholder="TOEFL">
-                                </p>
-                                <p class="language-experience">
-                                    <input type="text" name="languages[0][experience]" placeholder="5 years">
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="add-button" type="button" id="add-language-button">Add Language</button>
-                </section>
-                
-                <template id="language-template">
-                    <div class="language-section">
-                        <div class="flex">
-                            <p class="language-name">
-                                <input type="text" name="languages[0][language]" placeholder="French" required>
-                            </p>
-                            <p class="language-level">
-                                <input type="text" name="languages[0][level]" placeholder="B2">
-                            </p>
-                            <p class="language-certificate">
-                                <input type="text" name="languages[0][certification]" placeholder="DELF B2">
-                            </p>
-                            <p class="language-experience">
-                                <input type="text" name="languages[0][experience]" placeholder="3 years">
-                            </p>
-                        </div>
-                        <button type="button" class="remove-section-button remove-button">Remove</button>
-                    </div>
-                </template>
-        
-                <section class="interests">
-                    <h2>Interests</h2>
-                    <ul class="interests-list" id="interests-list">
-                        <li>
-                            <input type="text" name="interests[0]" placeholder="Human behavior" required>
-                        </li>
-                    </ul>
-                    <button class="add-button" type="button" id="add-interest-button">Add Interest</button>
-                </section>
-                
-                <template id="interest-template">
-                    <li>
-                        <input type="text" name="interests[0]" placeholder="Artificial Intelligence" required>
-                        <button type="button" class="remove-section-button remove-button">Remove</button>
-                    </li>
-                </template>
+                </div>
         </main>
     <button id="create" type="submit">Create CV</button>
-</form>      
+</form>
+
+<script>
+// Handle dynamic pluralization for both experience and project duration
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to update month text based on input value
+    function updateMonthText(input) {
+        const monthText = input.parentElement.querySelector('.month-text');
+        if (monthText) {
+            const value = parseInt(input.value) || 0;
+            monthText.textContent = value === 1 ? 'month' : 'months';
+        }
+    }
+    
+    // Add event listeners to all existing duration inputs (both experience and project)
+    document.querySelectorAll('input[name*="[duration]"]').forEach(input => {
+        input.addEventListener('input', function() {
+            updateMonthText(this);
+        });
+        // Update on page load
+        updateMonthText(input);
+    });
+    
+    // Handle dynamically added project sections
+    const addProjectButton = document.getElementById('add-project-button');
+    if (addProjectButton) {
+        addProjectButton.addEventListener('click', function() {
+            // Wait for the new project to be added, then add event listener
+            setTimeout(() => {
+                const newDurationInput = document.querySelector('input[name*="[duration]"]:last-of-type');
+                if (newDurationInput) {
+                    newDurationInput.addEventListener('input', function() {
+                        updateMonthText(this);
+                    });
+                    updateMonthText(newDurationInput);
+                }
+            }, 100);
+        });
+    }
+    
+    // Handle dynamically added experience sections
+    const addExperienceButton = document.getElementById('add-experience-button');
+    if (addExperienceButton) {
+        addExperienceButton.addEventListener('click', function() {
+            // Wait for the new experience to be added, then add event listener
+            setTimeout(() => {
+                const newDurationInput = document.querySelector('input[name*="[duration]"]:last-of-type');
+                if (newDurationInput) {
+                    newDurationInput.addEventListener('input', function() {
+                        updateMonthText(this);
+                    });
+                    updateMonthText(newDurationInput);
+                }
+            }, 100);
+        });
+    }
+});
+</script>
+      
 </body>
 </html>

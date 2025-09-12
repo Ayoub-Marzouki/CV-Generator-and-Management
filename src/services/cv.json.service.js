@@ -11,9 +11,9 @@ export default async function getAllCVs() {
     }
 }
 
-export async function saveCV(cv) {
+export async function saveCV(cv, isUpdate = false) {
     try {
-        await save(cv);
+        await save(cv, isUpdate);
     } catch (error) {
         console.log(error);
     }

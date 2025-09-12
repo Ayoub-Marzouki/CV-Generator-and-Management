@@ -7,13 +7,26 @@ export default async function selectAll() {
     return JSON.parse(data);
 }
 
-export async function save(cv) {
+export async function save(cv, isUpdate = false) {
     let cvs = await selectAll();
 
-    if (!cv.id) {
-        cv.id = `${Date.now()}-${Math.random().toString(36).slice(2,8)}`;
+    if (isUpdate) {
+        // Update existing CV
+        const index = cvs.findIndex(existingCv => existingCv.id === cv.id);
+        if (index !== -1) {
+            cvs[index] = cv; // Replace the existing CV
+        } else {
+            // If CV not found, treat as new
+            cv.id = `${Date.now()}-${Math.random().toString(36).slice(2,8)}`;
+            cvs.push(cv);
+        }
+    } else {
+        // Create new CV
+        if (!cv.id) {
+            cv.id = `${Date.now()}-${Math.random().toString(36).slice(2,8)}`;
+        }
+        cvs.push(cv); // Push the cv to the cv.json file
     }
-
-    cvs.push(cv); // Push the cv to the cv.json file
-    await fs.writeFile(source, JSON.stringify(cvs)); // rewrite the file (including the newly added cv)
+    
+    await fs.writeFile(source, JSON.stringify(cvs)); // rewrite the file
 }
