@@ -196,73 +196,6 @@
                         </li>
                     </template>
 
-                    <section class="languages">
-                        <h2>Languages</h2>
-                        <div class="languages-list" id="languages-list">
-                            <% if (isEdit && cvData.languages && cvData.languages.length > 0) { %>
-                                <% cvData.languages.forEach((lang, index) => { %>
-                                <div class="language-section">
-                                    <div class="flex">
-                                        <p class="language-name">
-                                            <input type="text" name="languages[<%= index %>][language]" placeholder="English" value="<%= lang.language %>" required>
-                                        </p>
-                                        <p class="language-level">
-                                            <input type="text" name="languages[<%= index %>][level]" placeholder="C1" value="<%= lang.level || '' %>">
-                                        </p>
-                                        <p class="language-certificate">
-                                            <input type="text" name="languages[<%= index %>][certification]" placeholder="TOEFL" value="<%= lang.certification || '' %>">
-                                        </p>
-                                        <p class="language-experience">
-                                            <input type="text" name="languages[<%= index %>][experience]" placeholder="5 years" value="<%= lang.experience || '' %>">
-                                        </p>
-                                    </div>
-                                    <% if (index > 0) { %>
-                                    <button type="button" class="remove-section-button remove-button">Remove</button>
-                                    <% } %>
-                                </div>
-                                <% }) %>
-                            <% } else { %>
-                            <div class="language-section">
-                                <div class="flex">
-                                    <p class="language-name">
-                                        <input type="text" name="languages[0][language]" placeholder="English" required>
-                                    </p>
-                                    <p class="language-level">
-                                        <input type="text" name="languages[0][level]" placeholder="C1">
-                                    </p>
-                                    <p class="language-certificate">
-                                        <input type="text" name="languages[0][certification]" placeholder="TOEFL">
-                                    </p>
-                                    <p class="language-experience">
-                                        <input type="text" name="languages[0][experience]" placeholder="5 years">
-                                    </p>
-                                </div>
-                            </div>
-                            <% } %>
-                        </div>
-                        <button class="add-button" type="button" id="add-language-button">Add Language</button>
-                    </section>
-                    
-                    <template id="language-template">
-                        <div class="language-section">
-                            <div class="flex">
-                                <p class="language-name">
-                                    <input type="text" name="languages[0][language]" placeholder="French" required>
-                                </p>
-                                <p class="language-level">
-                                    <input type="text" name="languages[0][level]" placeholder="B2">
-                                </p>
-                                <p class="language-certificate">
-                                    <input type="text" name="languages[0][certification]" placeholder="DELF B2">
-                                </p>
-                                <p class="language-experience">
-                                    <input type="text" name="languages[0][experience]" placeholder="3 years">
-                                </p>
-                            </div>
-                            <button type="button" class="remove-section-button remove-button">Remove</button>
-                        </div>
-                    </template>
-
                     <section class="education">
                         <h2>EDUCATION</h2>
                         <div id="education-list">
@@ -324,6 +257,73 @@
                                 </p>
                                 <p class="education-location">
                                     <input type="text" name="education[0][location]" placeholder="Morocco" required>
+                                </p>
+                            </div>
+                            <button type="button" class="remove-section-button remove-button">Remove</button>
+                        </div>
+                    </template>
+
+                    <section class="languages">
+                        <h2>Languages</h2>
+                        <div class="languages-list" id="languages-list">
+                            <% if (isEdit && cvData.languages && cvData.languages.length > 0) { %>
+                                <% cvData.languages.forEach((lang, index) => { %>
+                                <div class="language-section">
+                                    <div class="flex">
+                                        <p class="language-name">
+                                            <input type="text" name="languages[<%= index %>][language]" placeholder="English" value="<%= lang.language %>" required>
+                                        </p>
+                                        <p class="language-level">
+                                            <input type="text" name="languages[<%= index %>][level]" placeholder="C1" value="<%= lang.level || '' %>">
+                                        </p>
+                                        <p class="language-certificate">
+                                            <input type="text" name="languages[<%= index %>][certification]" placeholder="TOEFL" value="<%= lang.certification || '' %>">
+                                        </p>
+                                        <p class="language-experience">
+                                            <input type="text" name="languages[<%= index %>][experience]" placeholder="5 years" value="<%= lang.experience || '' %>">
+                                        </p>
+                                    </div>
+                                    <% if (index > 0) { %>
+                                    <button type="button" class="remove-section-button remove-button">Remove</button>
+                                    <% } %>
+                                </div>
+                                <% }) %>
+                            <% } else { %>
+                            <div class="language-section">
+                                <div class="flex">
+                                    <p class="language-name">
+                                        <input type="text" name="languages[0][language]" placeholder="English" required>
+                                    </p>
+                                    <p class="language-level">
+                                        <input type="text" name="languages[0][level]" placeholder="C1">
+                                    </p>
+                                    <p class="language-certificate">
+                                        <input type="text" name="languages[0][certification]" placeholder="TOEFL">
+                                    </p>
+                                    <p class="language-experience">
+                                        <input type="text" name="languages[0][experience]" placeholder="5 years">
+                                    </p>
+                                </div>
+                            </div>
+                            <% } %>
+                        </div>
+                        <button class="add-button" type="button" id="add-language-button">Add Language</button>
+                    </section>
+                    
+                    <template id="language-template">
+                        <div class="language-section">
+                            <div class="flex">
+                                <p class="language-name">
+                                    <input type="text" name="languages[0][language]" placeholder="French" required>
+                                </p>
+                                <p class="language-level">
+                                    <input type="text" name="languages[0][level]" placeholder="B2">
+                                </p>
+                                <p class="language-certificate">
+                                    <input type="text" name="languages[0][certification]" placeholder="DELF B2">
+                                </p>
+                                <p class="language-experience">
+                                    <input type="text" name="languages[0][experience]" placeholder="3 years">
                                 </p>
                             </div>
                             <button type="button" class="remove-section-button remove-button">Remove</button>

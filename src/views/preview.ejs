@@ -134,6 +134,23 @@
 			</section>
 			<% } %>
 
+			<!-- EDUCATION -->
+			<section class="education">
+			<h2>Education</h2>
+			<div class="education-list">
+				<% cv.education.forEach(edu => { %>
+				<div class="education-section">
+					<h3 class="education-diploma"><%= edu.diploma %></h3>
+					<p class="education-organization"><%= edu.organisation %></p>
+					<div class="flex year-location">
+					<p class="education-year"><%= edu.year %></p>
+					<p class="education-location"><%= edu.location || '' %></p>
+					</div>
+				</div>
+				<% }) %>
+			</div>
+			</section>
+
 			<!-- LANGUAGES -->
 			<% if (cv.languages && cv.languages.length) { %>
 			<section class="languages">
@@ -157,23 +174,6 @@
 				</div>
 			</section>
 			<% } %>
-
-			<!-- EDUCATION -->
-			<section class="education">
-			<h2>Education</h2>
-			<div class="education-list">
-				<% cv.education.forEach(edu => { %>
-				<div class="education-section">
-					<h3 class="education-diploma"><%= edu.diploma %></h3>
-					<p class="education-organization"><%= edu.organisation %></p>
-					<div class="flex year-location">
-					<p class="education-year"><%= edu.year %></p>
-					<p class="education-location"><%= edu.location || '' %></p>
-					</div>
-				</div>
-				<% }) %>
-			</div>
-			</section>
 
 			<!-- INTERESTS -->
 			<% if (cv.interests && cv.interests.length) { %>
