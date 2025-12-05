@@ -1,4 +1,5 @@
 import getAllCVs, { getCvByLastName, getFilteredCvs, saveCV, getCvById } from "../services/cv.json.service.js";
+import { translations } from "../translate/internalization.js";
 
 // catching HTTP related errors via try/catch
 
@@ -28,7 +29,10 @@ export async function handlePeopleCVs(req, res) {
            cvs = await getFilteredCvs(req.query);
         }
 
-        let context = {cvs, };
+        const lang = req.query.lang === 'fr' ? 'fr' : 'en';
+        const t = translations[lang];
+
+        let context = {cvs, t, lang, translations};
         res.render("people-cvs", context);
     } catch (error) {
         console.log("Error : ", error);    
@@ -41,8 +45,10 @@ export async function chosenLayout(req, res) {
     try {
         const chosenLayout = req.query.template || "creative";
         const editId = req.query.edit;
+        const lang = req.query.lang === 'fr' ? 'fr' : 'en';
+        const t = translations[lang];
         
-        let context = {chosenLayout, layout:false, isEdit: false, cvData: null};
+        let context = {chosenLayout, layout:false, isEdit: false, cvData: null, t, lang};
         
         // If edit mode, fetch the CV data
         if (editId) {
@@ -88,6 +94,7 @@ export async function handleCreateCV(req, res) {
         if (editId) {
             // Update existing CV
             cv.id = editId; // Ensure the ID is preserved
+            cv.language = req.body.language; // Preserve language
             await saveCV(cv, true); // Pass true to indicate update
             res.redirect(`/preview?id=${editId}&updated=true`);
         } else {
@@ -113,7 +120,11 @@ export async function chosenCV(req, res) {
         if (!cv) {
             return res.status(404).send("CV not found");
         }
-        res.render("preview", {cv, layout:false, req});
+
+        const lang = cv.language || (req.query.lang === 'fr' ? 'fr' : 'en');
+        const t = translations[lang];
+
+        res.render("preview", {cv, layout:false, req, t, lang});
     } catch (error) {
         console.log(error);
     }

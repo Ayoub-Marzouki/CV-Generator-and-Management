@@ -18,6 +18,7 @@
 <body>
     <form id="cvForm" action="/create-cv<%= isEdit ? '?edit=' + (cvData.id || cvData.profile.lastName) : '' %>" method="post" class="<%= chosenLayout %>" enctype="multipart/form-data">
         <input type="hidden" name="chosenLayout" value="<%= chosenLayout %>">
+        <input type="hidden" name="language" value="<%= lang %>">
         <% if (isEdit) { %>
         <input type="hidden" name="id" value="<%= cvData.id || cvData.profile.lastName %>">
         <% } %>
@@ -26,10 +27,10 @@
                 <div class="flex">
                 <h1 class="name">
                     <span class="last-name">
-                    <input type="text" name="profile[lastName]" placeholder="Last Name" value="<%= isEdit && cvData.profile.lastName ? cvData.profile.lastName : '' %>" required>
+                    <input type="text" name="profile[lastName]" placeholder="<%= t.last_name %>" value="<%= isEdit && cvData.profile.lastName ? cvData.profile.lastName : '' %>" required>
                     </span>
                     <span class="first-name">
-                    <input type="text" name="profile[firstName]" placeholder="First Name" value="<%= isEdit && cvData.profile.firstName ? cvData.profile.firstName : '' %>" required>
+                    <input type="text" name="profile[firstName]" placeholder="<%= t.first_name %>" value="<%= isEdit && cvData.profile.firstName ? cvData.profile.firstName : '' %>" required>
                     </span>
                 </h1>
                 <p class="birth">
@@ -48,11 +49,11 @@
                 </div>
         
                 <h2 class="job-title">
-                <input type="text" name="profile[jobTitle]" placeholder="Job Title" value="<%= isEdit && cvData.profile.jobTitle ? cvData.profile.jobTitle : '' %>" required>
+                <input type="text" name="profile[jobTitle]" placeholder="<%= t.job_title %>" value="<%= isEdit && cvData.profile.jobTitle ? cvData.profile.jobTitle : '' %>" required>
                 </h2>
         
                 <p class="professional-summary">
-                <textarea name="profile[professionalSummary]" cols="100" rows="10" placeholder="Persistent and persevering…" required><%= isEdit && cvData.profile.professionalSummary ? cvData.profile.professionalSummary : '' %></textarea>
+                <textarea name="profile[professionalSummary]" cols="100" rows="10" placeholder="<%= t.professional_summary_placeholder %>" required><%= isEdit && cvData.profile.professionalSummary ? cvData.profile.professionalSummary : '' %></textarea>
                 </p>
             </div>
         
@@ -65,17 +66,17 @@
             <div class="personal-contact">
                 <img class="icons" src="images/icons/envelope.png" alt="Email Icon">
                 <span>
-                <input type="email" name="profile[email]" placeholder="email@email.com" value="<%= isEdit && cvData.profile.email ? cvData.profile.email : '' %>" required>
+                <input type="email" name="profile[email]" placeholder="<%= t.email_placeholder %>" value="<%= isEdit && cvData.profile.email ? cvData.profile.email : '' %>" required>
                 </span>
                 <br>
                 <img class="icons" src="images/icons/location.png" alt="Address Icon">
                 <span class="address-text">
-                <input type="text" name="profile[address]" placeholder="Address" value="<%= isEdit && cvData.profile.address ? cvData.profile.address : '' %>" required>
+                <input type="text" name="profile[address]" placeholder="<%= t.address %>" value="<%= isEdit && cvData.profile.address ? cvData.profile.address : '' %>" required>
                 </span>
                 <br>
                 <img class="icons" src="images/icons/phone.png" alt="Phone Icon">
                 <span class="phone-text">
-                <input type="tel" name="profile[phone]" placeholder="00 11 22 33 44" value="<%= isEdit && cvData.profile.phone ? cvData.profile.phone : '' %>" required>
+                <input type="tel" name="profile[phone]" placeholder="<%= t.phone_placeholder %>" value="<%= isEdit && cvData.profile.phone ? cvData.profile.phone : '' %>" required>
                 </span>
                 <br>
             </div>
@@ -83,12 +84,12 @@
             <div class="links">
                 <img class="icons" src="/images/icons/github.png" alt="GitHub Icon">
                 <span class="link-text">
-                <input type="url" name="profile[links][]" placeholder=" https://www.github.com/in/username" value="<%= isEdit && cvData.profile.links ? cvData.profile.links.find(link => link.toLowerCase().includes('github.com')) || '' : '' %>">
+                <input type="url" name="profile[links][]" placeholder="<%= t.github_placeholder %>" value="<%= isEdit && cvData.profile.links ? cvData.profile.links.find(link => link.toLowerCase().includes('github.com')) || '' : '' %>">
                 </span>
                 <br>
                 <img class="icons" src="/images/icons/linkedin.png" alt="LinkedIn Icon">
                 <span class="link-text">
-                <input type="url" name="profile[links][]" placeholder="https://www.linkedin.com/in/username" value="<%= isEdit && cvData.profile.links ? cvData.profile.links.find(link => link.toLowerCase().includes('linkedin.com')) || '' : '' %>">
+                <input type="url" name="profile[links][]" placeholder="<%= t.linkedin_placeholder %>" value="<%= isEdit && cvData.profile.links ? cvData.profile.links.find(link => link.toLowerCase().includes('linkedin.com')) || '' : '' %>">
                 </span>
                 <br>
             </div>
@@ -97,194 +98,194 @@
             <main>
                 <div class="left-column">
                     <section class="technologies">
-                        <h2>SKILLS AND TECHNOLOGIES</h2>
+                        <h2><%= t.skills_title %></h2>
                         <div id="technologies-list">
                             <% if (isEdit && cvData.technologySkills && cvData.technologySkills.length > 0) { %>
                                 <% cvData.technologySkills.forEach((skill, skillIndex) => { %>
                                 <div class="technologies-section">
                                     <p class="skill">
-                                        <input type="text" name="technologySkills[<%= skillIndex %>][skill]" placeholder="Web Development" value="<%= skill.skill %>" required>
+                                        <input type="text" name="technologySkills[<%= skillIndex %>][skill]" placeholder="<%= t.skill_name_placeholder %>" value="<%= skill.skill %>" required>
                                     </p>
                                     <ul class="details">
                                         <% if (skill.details && skill.details.length > 0) { %>
                                             <% skill.details.forEach((detail, detailIndex) => { %>
                                             <li>
-                                                <input type="text" name="technologySkills[<%= skillIndex %>][details][]" placeholder="HTML, CSS, JavaScript" value="<%= detail %>">
+                                                <input type="text" name="technologySkills[<%= skillIndex %>][details][]" placeholder="<%= t.skill_details_placeholder %>" value="<%= detail %>">
                                                 <button type="button" class="remove-detail-button remove-button">-</button>
                                             </li>
                                             <% }) %>
                                         <% } else { %>
                                             <li>
-                                                <input type="text" name="technologySkills[<%= skillIndex %>][details][]" placeholder="HTML, CSS, JavaScript">
+                                                <input type="text" name="technologySkills[<%= skillIndex %>][details][]" placeholder="<%= t.skill_details_placeholder %>">
                                                 <button type="button" class="remove-detail-button remove-button">-</button>
                                             </li>
                                         <% } %>
                                     </ul>
-                                    <button type="button" class="add-detail-button">Add Detail</button>
+                                    <button type="button" class="add-detail-button"><%= t.add_detail %></button>
                                     <% if (skillIndex > 0) { %>
-                                    <button type="button" class="remove-skill-button remove-button">Remove Skill</button>
+                                    <button type="button" class="remove-skill-button remove-button"><%= t.remove_skill %></button>
                                     <% } %>
                                 </div>
                                 <% }) %>
                             <% } else { %>
                             <div class="technologies-section">
                                 <p class="skill">
-                                    <input type="text" name="technologySkills[0][skill]" placeholder="Web Development" required>
+                                    <input type="text" name="technologySkills[0][skill]" placeholder="<%= t.skill_name_placeholder %>" required>
                                 </p>
                                 <ul class="details">
                                     <li>
-                                        <input type="text" name="technologySkills[0][details][]" placeholder="HTML, CSS, JavaScript">
+                                        <input type="text" name="technologySkills[0][details][]" placeholder="<%= t.skill_details_placeholder %>">
                                         <button type="button" class="remove-detail-button remove-button">-</button>
                                     </li>
                                 </ul>
-                                <button type="button" class="add-detail-button">Add Detail</button>
+                                <button type="button" class="add-detail-button"><%= t.add_detail %></button>
                             </div>
                             <% } %>
                         </div>
                     
-                        <button type="button" id="add-skill-button">Add Skill</button>
+                        <button type="button" id="add-skill-button"><%= t.add_skill %></button>
                     </section>
                     
                     <template id="skill-template">
                         <div class="technologies-section">
                             <p class="skill">
-                                <input type="text" name="technologySkills[0][skill]" placeholder="Cloud Computing" required>
+                                <input type="text" name="technologySkills[0][skill]" placeholder="<%= t.skill_name_placeholder_2 %>" required>
                             </p>
                             <ul class="details">
                                 <li>
-                                    <input type="text" name="technologySkills[0][details][]" placeholder="AWS, Docker, Kubernetes">
+                                    <input type="text" name="technologySkills[0][details][]" placeholder="<%= t.skill_details_placeholder_2 %>">
                                     <button type="button" class="remove-detail-button remove-button">-</button>
                                 </li>
                             </ul>
-                            <button type="button" class="add-detail-button">Add Detail</button>
-                            <button type="button" class="remove-skill-button remove-button">Remove Skill</button>
+                            <button type="button" class="add-detail-button"><%= t.add_detail %></button>
+                            <button type="button" class="remove-skill-button remove-button"><%= t.remove_skill %></button>
                         </div>
                     </template>
                     
                     <template id="detail-template">
                         <li>
-                            <input type="text" name="" placeholder="Another detail...">
+                            <input type="text" name="" placeholder="<%= t.another_detail_placeholder %>">
                             <button type="button" class="remove-detail-button remove">-</button>
                         </li>
                     </template>
 
                     <section class="soft-skills">
-                        <h2>Soft Skills</h2>
+                        <h2><%= t.soft_skills_title %></h2>
                         <ul class="soft-skills-list" id="soft-skills-list">
                             <% if (isEdit && cvData.softSkills && cvData.softSkills.length > 0) { %>
                                 <% cvData.softSkills.forEach((skill, index) => { %>
                                 <li>
-                                    <input type="text" name="softSkills[<%= index %>]" placeholder="Resilience" value="<%= skill %>" required>
+                                    <input type="text" name="softSkills[<%= index %>]" placeholder="<%= t.soft_skill_placeholder %>" value="<%= skill %>" required>
                                     <% if (index > 0) { %>
-                                    <button type="button" class="remove-section-button remove-button">Remove</button>
+                                    <button type="button" class="remove-section-button remove-button"><%= t.remove %></button>
                                     <% } %>
                                 </li>
                                 <% }) %>
                             <% } else { %>
                             <li>
-                                <input type="text" name="softSkills[0]" placeholder="Resilience" required>
+                                <input type="text" name="softSkills[0]" placeholder="<%= t.soft_skill_placeholder %>" required>
                             </li>
                             <% } %>
                         </ul>
-                        <button class="add-button" type="button" id="add-soft-skill-button">Add Skill</button>
+                        <button class="add-button" type="button" id="add-soft-skill-button"><%= t.add_skill %></button>
                     </section>
                     
                     <template id="soft-skill-template">
                         <li>
-                            <input type="text" name="softSkills[0]" placeholder="Teamwork" required>
-                            <button type="button" class="remove-section-button remove-button">Remove</button>
+                            <input type="text" name="softSkills[0]" placeholder="<%= t.soft_skill_placeholder_2 %>" required>
+                            <button type="button" class="remove-section-button remove-button"><%= t.remove %></button>
                         </li>
                     </template>
 
                     <section class="education">
-                        <h2>EDUCATION</h2>
+                        <h2><%= t.education_title %></h2>
                         <div id="education-list">
                             <% if (isEdit && cvData.education && cvData.education.length > 0) { %>
                                 <% cvData.education.forEach((edu, index) => { %>
                                 <div class="education-section">
                                     <h3 class="education-diploma">
-                                        <input type="text" name="education[<%= index %>][diploma]" placeholder="Diploma's name" value="<%= edu.diploma %>" required>
+                                        <input type="text" name="education[<%= index %>][diploma]" placeholder="<%= t.diploma_placeholder %>" value="<%= edu.diploma %>" required>
                                     </h3>
                                     <p class="education-organization">
-                                        <input type="text" name="education[<%= index %>][organisation]" placeholder="Organization" value="<%= edu.organisation %>" required>
+                                        <input type="text" name="education[<%= index %>][organisation]" placeholder="<%= t.organization_placeholder %>" value="<%= edu.organisation %>" required>
                                     </p>
                                     <div class="flex year-location">
                                         <p class="education-year">
                                             <input type="text" name="education[<%= index %>][year]" placeholder="2026" value="<%= edu.year %>" required>
                                         </p>
                                         <p class="education-location">
-                                            <input type="text" name="education[<%= index %>][location]" placeholder="Morocco" value="<%= edu.location || '' %>" required>
+                                            <input type="text" name="education[<%= index %>][location]" placeholder="<%= t.location_placeholder %>" value="<%= edu.location || '' %>" required>
                                         </p>
                                     </div>
                                     <% if (index > 0) { %>
-                                    <button type="button" class="remove-section-button remove-button">Remove</button>
+                                    <button type="button" class="remove-section-button remove-button"><%= t.remove %></button>
                                     <% } %>
                                 </div>
                                 <% }) %>
                             <% } else { %>
                             <div class="education-section">
                                 <h3 class="education-diploma">
-                                    <input type="text" name="education[0][diploma]" placeholder="Diploma's name" required>
+                                    <input type="text" name="education[0][diploma]" placeholder="<%= t.diploma_placeholder %>" required>
                                 </h3>
                                 <p class="education-organization">
-                                    <input type="text" name="education[0][organisation]" placeholder="Organization" required>
+                                    <input type="text" name="education[0][organisation]" placeholder="<%= t.organization_placeholder %>" required>
                                 </p>
                                 <div class="flex year-location">
                                     <p class="education-year">
                                         <input type="number" name="education[0][year]" placeholder="2026" min="1900" max="2100" required>
                                     </p>
                                     <p class="education-location">
-                                        <input type="text" name="education[0][location]" placeholder="Morocco" required>
+                                        <input type="text" name="education[0][location]" placeholder="<%= t.location_placeholder %>" required>
                                     </p>
                                 </div>
                             </div>
                             <% } %>
                         </div>
-                        <button class="add-button" type="button" id="add-education-button">Add section</button>
+                        <button class="add-button" type="button" id="add-education-button"><%= t.add_section %></button>
                     </section>
                       
                     <template id="education-template">
                         <div class="education-section">
                                 <h3 class="education-diploma">
-                                <input type="text" name="education[0][diploma]" placeholder="Diploma's name" required>
+                                <input type="text" name="education[0][diploma]" placeholder="<%= t.diploma_placeholder %>" required>
                             </h3>
                             <p class="education-organization">
-                                <input type="text" name="education[0][organisation]" placeholder="Organization" required>
+                                <input type="text" name="education[0][organisation]" placeholder="<%= t.organization_placeholder %>" required>
                             </p>
                             <div class="flex year-location">
                                 <p class="education-year">
                                     <input type="number" name="education[0][year]" placeholder="2026" min="1900" max="2100" required>
                                 </p>
                                 <p class="education-location">
-                                    <input type="text" name="education[0][location]" placeholder="Morocco" required>
+                                    <input type="text" name="education[0][location]" placeholder="<%= t.location_placeholder %>" required>
                                 </p>
                             </div>
-                            <button type="button" class="remove-section-button remove-button">Remove</button>
+                            <button type="button" class="remove-section-button remove-button"><%= t.remove %></button>
                         </div>
                     </template>
 
                     <section class="languages">
-                        <h2>Languages</h2>
+                        <h2><%= t.languages_title %></h2>
                         <div class="languages-list" id="languages-list">
                             <% if (isEdit && cvData.languages && cvData.languages.length > 0) { %>
                                 <% cvData.languages.forEach((lang, index) => { %>
                                 <div class="language-section">
                                     <div class="flex">
                                         <p class="language-name">
-                                            <input type="text" name="languages[<%= index %>][language]" placeholder="English" value="<%= lang.language %>" required>
+                                            <input type="text" name="languages[<%= index %>][language]" placeholder="<%= t.language_placeholder %>" value="<%= lang.language %>" required>
                                         </p>
                                         <p class="language-level">
-                                            <input type="text" name="languages[<%= index %>][level]" placeholder="C1" value="<%= lang.level || '' %>">
+                                            <input type="text" name="languages[<%= index %>][level]" placeholder="<%= t.level_placeholder %>" value="<%= lang.level || '' %>">
                                         </p>
                                         <p class="language-certificate">
-                                            <input type="text" name="languages[<%= index %>][certification]" placeholder="TOEFL" value="<%= lang.certification || '' %>">
+                                            <input type="text" name="languages[<%= index %>][certification]" placeholder="<%= t.certification_placeholder %>" value="<%= lang.certification || '' %>">
                                         </p>
                                         <p class="language-experience">
-                                            <input type="text" name="languages[<%= index %>][experience]" placeholder="5 years" value="<%= lang.experience || '' %>">
+                                            <input type="text" name="languages[<%= index %>][experience]" placeholder="<%= t.experience_placeholder %>" value="<%= lang.experience || '' %>">
                                         </p>
                                     </div>
                                     <% if (index > 0) { %>
-                                    <button type="button" class="remove-section-button remove-button">Remove</button>
+                                    <button type="button" class="remove-section-button remove-button"><%= t.remove %></button>
                                     <% } %>
                                 </div>
                                 <% }) %>
@@ -292,121 +293,121 @@
                             <div class="language-section">
                                 <div class="flex">
                                     <p class="language-name">
-                                        <input type="text" name="languages[0][language]" placeholder="English" required>
+                                        <input type="text" name="languages[0][language]" placeholder="<%= t.language_placeholder %>" required>
                                     </p>
                                     <p class="language-level">
-                                        <input type="text" name="languages[0][level]" placeholder="C1">
+                                        <input type="text" name="languages[0][level]" placeholder="<%= t.level_placeholder %>">
                                     </p>
                                     <p class="language-certificate">
-                                        <input type="text" name="languages[0][certification]" placeholder="TOEFL">
+                                        <input type="text" name="languages[0][certification]" placeholder="<%= t.certification_placeholder %>">
                                     </p>
                                     <p class="language-experience">
-                                        <input type="text" name="languages[0][experience]" placeholder="5 years">
+                                        <input type="text" name="languages[0][experience]" placeholder="<%= t.experience_placeholder %>">
                                     </p>
                                 </div>
                             </div>
                             <% } %>
                         </div>
-                        <button class="add-button" type="button" id="add-language-button">Add Language</button>
+                        <button class="add-button" type="button" id="add-language-button"><%= t.add_language %></button>
                     </section>
                     
                     <template id="language-template">
                         <div class="language-section">
                             <div class="flex">
                                 <p class="language-name">
-                                    <input type="text" name="languages[0][language]" placeholder="French" required>
+                                    <input type="text" name="languages[0][language]" placeholder="<%= t.language_placeholder_2 %>" required>
                                 </p>
                                 <p class="language-level">
-                                    <input type="text" name="languages[0][level]" placeholder="B2">
+                                    <input type="text" name="languages[0][level]" placeholder="<%= t.level_placeholder_2 %>">
                                 </p>
                                 <p class="language-certificate">
-                                    <input type="text" name="languages[0][certification]" placeholder="DELF B2">
+                                    <input type="text" name="languages[0][certification]" placeholder="<%= t.certification_placeholder_2 %>">
                                 </p>
                                 <p class="language-experience">
-                                    <input type="text" name="languages[0][experience]" placeholder="3 years">
+                                    <input type="text" name="languages[0][experience]" placeholder="<%= t.experience_placeholder_2 %>">
                                 </p>
                             </div>
-                            <button type="button" class="remove-section-button remove-button">Remove</button>
+                            <button type="button" class="remove-section-button remove-button"><%= t.remove %></button>
                         </div>
                     </template>
 
                     <section class="interests">
-                        <h2>Interests</h2>
+                        <h2><%= t.interests_title %></h2>
                         <ul class="interests-list" id="interests-list">
                             <% if (isEdit && cvData.interests && cvData.interests.length > 0) { %>
                                 <% cvData.interests.forEach((interest, index) => { %>
                                 <li>
-                                    <input type="text" name="interests[<%= index %>]" placeholder="Human behavior" value="<%= interest %>" required>
+                                    <input type="text" name="interests[<%= index %>]" placeholder="<%= t.interest_placeholder %>" value="<%= interest %>" required>
                                     <% if (index > 0) { %>
-                                    <button type="button" class="remove-section-button remove-button">Remove</button>
+                                    <button type="button" class="remove-section-button remove-button"><%= t.remove %></button>
                                     <% } %>
                                 </li>
                                 <% }) %>
                             <% } else { %>
                             <li>
-                                <input type="text" name="interests[0]" placeholder="Human behavior" required>
+                                <input type="text" name="interests[0]" placeholder="<%= t.interest_placeholder %>" required>
                             </li>
                             <% } %>
                         </ul>
-                        <button class="add-button" type="button" id="add-interest-button">Add Interest</button>
+                        <button class="add-button" type="button" id="add-interest-button"><%= t.add_interest %></button>
                     </section>
                     
                     <template id="interest-template">
                         <li>
-                            <input type="text" name="interests[0]" placeholder="Artificial Intelligence" required>
-                            <button type="button" class="remove-section-button remove-button">Remove</button>
+                            <input type="text" name="interests[0]" placeholder="<%= t.interest_placeholder_2 %>" required>
+                            <button type="button" class="remove-section-button remove-button"><%= t.remove %></button>
                         </li>
                     </template>
                 </div>
 
                 <div class="right-column">
                     <section class="experience">
-                    <h2>Experience</h2>
+                    <h2><%= t.experience_title %></h2>
                     <div class="experience-list" id="experience-list">
                         <% if (isEdit && cvData.experiences && cvData.experiences.length > 0) { %>
                             <% cvData.experiences.forEach((exp, index) => { %>
                             <div class="experience-section">
                                 <h3 class="experience-type">
                                     <select name="experiences[<%= index %>][type]" required>
-                                        <option value="Internship" <%= exp.type === 'Internship' ? 'selected' : '' %>>Internship</option>
-                                        <option value="Work" <%= exp.type === 'Work' ? 'selected' : '' %>>Work</option>
+                                        <option value="Internship" <%= exp.type === 'Internship' ? 'selected' : '' %>><%= t.internship %></option>
+                                        <option value="Work" <%= exp.type === 'Work' ? 'selected' : '' %>><%= t.work %></option>
                                     </select>
                                 </h3>
                                 <h3 class="experience-title">
-                                    <input type="text" name="experiences[<%= index %>][title]" placeholder="Title" value="<%= exp.title %>" required>
+                                    <input type="text" name="experiences[<%= index %>][title]" placeholder="<%= t.title_placeholder %>" value="<%= exp.title %>" required>
                                 </h3>
                                 <p class="experience-organization">
-                                    <input type="text" name="experiences[<%= index %>][organisation]" placeholder="Organization's name" value="<%= exp.organisation %>" required>
+                                    <input type="text" name="experiences[<%= index %>][organisation]" placeholder="<%= t.org_name_placeholder %>" value="<%= exp.organisation %>" required>
                                 </p>
                                 <div class="year-duration">
                                     <p class="year">
                                         <input type="number" name="experiences[<%= index %>][year]" placeholder="2020" min="1900" max="2100" value="<%= exp.year %>" required>
                                     </p>
                                     <p class="duration">
-                                        <input type="number" name="experiences[<%= index %>][duration]" placeholder="3" min="0" value="<%= exp.duration %>" required> <span class="month-text">month</span>
+                                        <input type="number" name="experiences[<%= index %>][duration]" placeholder="3" min="0" value="<%= exp.duration %>" required> <span class="month-text"><%= t.month %></span>
                                     </p>
                                 </div>
                                 <div class="experience-description">
-                                    <textarea name="experiences[<%= index %>][description]" placeholder="Describe your role, responsibilities, and achievements..." rows="3"><%= exp.description || '' %></textarea>
+                                    <textarea name="experiences[<%= index %>][description]" placeholder="<%= t.description_placeholder %>" rows="3"><%= exp.description || '' %></textarea>
                                 </div>
                                 <ul class="experience-technologies">
                                     <% if (exp.technologies && exp.technologies.length > 0) { %>
                                         <% exp.technologies.forEach((tech, techIndex) => { %>
                                         <li>
-                                            <input type="text" name="experiences[<%= index %>][technologies][]" placeholder="Java" value="<%= tech %>">
+                                            <input type="text" name="experiences[<%= index %>][technologies][]" placeholder="<%= t.tech_placeholder %>" value="<%= tech %>">
                                             <button type="button" class="remove-tech-button">-</button>
                                         </li>
                                         <% }) %>
                                     <% } else { %>
                                         <li>
-                                            <input type="text" name="experiences[<%= index %>][technologies][]" placeholder="Java">
+                                            <input type="text" name="experiences[<%= index %>][technologies][]" placeholder="<%= t.tech_placeholder %>">
                                             <button type="button" class="remove-tech-button">-</button>
                                         </li>
                                     <% } %>
                                 </ul>
-                                <button type="button" class="add-tech-button">Add Technology</button>
+                                <button type="button" class="add-tech-button"><%= t.add_technology %></button>
                                 <% if (index > 0) { %>
-                                <button type="button" class="remove-experience-button">Remove Experience</button>
+                                <button type="button" class="remove-experience-button"><%= t.remove_experience %></button>
                                 <% } %>
                             </div>
                             <% }) %>
@@ -414,205 +415,205 @@
                         <div class="experience-section">
                             <h3 class="experience-type">
                                 <select name="experiences[0][type]" required>
-                                    <option>Internship</option>
-                                    <option>Work</option>
+                                    <option value="Internship"><%= t.internship %></option>
+                                    <option value="Work"><%= t.work %></option>
                                 </select>
                             </h3>
                             <h3 class="experience-title">
-                                <input type="text" name="experiences[0][title]" placeholder="Title" required>
+                                <input type="text" name="experiences[0][title]" placeholder="<%= t.title_placeholder %>" required>
                             </h3>
                             <p class="experience-organization">
-                                <input type="text" name="experiences[0][organisation]" placeholder="Organization's name" required>
+                                <input type="text" name="experiences[0][organisation]" placeholder="<%= t.org_name_placeholder %>" required>
                             </p>
                             <div class="year-duration">
                                 <p class="year">
                                     <input type="number" name="experiences[0][year]" placeholder="2020" min="1900" max="2100" required>
                                 </p>
                                 <p class="duration">
-                                    <input type="number" name="experiences[0][duration]" placeholder="3" min="0" required> <span class="month-text">month</span>
+                                    <input type="number" name="experiences[0][duration]" placeholder="3" min="0" required> <span class="month-text"><%= t.month %></span>
                                 </p>
                             </div>
                             <div class="experience-description">
-                                <textarea name="experiences[0][description]" placeholder="Describe your role, responsibilities, and achievements..." rows="3"></textarea>
+                                <textarea name="experiences[0][description]" placeholder="<%= t.description_placeholder %>" rows="3"></textarea>
                             </div>
                             <ul class="experience-technologies">
                                 <li>
-                                    <input type="text" name="experiences[0][technologies][]" placeholder="Java">
+                                    <input type="text" name="experiences[0][technologies][]" placeholder="<%= t.tech_placeholder %>">
                                     <button type="button" class="remove-tech-button">-</button>
                                 </li>
                             </ul>
-                            <button type="button" class="add-tech-button">Add Technology</button>
+                            <button type="button" class="add-tech-button"><%= t.add_technology %></button>
                         </div>
                         <% } %>
                     </div>
                 
-                    <button type="button" id="add-experience-button">Add Experience</button>
+                    <button type="button" id="add-experience-button"><%= t.add_experience %></button>
                 </section>
                 
                 <template id="experience-template">
                     <div class="experience-section">
                         <h3 class="experience-type">
                             <select name="experiences[0][type]" required>
-                                <option>Internship</option>
-                                <option>Work</option>
+                                <option value="Internship"><%= t.internship %></option>
+                                <option value="Work"><%= t.work %></option>
                             </select>
                         </h3>
                         <h3 class="experience-title">
-                            <input type="text" name="experiences[0][title]" placeholder="Title" required>
+                            <input type="text" name="experiences[0][title]" placeholder="<%= t.title_placeholder %>" required>
                         </h3>
                         <p class="experience-organization">
-                            <input type="text" name="experiences[0][organisation]" placeholder="Organization’s name" required>
+                            <input type="text" name="experiences[0][organisation]" placeholder="<%= t.org_name_placeholder %>" required>
                         </p>
                         <div class="year-duration">
                             <p class="year">
                                 <input type="number" name="experiences[0][year]" placeholder="2020" min="1900" max="2100" required>
                             </p>
                             <p class="duration">
-                                <input type="number" name="experiences[0][duration]" placeholder="3" min="0" required> <span class="month-text">month</span>
+                                <input type="number" name="experiences[0][duration]" placeholder="3" min="0" required> <span class="month-text"><%= t.month %></span>
                             </p>
                         </div>
                         <div class="experience-description">
-                            <textarea name="experiences[0][description]" placeholder="Describe your role, responsibilities, and achievements..." rows="3"></textarea>
+                            <textarea name="experiences[0][description]" placeholder="<%= t.description_placeholder %>" rows="3"></textarea>
                         </div>
                         <ul class="experience-technologies">
                             <li>
-                                <input type="text" name="experiences[0][technologies][]" placeholder="Java">
+                                <input type="text" name="experiences[0][technologies][]" placeholder="<%= t.tech_placeholder %>">
                                 <button type="button" class="remove-tech-button">-</button>
                             </li>
                         </ul>
-                        <button type="button" class="add-tech-button">Add Technology</button>
-                        <button type="button" class="remove-experience-button">Remove Experience</button>
+                        <button type="button" class="add-tech-button"><%= t.add_technology %></button>
+                        <button type="button" class="remove-experience-button"><%= t.remove_experience %></button>
                     </div>
                 </template>
                 
                 <template id="experience-tech-template">
                     <li>
-                        <input type="text" name="" placeholder="Another technology...">
+                        <input type="text" name="" placeholder="<%= t.another_tech_placeholder %>">
                         <button type="button" class="remove-tech-button">-</button>
                     </li>
                 </template>
         
                 <section class="projects">
-                    <h2>Projects</h2>
+                    <h2><%= t.projects_title %></h2>
                     <div class="project-list" id="project-list">
                         <% if (isEdit && cvData.projects && cvData.projects.length > 0) { %>
                             <% cvData.projects.forEach((project, index) => { %>
                             <div class="project-section">
                                 <h3 class="project-title">
-                                    <input type="text" name="projects[<%= index %>][title]" placeholder="Title" value="<%= project.title %>" required>
+                                    <input type="text" name="projects[<%= index %>][title]" placeholder="<%= t.title_placeholder %>" value="<%= project.title %>" required>
                                 </h3>
                                 <div class="project-duration">
                                     <p class="duration">
-                                        <input type="number" name="projects[<%= index %>][duration]" placeholder="3" min="0" value="<%= project.duration || '' %>"> <span class="month-text">month</span>
+                                        <input type="number" name="projects[<%= index %>][duration]" placeholder="3" min="0" value="<%= project.duration || '' %>"> <span class="month-text"><%= t.month %></span>
                                     </p>
                                 </div>
                                 <div class="project-description">
-                                    <textarea name="projects[<%= index %>][description]" placeholder="Describe the project, your role, technologies used, and key achievements..." rows="3"><%= project.description || '' %></textarea>
+                                    <textarea name="projects[<%= index %>][description]" placeholder="<%= t.project_description_placeholder %>" rows="3"><%= project.description || '' %></textarea>
                                 </div>
                                 <ul class="project-technologies">
                                     <% if (project.technologies && project.technologies.length > 0) { %>
                                         <% project.technologies.forEach((tech, techIndex) => { %>
                                         <li>
-                                            <input type="text" name="projects[<%= index %>][technologies][]" placeholder="Node.js" value="<%= tech %>">
+                                            <input type="text" name="projects[<%= index %>][technologies][]" placeholder="<%= t.tech_placeholder_2 %>" value="<%= tech %>">
                                             <button type="button" class="remove-tech-button">-</button>
                                         </li>
                                         <% }) %>
                                     <% } else { %>
                                         <li>
-                                            <input type="text" name="projects[<%= index %>][technologies][]" placeholder="Node.js">
+                                            <input type="text" name="projects[<%= index %>][technologies][]" placeholder="<%= t.tech_placeholder_2 %>">
                                             <button type="button" class="remove-tech-button">-</button>
                                         </li>
                                     <% } %>
                                 </ul>
-                                <button type="button" class="add-tech-button">Add Technology</button>
+                                <button type="button" class="add-tech-button"><%= t.add_technology %></button>
                                 <div class="links">
                                     <% if (project.links && project.links.length > 0) { %>
                                         <% project.links.forEach((link, linkIndex) => { %>
                                         <span class="link-text">
-                                            <input type="url" name="projects[<%= index %>][links][]" placeholder="https://www.github.com/in/username" value="<%= link %>">
+                                            <input type="url" name="projects[<%= index %>][links][]" placeholder="<%= t.github_placeholder %>" value="<%= link %>">
                                         </span>
                                         <br>
                                         <% }) %>
                                     <% } else { %>
                                         <span class="link-text">
-                                            <input type="url" name="projects[<%= index %>][links][]" placeholder="https://www.github.com/in/username">
+                                            <input type="url" name="projects[<%= index %>][links][]" placeholder="<%= t.github_placeholder %>">
                                         </span>
                                         <br>
                                     <% } %>
                                 </div>
-                                <button type="button" class="add-link-button">Add Link</button>
+                                <button type="button" class="add-link-button"><%= t.add_link %></button>
                                 <% if (index > 0) { %>
-                                <button type="button" class="remove-project-button">Remove Project</button>
+                                <button type="button" class="remove-project-button"><%= t.remove_project %></button>
                                 <% } %>
                             </div>
                             <% }) %>
                         <% } else { %>
                         <div class="project-section">
                             <h3 class="project-title">
-                                <input type="text" name="projects[0][title]" placeholder="Title" required>
+                                <input type="text" name="projects[0][title]" placeholder="<%= t.title_placeholder %>" required>
                             </h3>
                             <div class="project-duration">
                                 <p class="duration">
-                                    <input type="number" name="projects[0][duration]" placeholder="3" min="0"> <span class="month-text">month</span>
+                                    <input type="number" name="projects[0][duration]" placeholder="3" min="0"> <span class="month-text"><%= t.month %></span>
                                 </p>
                             </div>
                             <div class="project-description">
-                                <textarea name="projects[0][description]" placeholder="Describe the project, your role, technologies used, and key achievements..." rows="3"></textarea>
+                                <textarea name="projects[0][description]" placeholder="<%= t.project_description_placeholder %>" rows="3"></textarea>
                             </div>
                             <ul class="project-technologies">
                                 <li>
-                                    <input type="text" name="projects[0][technologies][]" placeholder="Node.js">
+                                    <input type="text" name="projects[0][technologies][]" placeholder="<%= t.tech_placeholder_2 %>">
                                     <button type="button" class="remove-tech-button">-</button>
                                 </li>
                             </ul>
-                            <button type="button" class="add-tech-button">Add Technology</button>
+                            <button type="button" class="add-tech-button"><%= t.add_technology %></button>
                             <div class="links">
                                 <span class="link-text">
-                                <input type="url" name="projects[0][links][]" placeholder="https://www.github.com/in/username">
+                                <input type="url" name="projects[0][links][]" placeholder="<%= t.github_placeholder %>">
                                 </span>
                                 <br>
                             </div>
-                            <button type="button" class="add-link-button">Add Link</button>
+                            <button type="button" class="add-link-button"><%= t.add_link %></button>
                         </div>
                         <% } %>
                     </div>
-                    <button type="button" id="add-project-button">Add Project</button>
+                    <button type="button" id="add-project-button"><%= t.add_project %></button>
                 </section>
                 
                 <template id="project-template">
                     <div class="project-section">
                         <h3 class="project-title">
-                            <input type="text" name="projects[0][title]" placeholder="Title" required>
+                            <input type="text" name="projects[0][title]" placeholder="<%= t.title_placeholder %>" required>
                         </h3>
                         <div class="project-duration">
                             <p class="duration">
-                                <input type="number" name="projects[0][duration]" placeholder="3" min="0"> <span class="month-text">month</span>
+                                <input type="number" name="projects[0][duration]" placeholder="3" min="0"> <span class="month-text"><%= t.month %></span>
                             </p>
                         </div>
                         <div class="project-description">
-                            <textarea name="projects[0][description]" placeholder="Describe the project, your role, technologies used, and key achievements..." rows="3"></textarea>
+                            <textarea name="projects[0][description]" placeholder="<%= t.project_description_placeholder %>" rows="3"></textarea>
                         </div>
                         <ul class="project-technologies">
                             <li>
-                                <input type="text" name="projects[0][technologies][]" placeholder="Node.js">
+                                <input type="text" name="projects[0][technologies][]" placeholder="<%= t.tech_placeholder_2 %>">
                                 <button type="button" class="remove-tech-button">-</button>
                             </li>
                         </ul>
-                        <button type="button" class="add-tech-button">Add Technology</button>
+                        <button type="button" class="add-tech-button"><%= t.add_technology %></button>
                         <div class="links">
                             <span class="link-text">
-                            <input type="url" name="projects[0][links][]" placeholder="httpshttps://www.github.com/in/username">
+                            <input type="url" name="projects[0][links][]" placeholder="<%= t.github_placeholder %>">
                             </span>
                             <br>
                         </div>
-                        <button type="button" class="add-link-button">Add Link</button>
-                        <button type="button" class="remove-project-button">Remove Project</button>
+                        <button type="button" class="add-link-button"><%= t.add_link %></button>
+                        <button type="button" class="remove-project-button"><%= t.remove_project %></button>
                     </div>
                 </template>
                 
                 <template id="project-tech-template">
                     <li>
-                        <input type="text" name="" placeholder="Another technology...">
+                        <input type="text" name="" placeholder="<%= t.another_tech_placeholder %>">
                         <button type="button" class="remove-tech-button">-</button>
                     </li>
                 </template>
@@ -620,7 +621,7 @@
                 <template id="project-link-template">
                     <div>
                         <span class="link-text">
-                        <input type="url" name="" placeholder="https://www.github.com/in/username">
+                        <input type="url" name="" placeholder="<%= t.github_placeholder %>">
                         </span>
                         <button type="button" class="remove-link-button">-</button>
                         <br>
@@ -628,7 +629,7 @@
                 </template>
                 </div>
         </main>
-    <button id="create" type="submit">Create CV</button>
+    <button id="create" type="submit"><%= t.create_cv %></button>
 </form>
 
 <script>
@@ -639,7 +640,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const monthText = input.parentElement.querySelector('.month-text');
         if (monthText) {
             const value = parseInt(input.value) || 0;
-            monthText.textContent = value === 1 ? 'month' : 'months';
+            monthText.textContent = value === 1 ? '<%= t.month %>' : '<%= t.months %>';
         }
     }
     

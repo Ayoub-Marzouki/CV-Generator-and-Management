@@ -16,9 +16,9 @@
     </div>
     <% } %>
     <div id="actions">
-        <p class="button" id="save" onclick="window.print()">Save as PDF</p>
-        <p class="button" id="edit-cv"><a href="create-cv?edit=<%= cv.id || cv.profile.lastName %>">Edit CV</a></p>
-        <p class="button" id="learn-more"><a href="faqs#how-to-print" target="_blank">How to properly print CV</a></p>
+        <p class="button" id="save" onclick="window.print()"><%= t.save_pdf %></p>
+        <p class="button" id="edit-cv"><a href="create-cv?edit=<%= cv.id || cv.profile.lastName %>"><%= t.edit_cv %></a></p>
+        <p class="button" id="learn-more"><a href="faqs#how-to-print" target="_blank"><%= t.how_to_print %></a></p>
     </div>
     <!-- Profile Section -->
     <header class="profile">
@@ -105,7 +105,7 @@
 		<div class="left-column">
 			<!-- TECHNOLOGIES -->
 			<section class="technologies">
-			<h2>Skills & Technologies</h2>
+			<h2><%= t.skills_title %></h2>
 			<div class="technologies-list">
 				<% cv.technologySkills.forEach(skill => { %>
 				<div class="technologies-section">
@@ -125,7 +125,7 @@
 			<!-- SOFT SKILLS -->
 			<% if (cv.softSkills && cv.softSkills.length) { %>
 			<section class="soft-skills">
-				<h2>Soft Skills</h2>
+				<h2><%= t.soft_skills_title %></h2>
 				<ul class="soft-skills-list">
 				<% cv.softSkills.forEach(s => { %>
 					<li><%= s %></li>
@@ -136,7 +136,7 @@
 
 			<!-- EDUCATION -->
 			<section class="education">
-			<h2>Education</h2>
+			<h2><%= t.education_title %></h2>
 			<div class="education-list">
 				<% cv.education.forEach(edu => { %>
 				<div class="education-section">
@@ -154,7 +154,7 @@
 			<!-- LANGUAGES -->
 			<% if (cv.languages && cv.languages.length) { %>
 			<section class="languages">
-				<h2>Languages</h2>
+				<h2><%= t.languages_title %></h2>
 				<div class="languages-list">
 				<% cv.languages.forEach(lang => { %>
 					<div class="language-section">
@@ -163,10 +163,10 @@
 						<p class="language-level"><%= lang.level %></p>
 					</div>
 					<% if (lang.certification) { %>
-						<p>Certificate: <%= lang.certification %></p>
+						<p><%= t.certificate_label %> <%= lang.certification %></p>
 					<% } %>
 					<% if (lang.experience) { %>
-						<p>Experience: <%= lang.experience %></p>
+						<p><%= t.experience_label %> <%= lang.experience %></p>
 					<% } %>
 					<hr class="language-section-hr" />
 					</div>
@@ -178,7 +178,7 @@
 			<!-- INTERESTS -->
 			<% if (cv.interests && cv.interests.length) { %>
 			<section class="interests">
-				<h2>Interests</h2>
+				<h2><%= t.interests_title %></h2>
 				<ul class="interests-list">
 				<% cv.interests.forEach(i => { %>
 					<li><%= i %></li>
@@ -191,7 +191,7 @@
 		<div class="right-column">
 			<!-- EXPERIENCES -->
 			<section class="experience">
-			<h2>Experience</h2>
+			<h2><%= t.experience_title %></h2>
 			<div class="experience-list">
 				<% cv.experiences.forEach(exp => { %>
 				<div class="experience-section">
@@ -200,7 +200,7 @@
 					<p class="experience-organization"><%= exp.organisation %></p>
 					<div class="year-duration">
 					<p class="year"><%= exp.year %></p>
-					<p class="duration"><%= exp.duration %> <%= exp.duration == 1 ? 'month' : 'months' %></p>
+					<p class="duration"><%= exp.duration %> <%= exp.duration == 1 ? t.month : t.months %></p>
 					</div>
 					<% if (exp.description) { %>
 					<div class="experience-description">
@@ -221,14 +221,14 @@
 
 			<% if (cv.projects && cv.projects.length > 0) { %>
 			<section class="projects">
-				<h2>Projects</h2>
+				<h2><%= t.projects_title %></h2>
 				<div class="project-list">
 					<% cv.projects.forEach(project => { %>
 					<div class="project-section">
 						<h3 class="project-title"><%= project.title %></h3>
 						<% if (project.duration) { %>
 						<div class="project-duration">
-							<p class="duration"><%= project.duration %> <%= project.duration == 1 ? 'month' : 'months' %></p>
+							<p class="duration"><%= project.duration %> <%= project.duration == 1 ? t.month : t.months %></p>
 						</div>
 						<% } %>
 						<% if (project.description) { %>

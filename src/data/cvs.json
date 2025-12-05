@@ -1,1 +1,370 @@
-[{"profile":{"photo":"/uploads/cv_photo.png","firstName":"Houssameddine","lastName":"HAIMOURA","birthday":{"day":8,"month":2,"year":1999},"phone":"+212 6 97 46 59 59","email":"houssameddine.haimoura@gmail.com","address":"N° 6, Rue 7, Bloc II, l'Habitat Dhar Lakhmiss, Fès","professionalSummary":"Développeur logiciel passionné avec un an d'expérience dans la conception et le développement d'applications robustes. Expertise en Java, PHP et JavaScript, ainsi qu'en frameworks modernes. Orienté vers les solutions innovantes et le travail d'équipe pour livrer des produits de haute qualité.","links":["https://github.com/houssameddine-h","https://linkedin.com/in/houssameddine-haimoura"]},"education":[{"diploma":"Master Qualité du Logiciel (MQL)","organisation":"FSDM - Université Sidi Mohammed Ben Abdellah - Fès","year":"En cours (2ème année)"},{"diploma":"Licence Professionnelle Cybersécurité et Ingénierie des Systèmes","organisation":"FSR - Université Mohammed V - Rabat","year":2023}],"technologySkills":[{"skill":"Jakarta Entreprise Edition (JEE)","details":["Architecture 3 tiers, MVC2, DAO","Servlets, JSP, Spring / Spring Boot","MySQL, PostgreSQL"]},{"skill":"Ingénierie du Web","details":["HTML, CSS, JavaScript, TypeScript","Node.js, React, Angular"]},{"skill":"Ingénierie DevOps","details":["Maven, Git, GitHub, GitLab","JUnit, Jest, Selenium"]},{"skill":"Bases de données","details":["XML (Parseurs : DOM et SAX, DTD, XSD, XSLT, XPath, XQuery)","MySQL, PostgreSQL, NoSQL"]}],"experiences":[{"type":"CDI","organisation":"TELCO DEV - Fès","title":"Développeur Informatique","technologies":["HTML","CSS","JavaScript","JQuery","Bootstrap","Bootstrap","PHP","MySQL"],"year":"2021-2022","duration":"1 an"},{"type":"CDD","organisation":"ALTEN - Fès","title":"Technicien Support FAI et Réseaux","technologies":["Réseaux","ADSL","FTTH","VoIP","IPTV"],"year":"2019-2020","duration":"10 mois"}],"softSkills":["Communication","Esprit d'équipe","Créativité","Rigueur","Adaptabilité","Organisation"],"languages":[{"language":"Français","level":"B2","certification":"","experience":""},{"language":"Anglais","level":"B2","certification":"","experience":""}],"interests":["Sport","Voyage","Lecture"],"chosenLayout":"modern"},{"profile":{"photo":"/uploads/p01.png","firstName":"Zakaria","lastName":"Bozari","birthday":{"day":20,"month":2,"year":2001},"phone":"0623474143","email":"zakaria.bozari@gmail.com","address":"Casablanca","professionalSummary":"Ingénieur en informatique avec une bonne expérience \n            sur les architectures logicielles et les nouvelles technologies informatique, \n            en l'occurence Jakarta EE, Spring Boot, React et Angular. \n            Expérimenté dans la gestion de projets agiles, planification, exécution et coordination des tâches \n            avec des équipes multifonctionnelles. Disposant des compétences requises en communication et \n            en résolution de problèmes avec un esprit ouvert en collaboration efficace avec les parties prenantes \n            et les membres de l'équipe.\n        ","links":["https://github.com/B-Zakaria-u","https://gitlab.com/zakaria.bozari"]},"education":[{"diploma":"Master MQL","organisation":"FSDM - Université Sidi Mohammed ben Abdellah - Fès","year":2024},{"diploma":"License LST","organisation":"FSTT - Université Abdelmalek Essaâdi - Tanger","year":2024},{"diploma":"Baccalauréat","organisation":"Collège Lycée Lahlou - Casablanca","year":2018}],"technologySkills":[{"skill":"Jakarta Entreprise Edition (JEE)","details":["Architecture 3 tiers","Modèle MVC2","Servlets et JSP","modèle DAO","Framework Spring / Spring Boot","JPA","Hibernate","Administration Tomcat"]},{"skill":"Ingénierie du Web","details":["HTML","CSS","JavaScript","Node.js","React","Angular"]},{"skill":"Ingénierie DevOps","details":["Maven","Git","GitHub","GitLab","Jira","Jenkins","JUnit","Selenuim"]},{"skill":"Technologie XML","details":["Standard XML","Bases de données XML","Parseurs XML (DOM, SAX)","DTD","XSD (XML Schema)","XSLT","XPath","XQuery"]}],"experiences":[{"type":"Stage","organisation":"Skatys - Casablanca","title":"Développeur ABAP","technologies":["SAP","ABAP"],"year":2024,"duration":"2 mois"},{"type":"Projet","organisation":"FSDM","title":"Réalisation d'une application de Gestion de CVs","technologies":["HTML","CSS","JavaScript","Node.js"],"year":2025,"duration":"1 mois"},{"type":"Projet","organisation":"FSDM","title":"Réalisation d'une application de génération de diagramme de classeswing java","technologies":["Java","Swing","Technologie XML"],"year":2025,"duration":"1 mois"}],"softSkills":["Communication","Esprit d'équipe","Capacité de Résolution de problèmes"],"languages":[{"language":"Français","level":"C1","certification":"TCF","experience":""},{"language":"Anglais","level":"C1","certification":"Rosetta","experience":""},{"language":"Arabe","level":"Maternelle","certification":"","experience":""}],"interests":["Design","Music","Création numérique et montage"],"chosenLayout":"professional"},{"profile":{"photo":"/uploads/aymane.jpg","firstName":"Lamhamdi","lastName":"Mohamed Aymane","birthday":{"day":25,"month":10,"year":2001},"phone":"+212 7 05 79 71 52","email":"mohamedaymanelamhamdi@gmail.com","address":"Résidence Belle Vue Quartier Adarissa, Fès Maroc","professionalSummary":"Je suis à la recherche d'un stage dans le domaine de l'ingénierie logicielle pour mettre en pratique mes compétences techniques et contribuer à des projets innovants. Passionné par le développement logiciel, la conception d'architectures robustes et l'amélioration continue des processus.","links":["https://www.linkedin.com/in/mohamed-aymane-lamhamdi"]},"education":[{"diploma":"Master spécialisé en Qualité du Logiciel (en cours)","organisation":"FSDM - Université Sidi Mohammed ben Abdellah - Fès","year":"2024-2026"},{"diploma":"Licence Fondamentale en Science Math et Informatique","organisation":"FSDM - Université Sidi Mohammed ben Abdellah - Fès","year":"2023-2024"},{"diploma":"DUT en Génie Informatique, option Génie Logiciel","organisation":"École supérieure de technologie - Fès","year":"2020-2022"},{"diploma":"Baccalaureat Science Physique et Chimie","organisation":"Académie Royale Militaire - Meknès","year":"2019-2020"}],"technologySkills":[{"skill":"Java & JEE","details":["Architecture 3-tiers","MVC2","Servlets & JSP","Design patterns"]},{"skill":"Ingénierie Web","details":["HTML","CSS","JavaScript","Node.js","Express","React"]},{"skill":"DevOps & tests","details":["Maven","Trello","Github","GitLab","JUnit"]},{"skill":"Procedural Language/SQL","details":["PL-SQL","T-SQL"]},{"skill":"Données & Architectures","details":["MySQL","SQL Server","XML","JSON","REST/SOAP APIs","GraphQL"]},{"skill":"Design & Outils","details":["Canva","Word","PowerPoint","Teams"]},{"skill":"Framework","details":["Spring","Spring Boot","Angular"]},{"skill":"Méthodes & Modélisation","details":["UML","Merise","Agile (Scrum)"]}],"experiences":[{"type":"Stage","organisation":"RADEEF - Fès","title":"Technicien","technologies":[],"year":2022,"duration":"Avril 2022 - Juin 2022","description":"Création d'une application mobile de communication"},{"type":"Stage","organisation":"Pharmacie Labaraka - Fès","title":"Intern","technologies":[],"year":2021,"duration":"Juillet 2021 - Août 2021","description":"Maintenance des systèmes informatiques"},{"type":"Stage","organisation":"RADEEF - Fès","title":"Technicien","technologies":[],"year":2021,"duration":"Juin 2021 - Juillet 2021","description":"Découverte des systèmes de gestion"},{"type":"Projet","organisation":"","title":"Création d'une application mobile de gym","technologies":[],"year":"","duration":""},{"type":"Projet","organisation":"","title":"Création d'un site web de gym","technologies":["Angular","Spring Boot","MySQL","API"],"year":"","duration":""}],"professionalExperiences":[{"title":"IT, Manager de technologie et communication","organisation":"Youth Access Support - Fès","duration":""},{"title":"Président de la commité du BasketBall","organisation":"Rotaract - Fès","duration":""},{"title":"Assistant","organisation":"Give 2 Get Maroc - Pays-Bas","duration":""},{"title":"Gérant d'un magasin de textile","organisation":"Al Morakab - Taza","duration":""}],"softSkills":["Optimisation des processus","Gestion du temps en mode Agile","Créativité orientée solutions","Adaptation en contexte incertain","Collaboration transverse"],"languages":[{"language":"Arabe","level":"maternelle"},{"language":"Français","level":"courant"},{"language":"Anglais","level":"courant"}],"interests":["Permis B","Équitation","Voyage","Paddle-Tennis","Football","Natation","BasketBall"],"chosenLayout":"retro"},{"chosenLayout":"creative","profile":{"lastName":"Marzouki","firstName":"Ayoub","birthday":{"day":"01","month":"11","year":"2003"},"jobTitle":"Full Stack Developer","professionalSummary":"Persistent and persevering computer science student with a strong foundation in web development and programming. Raw\r\nwillpower being my primary weapon to overcome challenges and achieve goals. Specialized in building functional web applications using modern technologies, such as JEE, Spring / Spring Boot, JavasScript (AJAX included), SQL, PL/SQL, MySQL and MongoDB.\r\n\r\nExperienced with additional technologies such as Node JS, Django Framework, and Java Swing for desktop applications.","email":"ayoubma321@gmail.com","address":"Fes, Morocco","phone":"+212 613852665","links":["https://github.com/Ayoub-Marzouki","https://www.linkedin.com/in/ayoubmarzouki/"],"photo":"/uploads/7a5d4783da5f9eac82735bae256c6f3e"},"education":[{"diploma":"Software Quality Master's","organisation":"FSDM - Université Sidi Mohammed ben Abdellah - Fès","year":"2026","location":"Fes, Morocco"},{"diploma":"Licence at Mathematics and Computer Sciences","organisation":"FSDM - Université Sidi Mohammed ben Abdellah - Fès","year":"2024","location":"Fes, Morocco"},{"diploma":"DEUG at Mathematics and Computer Sciences","organisation":"FSDM - Université Sidi Mohammed ben Abdellah - Fès","year":"2024","location":"Fes, Morocco"}],"technologySkills":[{"skill":"Jakarta Enterprise Edition (JEE)","details":["3-tiers Architecture","Spring / Spring Boot Framework","MVC2 model","DAO Model","JPA & Hibernate","Servlets and JSPs"]},{"skill":"Frontend Development","details":["HTML","Native CSS","JavaScript","AJAX"]},{"skill":"Java Standard Edition (Java SE)","details":["Generics","Reflection","MultiThreading","Swing","Java XML","Lists & Maps"]},{"skill":"Databases and Query Languages","details":["SQL","PL/SQL","MySQL","MongoDB"]},{"skill":"Software Development Practices","details":["Test-Driven Development (TDD)","Domain Driven Design (DDD)"]}],"experiences":[{"type":"Internship","title":"Full Stack Developer","organisation":"IR4LAB Africa","year":"2025","duration":"2","technologies":["Spring Boot","Ethereum"]}],"projects":[{"title":"Moroccan Art Gallery Website","technologies":["Spring Boot","Spring Data JPA","Spring Security","Paypal API","Thymeleaf","MySQL"],"links":["https://github.com/Ayoub-Marzouki/mehdi-ragani-website/","https://mehdiragani.art/"]},{"title":"CV Generator & Management","technologies":["Node JS","Express","EJS"],"links":["https://github.com/Ayoub-Marzouki/CV-Generator-and-Management/"]},{"title":"Java Project Parser & UML Diagrams Generator","technologies":["Java","Java Swing","Java XML"],"links":["https://github.com/Ayoub-Marzouki/Java-Project-Parser-UML-Diagrams-Generator"]},{"title":"Online Art Gallery & Marketplace : Artful Atlas","technologies":["Django Rest Framework","SQLite3"],"links":["https://github.com/Ayoub-Marzouki/Artful-Atlas-ecommerce"]}],"softSkills":["Resilience","Perseverance","Clear Communication","Adaptability","Independent Learning","Analytical Thinking"],"languages":[{"language":"English","level":"C1","certification":"","experience":""},{"language":"French","level":"C1","certification":"","experience":""},{"language":"Arabic","level":"Native","certification":"","experience":""}],"interests":["Human Behavior and Emotional Connection","Dreams & Lucid Dreaming","Software Architecture and Clean Code"]},{"chosenLayout":"creative","id":"1757706105770-x9lwu5","profile":{"lastName":"Marzouki","firstName":"Ayoub","birthday":{"day":"01","month":"11","year":"2003"},"jobTitle":"Full Stack Developer","professionalSummary":"Persistent and persevering computer science student with a strong foundation in web development and programming. Raw\r\nwillpower being my primary weapon to overcome challenges and achieve goals. Specialized in building functional web applications using modern technologies, such as JEE, Spring / Spring Boot, JavasScript (AJAX included), SQL, PL/SQL, MySQL and MongoDB.\r\n\r\nExperienced with additional technologies such as Node JS, Django Framework, and Java Swing for desktop applications.","email":"ayoubma321@gmail.com","address":"Fes, Morocco","phone":"+212 613852665","links":["https://github.com/Ayoub-Marzouki","https://www.linkedin.com/in/ayoubmarzouki/"],"photo":"/uploads/e9bd38f0e38eb156a1d09f50f6704a0c"},"technologySkills":[{"skill":"Jakarta Enterprise Edition (JEE)","details":["3-tiers Architecture","Spring / Spring Boot Framework","MVC2 model","DAO Model","Spring JPA & Profiles","Servlets and JSPs"]},{"skill":"Frontend Development","details":["HTML","Native CSS","JavaScript","AJAX"]},{"skill":"Java Standard Edition (Java SE)","details":["Generics","Reflection","MultiThreading","Swing","Java XML","Lists & Maps"]},{"skill":"Databases and Query Languages","details":["SQL","PL/SQL","MySQL","MongoDB"]},{"skill":"Software Development Practices","details":["Test-Driven Development (TDD)","Domain Driven Design (DDD)"]}],"softSkills":["Resilience","Perseverance","Clear Communication","Adaptability","Independent Learning","Analytical Thinking"],"languages":[{"language":"English","level":"Fluent","certification":"","experience":""},{"language":"French","level":"Fluent","certification":"","experience":""},{"language":"Arabic","level":"Native","certification":"","experience":""}],"education":[{"diploma":"Software Quality Master's","organisation":"FSDM - Université Sidi Mohammed ben Abdellah - Fès","year":"2026","location":"Fes, Morocco"},{"diploma":"Licence at Mathematics and Computer Sciences","organisation":"FSDM - Université Sidi Mohammed ben Abdellah - Fès","year":"2024","location":"Fes, Morocco"},{"diploma":"DEUG at Mathematics and Computer Sciences","organisation":"FSDM - Université Sidi Mohammed ben Abdellah - Fès","year":"2024","location":"Fes, Morocco"}],"interests":["Human Behavior and Emotional Connection","Dreams & Lucid Dreaming","Software Architecture and Clean Code"],"experiences":[{"type":"Internship","title":"Full Stack Developer","organisation":"IR4LAB Africa","year":"2025","duration":"2","description":"Worked mainly on backend bug tickets where I contributed in fixing bugs reported by users, and others that I was able to debug . Also worked on some frontend bug / improvements tickets. And finally some small improvements on the blockchain side of the application that uses the latter to issue certificates (DocCerts).\r\n\r\nThanks to this opportunity, I landed on a huge project, I was able to see the concept of DevOps in action, I was able to contribute, I experienced what it is like to work remotely, through Jira, and communicate with the team through Slack platform.","technologies":["Spring Boot","Ethereum"]}],"projects":[{"title":"Moroccan Art Gallery Website","duration":"15","description":"An aesthetically pleasing and user-friendly art gallery website dedicated to showcasing the works of a single artist.","technologies":["Spring Boot","Spring Data JPA","Spring Security","Paypal API","Thymeleaf","MySQL"],"links":["https://github.com/Ayoub-Marzouki/mehdi-ragani-website/","https://mehdiragani.art/"]},{"title":"CV Generator & Management","duration":"3","description":"A fully dynamic CV generator built with Node.js, Express and EJS template engine that lets users pick from multiple templates, fill out structured sections, upload a profile photo and instantly get a polished CV. Profile photos are handled seamlessly with Multer middleware. User can use a search filter to instantly find any CV by a filter of his choice. CVs are currently stored in a JSON database.","technologies":["Node JS","Express","EJS"],"links":["https://github.com/Ayoub-Marzouki/CV-Generator-and-Management/"]},{"title":"Java Project Parser & UML Diagrams Generator","duration":"3","description":"A desktop application; a java project that generates UML diagrams for a given src folder path of a java project, and its structure in XML format.","technologies":["Java","Java Swing","Java XML"],"links":["https://github.com/Ayoub-Marzouki/Java-Project-Parser-UML-Diagrams-Generator"]},{"title":"Online Art Gallery & Marketplace : Artful Atlas","duration":"4","description":"An innovative e-commerce platform, specially designed to highlight Moroccan art and facilitate the sale of the artworks of Moroccan artists and painters, that aims to be a true virtual gallery, where users can discover, appreciate and purchase unique works of art, directly from local artists.","technologies":["Django Rest Framework","SQLite3"],"links":["https://github.com/Ayoub-Marzouki/Artful-Atlas-ecommerce"]}]}]
+[
+  {
+    "id": "1757706105770-eng-v4",
+    "chosenLayout": "creative",
+    "language": "en",
+    "profile": {
+      "lastName": "Marzouki",
+      "firstName": "Ayoub",
+      "birthday": { "day": "01", "month": "11", "year": "2003" },
+      "jobTitle": "Full Stack Developer",
+      "professionalSummary": "Persistent and persevering computer science student with a strong foundation in web development and programming. Raw willpower being my primary weapon to overcome challenges and achieve goals. Specialized in building functional web applications using modern technologies, such as JEE, Spring / Spring Boot, JavasScript (AJAX included), SQL, PL/SQL, MySQL and MongoDB. Experienced with additional technologies such as Node JS, Django Framework, and Java Swing for desktop applications. Currently mastering React JS.",
+      "email": "ayoubma321@gmail.com",
+      "address": "Fes, Morocco",
+      "phone": "+212 613852665",
+      "links": [
+        "https://github.com/Ayoub-Marzouki",
+        "https://www.linkedin.com/in/ayoubmarzouki/"
+      ],
+      "photo": "/uploads/7a5d4783da5f9eac82735bae256c6f3e"
+    },
+    "technologySkills": [
+      {
+        "skill": "Jakarta Enterprise Edition (JEE)",
+        "details": [
+          "3-tiers Architecture",
+          "Spring / Spring Boot Framework",
+          "MVC2 model",
+          "DAO Model",
+          "Spring JPA & Profiles",
+          "Servlets and JSPs"
+        ]
+      },
+      {
+        "skill": "Frontend Development",
+        "details": ["HTML", "Native CSS", "JavaScript", "AJAX"]
+      },
+      {
+        "skill": "Java Standard Edition (Java SE)",
+        "details": [
+          "Generics",
+          "Reflection",
+          "MultiThreading",
+          "Swing",
+          "Java XML",
+          "Lists & Maps",
+          "JUnit"
+        ]
+      },
+      {
+        "skill": "Databases and Query Languages",
+        "details": ["SQL", "PL/SQL", "MySQL", "Oracle", "MongoDB"]
+      },
+      {
+        "skill": "Software Development Practices",
+        "details": [
+          "Test-Driven Development (TDD)",
+          "Domain Driven Design (DDD)",
+          "Design Patterns"
+        ]
+      }
+    ],
+    "experiences": [
+      {
+        "type": "Internship",
+        "title": "Full Stack Developer",
+        "organisation": "IR4LAB Africa",
+        "year": "2025",
+        "duration": "2",
+        "description": "+ Restored a core DocCerts function by fixing a token-mismatch bug in the Issuer account impersonation feature, ensuring document issuance worked as expected.\n+ Resolved frontend bugs and improved UI.\n+ Migrated blockchain integration from the deprecated Ropsten testnet to Sepolia for continued testing support.\n+ Worked remotely on a DevOps-oriented project, coordinating via Jira and Slack.",
+        "technologies": ["Spring Boot", "Ethereum", "Docker"]
+      }
+    ],
+    "projects": [
+      {
+        "title": "Moroccan Art Gallery Website",
+        "duration": "15",
+        "description": "Built a complete art e-commerce platform from concept to production, featuring sophisticated user experience design with guest cart merging, PayPal payment integration, and comprehensive admin dashboard - deployed live with professional infrastructure and SSL certificates.",
+        "technologies": [
+          "Spring Boot",
+          "Spring Data JPA",
+          "Spring Security",
+          "Paypal API",
+          "Thymeleaf",
+          "MySQL",
+          "Cloudflare Proxy"
+        ],
+        "links": [
+          "https://github.com/Ayoub-Marzouki/mehdi-ragani-website/",
+          "https://mehdiragani.art/"
+        ]
+      },
+      {
+        "title": "Auto-Apply",
+        "duration": "3",
+        "description": "Built an autonomous smart job application system to parse CVs, analyze user intent and evaluate job fit against the user's profile with AI, and automate the 'Easy Apply' submission process with dynamic form handling.",
+        "technologies": [
+          "Spring Boot & Spring AI",
+          "Node JS",
+          "PlayWright",
+          "Gemini API"
+        ],
+        "links": [
+          "https://www.linkedin.com/feed/update/urn:li:activity:7398705511233376256/"
+        ]
+      },
+      {
+        "title": "CV Generator & Management",
+        "duration": "3",
+        "description": "A fully dynamic CV generator built with Node.js, Express and EJS template engine that lets users pick from multiple templates, fill out structured sections, upload a profile photo and instantly get a polished CV. Profile photos are handled seamlessly with Multer middleware. User can use a search filter to instantly find any CV by a filter of his choice. CVs are currently stored in a JSON database.",
+        "technologies": ["Node JS", "Express", "EJS"],
+        "links": [
+          "https://github.com/Ayoub-Marzouki/CV-Generator-and-Management/"
+        ]
+      },
+      {
+        "title": "Java Project Parser & UML Diagrams Generator",
+        "duration": "3",
+        "description": "A desktop application; a java project that generates UML diagrams for a given src folder path of a java project, and its structure in XML format.",
+        "technologies": ["Java", "Java Swing", "Java XML"],
+        "links": [
+          "https://github.com/Ayoub-Marzouki/Java-Project-Parser-UML-Diagrams-Generator"
+        ]
+      },
+      {
+        "title": "Online Art Gallery & Marketplace : Artful Atlas",
+        "duration": "4",
+        "description": "An innovative e-commerce platform, specially designed to highlight Moroccan art and facilitate the sale of the artworks of Moroccan artists and painters, that aims to be a true virtual gallery, where users can discover, appreciate and purchase unique works of art, directly from local artists.",
+        "technologies": ["Django Rest Framework", "SQLite3"],
+        "links": ["https://github.com/Ayoub-Marzouki/Artful-Atlas-ecommerce"]
+      }
+    ],
+    "softSkills": [
+      "Resilience",
+      "Perseverance",
+      "Clear Communication",
+      "Adaptability",
+      "Independent Learning",
+      "Analytical Thinking"
+    ],
+    "education": [
+      {
+        "diploma": "Software Quality Master's",
+        "organisation": "FSDM - Université Sidi Mohammed ben Abdellah - Fès",
+        "year": "2026",
+        "location": "Fes, Morocco"
+      },
+      {
+        "diploma": "Licence at Mathematics and Computer Sciences",
+        "organisation": "FSDM - Université Sidi Mohammed ben Abdellah - Fès",
+        "year": "2024",
+        "location": "Fes, Morocco"
+      },
+      {
+        "diploma": "DEUG at Mathematics and Computer Sciences",
+        "organisation": "FSDM - Université Sidi Mohammed ben Abdellah - Fès",
+        "year": "2024",
+        "location": "Fes, Morocco"
+      }
+    ],
+    "languages": [
+      {
+        "language": "English",
+        "level": "Fluent",
+        "certification": "",
+        "experience": ""
+      },
+      {
+        "language": "French",
+        "level": "Fluent",
+        "certification": "",
+        "experience": ""
+      },
+      {
+        "language": "Arabic",
+        "level": "Native",
+        "certification": "",
+        "experience": ""
+      }
+    ],
+    "interests": [
+      "Human Behavior and Emotional Connection",
+      "Dreams & Lucid Dreaming",
+      "Software Architecture and Clean Code"
+    ]
+  },
+  {
+    "chosenLayout": "creative",
+    "language": "fr",
+    "id": "1757706105770-fr-v2",
+    "profile": {
+      "lastName": "Marzouki",
+      "firstName": "Ayoub",
+      "birthday": { "day": "01", "month": "11", "year": "2003" },
+      "jobTitle": "Développeur Full Stack",
+      "professionalSummary": "Étudiant en informatique persévérant et assidu, doté d'une solide base en développement web et en programmation. Ma détermination est mon principal atout pour surmonter les défis et atteindre les objectifs. Spécialisé dans la création d'applications web fonctionnelles à l'aide de technologies modernes, telles que JEE, Spring / Spring Boot, JavaScript (y compris AJAX), SQL, PL/SQL, MySQL et MongoDB.\r\n\r\nExpérimenté avec des technologies supplémentaires telles que Node JS, Django Framework et Java Swing pour les applications de bureau. Actuellement en processus de maîtrise de React JS.",
+      "email": "ayoubma321@gmail.com",
+      "address": "Fès, Maroc",
+      "phone": "+212 613852665",
+      "links": [
+        "https://github.com/Ayoub-Marzouki",
+        "https://www.linkedin.com/in/ayoubmarzouki/"
+      ],
+      "photo": "/uploads/76ca45af6aa50cd919f5dfa4788dc6df"
+    },
+    "technologySkills": [
+      {
+        "skill": "Jakarta Enterprise Edition (JEE)",
+        "details": [
+          "Architecture 3-tiers",
+          "Framework Spring / Spring Boot",
+          "Modèle MVC2",
+          "Modèle DAO",
+          "Spring JPA & Profils",
+          "Servlets et JSPs"
+        ]
+      },
+      {
+        "skill": "Développement Frontend",
+        "details": ["HTML", "CSS Natif", "JavaScript", "AJAX"]
+      },
+      {
+        "skill": "Java Standard Edition (Java SE)",
+        "details": [
+          "Généricité",
+          "Réflexion",
+          "Multi-threading",
+          "Swing",
+          "Java XML",
+          "Listes & Maps",
+          "JUnit"
+        ]
+      },
+      {
+        "skill": "Bases de données et langages de requête",
+        "details": ["SQL", "PL/SQL", "MySQL", "Oracle", "MongoDB"]
+      },
+      {
+        "skill": "Pratiques de développement logiciel",
+        "details": [
+          "Développement piloté par les tests (TDD)",
+          "Conception pilotée par le domaine (DDD)",
+          "Design Patterns"
+        ]
+      }
+    ],
+    "softSkills": [
+      "Résilience",
+      "Persévérance",
+      "Communication claire",
+      "Adaptabilité",
+      "Apprentissage autonome",
+      "Esprit d'analyse"
+    ],
+    "education": [
+      {
+        "diploma": "Master en Qualité Logicielle",
+        "organisation": "FSDM - Université Sidi Mohammed ben Abdellah - Fès",
+        "year": "2026",
+        "location": "Fès, Maroc"
+      },
+      {
+        "diploma": "Licence en Mathématiques et Informatique",
+        "organisation": "FSDM - Université Sidi Mohammed ben Abdellah - Fès",
+        "year": "2024",
+        "location": "Fès, Maroc"
+      },
+      {
+        "diploma": "DEUG en Mathématiques et Informatique",
+        "organisation": "FSDM - Université Sidi Mohammed ben Abdellah - Fès",
+        "year": "2024",
+        "location": "Fès, Maroc"
+      }
+    ],
+    "languages": [
+      {
+        "language": "Anglais",
+        "level": "Courant",
+        "certification": "",
+        "experience": ""
+      },
+      {
+        "language": "Français",
+        "level": "Courant",
+        "certification": "",
+        "experience": ""
+      },
+      {
+        "language": "Arabe",
+        "level": "Langue maternelle",
+        "certification": "",
+        "experience": ""
+      }
+    ],
+    "interests": [
+      "Comportement humain et connexion émotionnelle",
+      "Rêves et rêve lucide",
+      "Architecture logicielle et Clean Code"
+    ],
+    "experiences": [
+      {
+        "type": "Internship",
+        "title": "Développeur Full Stack",
+        "organisation": "IR4LAB Africa",
+        "year": "2025",
+        "duration": "2",
+        "description": "+ Restauré une fonction essentielle de DocCerts en corrigeant un bug de non-concordance de jeton dans la fonctionnalité d'usurpation de compte Émetteur, assurant le bon fonctionnement de l'émission de documents.\r\n+ Résolu des bugs frontend et amélioré l'interface utilisateur.\r\n+ Migré l'intégration de la blockchain du testnet obsolète Ropsten vers Sepolia pour un support de test continu.\r\n+ Travaillé à distance sur un projet orienté DevOps, en coordination via Jira et Slack.",
+        "technologies": ["Spring Boot", "Ethereum", "Docker"]
+      }
+    ],
+    "projects": [
+      {
+        "title": "Site Web de Galerie d'Art Marocain",
+        "duration": "15",
+        "description": "Construit une plateforme complète e-commerce d'art, offrant une conception d'expérience utilisateur sophistiquée avec fusion du panier invité, intégration des paiements PayPal et un tableau de bord d'administration complet - déployée en production avec une infrastructure professionnelle et des certificats SSL.",
+        "technologies": [
+          "Spring Boot",
+          "Spring Data JPA",
+          "Spring Security",
+          "Paypal API",
+          "Thymeleaf",
+          "MySQL",
+          "Cloudflare Proxy"
+        ],
+        "links": [
+          "https://github.com/Ayoub-Marzouki/mehdi-ragani-website/",
+          "https://mehdiragani.art/"
+        ]
+      },
+      {
+        "title": "Auto-Apply",
+        "duration": "3",
+        "description": "Conçu un système de candidature intelligent et autonome capable d'analyser les CV, d'évaluer l'intention de l'utilisateur et de déterminer l'adéquation du poste à son profile grâce à l'IA, et d'automatiser le processus d'application.",
+        "technologies": [
+          "Spring Boot & Spring AI",
+          "Node JS",
+          "PlayWright",
+          "Gemini API"
+        ],
+        "links": [
+          "https://www.linkedin.com/feed/update/urn:li:activity:7398705511233376256/"
+        ]
+      },
+      {
+        "title": "Générateur et Gestion de CV",
+        "duration": "3",
+        "description": "Un générateur de CV entièrement dynamique qui permet aux utilisateurs de choisir parmi plusieurs modèles pour obtenir instantanément un CV optimisé pour les ATS. Les photos de profil sont gérées de manière transparente avec Multer. L'utilisateur peut utiliser un filtre de recherche pour trouver instantanément n'importe quel CV par un filtre de son choix.",
+        "technologies": ["Node JS", "Express", "EJS"],
+        "links": [
+          "https://github.com/Ayoub-Marzouki/CV-Generator-and-Management/"
+        ]
+      },
+      {
+        "title": "Parseur de Projet Java & Générateur de Diagrammes UML",
+        "duration": "3",
+        "description": "Une application de bureau ; un projet Java qui génère des diagrammes UML pour un chemin de dossier 'src' donné d'un projet Java, ainsi que sa structure au format XML.",
+        "technologies": ["Java", "Java Swing", "Java XML"],
+        "links": [
+          "https://github.com/Ayoub-Marzouki/Java-Project-Parser-UML-Diagrams-Generator"
+        ]
+      },
+      {
+        "title": "Galerie d'Art en Ligne & Marketplace : Artful Atlas",
+        "duration": "4",
+        "description": "Une plateforme e-commerce innovante, spécialement conçue pour mettre en valeur l'art marocain et faciliter la vente des œuvres d'art d'artistes et de peintres marocains, qui se veut être une véritable galerie virtuelle, où les utilisateurs peuvent découvrir, apprécier et acheter des œuvres d'art uniques, directement auprès des artistes locaux.",
+        "technologies": ["Django Rest Framework", "SQLite3"],
+        "links": ["https://github.com/Ayoub-Marzouki/Artful-Atlas-ecommerce"]
+      }
+    ]
+  }
+]

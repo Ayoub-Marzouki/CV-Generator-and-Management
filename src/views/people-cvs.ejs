@@ -10,43 +10,43 @@
 
 <header id="filter">
   <form action="/people-cvs" method="get">
-      <h1 id="filter-header">Click to Search for a specific person</h1> 
+      <h1 id="filter-header"><%= t.search_header %></h1> 
       <section id="drop-content" class="hidden">
           <div>
-              <p>Last Name</p>
-              <input type="text" name="lastName" placeholder="Last Name">
+              <p><%= t.last_name %></p>
+              <input type="text" name="lastName" placeholder="<%= t.last_name %>">
           </div>
           
           <div>
-            <p>First Name</p>
-            <input type="text" name="firstName" placeholder="Last Name">
+            <p><%= t.first_name %></p>
+            <input type="text" name="firstName" placeholder="<%= t.last_name %>">
           </div> 
 
           <div>
-            <p>Year Born</p>
+            <p><%= t.year_born %></p>
             <input type="number" name="year" placeholder="2000">
           </div>
           
           <div>
-            <p>Skill</p>
+            <p><%= t.skill %></p>
             <input type="text" name="skill" placeholder="JEE">
           </div>
           
           <div>
-            <p>Technology Details</p>
+            <p><%= t.tech_details %></p>
             <input type="text" name="technologyDetails" placeholder="MVC">
-            <p id="add-technology">Add a technology</p>
+            <p id="add-technology"><%= t.add_tech %></p>
           </div>
           
 
           <div>
-            <p>Job Title</p>
-            <input type="text" name="jobTitle" placeholder="Job Title">
+            <p><%= t.job_title %></p>
+            <input type="text" name="jobTitle" placeholder="<%= t.job_title %>">
           </div> 
 
           <div id="location-filter">
-              <p>Location</p>
-              <input type="text" name="address" placeholder="Address">
+              <p><%= t.location %></p>
+              <input type="text" name="address" placeholder="<%= t.address %>">
           </div>
       </section>
       <button id="search" type="submit"><img class="icons" src="images/icons/search.png" alt=""></button>
@@ -56,7 +56,8 @@
 
 <% if (cvs && cvs.length) { %>
 <% cvs.reverse().forEach((cv) => { %>
-	<h2><a class="preview-download" href="preview?<%= cv.id ? ('id=' + cv.id) : ('lastName=' + cv.profile.lastName) %>">Preview and Download</a></h2>
+    <% const cvT = translations[cv.language || 'en']; %>
+	<h2><a class="preview-download" href="preview?<%= cv.id ? ('id=' + cv.id) : ('lastName=' + cv.profile.lastName) %>"><%= cvT.preview_download %></a></h2>
 	<section class="cv-block <%= cv.chosenLayout || 'minimalist'%>">
 	<!-- PROFILE -->
 	<header class="profile">
@@ -143,7 +144,7 @@
 		<div class="left-column">
 			<!-- TECHNOLOGIES -->
 			<section class="technologies">
-			<h2>Skills & Technologies</h2>
+			<h2><%= cvT.skills_title %></h2>
 			<div class="technologies-list">
 				<% cv.technologySkills.forEach(skill => { %>
 				<div class="technologies-section">
@@ -163,7 +164,7 @@
 			<!-- SOFT SKILLS -->
 			<% if (cv.softSkills && cv.softSkills.length) { %>
 			<section class="soft-skills">
-				<h2>Soft Skills</h2>
+				<h2><%= cvT.soft_skills_title %></h2>
 				<ul class="soft-skills-list">
 				<% cv.softSkills.forEach(s => { %>
 					<li><%= s %></li>
@@ -174,7 +175,7 @@
 
 			<!-- EDUCATION -->
 			<section class="education">
-			<h2>Education</h2>
+			<h2><%= cvT.education_title %></h2>
 			<div class="education-list">
 				<% cv.education.forEach(edu => { %>
 				<div class="education-section">
@@ -192,7 +193,7 @@
 			<!-- LANGUAGES -->
 			<% if (cv.languages && cv.languages.length) { %>
 			<section class="languages">
-				<h2>Languages</h2>
+				<h2><%= cvT.languages_title %></h2>
 				<div class="languages-list">
 				<% cv.languages.forEach(lang => { %>
 					<div class="language-section">
@@ -201,10 +202,10 @@
 						<p class="language-level"><%= lang.level %></p>
 					</div>
 					<% if (lang.certification) { %>
-						<p>Certificate: <%= lang.certification %></p>
+						<p><%= cvT.certificate_label %> <%= lang.certification %></p>
 					<% } %>
 					<% if (lang.experience) { %>
-						<p>Experience: <%= lang.experience %></p>
+						<p><%= cvT.experience_label %> <%= lang.experience %></p>
 					<% } %>
 					<hr class="language-section-hr" />
 					</div>
@@ -216,7 +217,7 @@
 			<!-- INTERESTS -->
 			<% if (cv.interests && cv.interests.length) { %>
 			<section class="interests">
-				<h2>Interests</h2>
+				<h2><%= cvT.interests_title %></h2>
 				<ul class="interests-list">
 				<% cv.interests.forEach(i => { %>
 					<li><%= i %></li>
@@ -229,7 +230,7 @@
 		<div class="right-column">
 			<!-- EXPERIENCES -->
 			<section class="experience">
-			<h2>Experience</h2>
+			<h2><%= cvT.experience_title %></h2>
 			<div class="experience-list">
 				<% cv.experiences.forEach(exp => { %>
 				<div class="experience-section">
@@ -238,7 +239,7 @@
 					<p class="experience-organization"><%= exp.organisation %></p>
 					<div class="year-duration">
 					<p class="year"><%= exp.year %></p>
-					<p class="duration"><%= exp.duration %> <%= exp.duration == 1 ? 'month' : 'months' %></p>
+					<p class="duration"><%= exp.duration %> <%= exp.duration == 1 ? cvT.month : cvT.months %></p>
 					</div>
 					<% if (exp.description) { %>
 					<div class="experience-description">
@@ -259,14 +260,14 @@
 
 			<% if (cv.projects && cv.projects.length > 0) { %>
 				<section class="projects">
-					<h2>Projects</h2>
+					<h2><%= cvT.projects_title %></h2>
 					<div class="project-list">
 						<% cv.projects.forEach(project => { %>
 					<div class="project-section">
 						<h3 class="project-title"><%= project.title %></h3>
 						<% if (project.duration) { %>
 						<div class="project-duration">
-							<p class="duration"><%= project.duration %> <%= project.duration == 1 ? 'month' : 'months' %></p>
+							<p class="duration"><%= project.duration %> <%= project.duration == 1 ? cvT.month : cvT.months %></p>
 						</div>
 						<% } %>
 						<% if (project.description) { %>
