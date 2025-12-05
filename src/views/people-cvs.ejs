@@ -242,7 +242,7 @@
 					</div>
 					<% if (exp.description) { %>
 					<div class="experience-description">
-						<p><%= exp.description %></p>
+						<p><%- exp.description.replace(/\n/g, '<br>') %></p>
 					</div>
 					<% } %>
 					<% if (exp.technologies && exp.technologies.length) { %>
